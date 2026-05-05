@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YiwuDirect • Mike | Your SOHO Partner in Yiwu International Trade City</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700&display=swap');
+        
+        :root {
+            --primary: #e63939;
+        }
+        
+        .hero-bg {
+            background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.55)), url('https://picsum.photos/id/1015/2000/1200') center/cover no-repeat;
+        }
+        
+        .product-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #e63939;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover:after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-gray-800">
+    <!-- Navbar -->
+    <nav class="bg-white border-b sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-9 h-9 bg-red-600 rounded-xl flex items-center justify-center text-white font-bold text-2xl">Y</div>
+                    <div>
+                        <span class="text-2xl font-bold tracking-tight">YiwuDirect</span>
+                        <span class="text-xs text-gray-500 block -mt-1">by Mike</span>
+                    </div>
+                </div>
+
+                <!-- Menu -->
+                <div class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                    <a href="#" class="nav-link text-gray-700 hover:text-red-600">Home</a>
+                    <a href="#products" class="nav-link text-gray-700 hover:text-red-600">Products</a>
+                    <a href="#about" class="nav-link text-gray-700 hover:text-red-600">About Mike</a>
+                    <a href="#services" class="nav-link text-gray-700 hover:text-red-600">Services</a>
+                    <a href="#contact" class="nav-link text-gray-700 hover:text-red-600">Contact</a>
+                </div>
+
+                <div class="flex items-center gap-4">
+                    <div class="text-xs bg-green-100 text-green-700 px-3 py-1.5 rounded-full font-medium flex items-center gap-1">
+                        <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+                        Online in Yiwu
+                    </div>
+                    <button onclick="window.location.href='#contact'" 
+                            class="bg-red-600 hover:bg-red-700 text-white px-6 py-2.5 rounded-xl text-sm font-semibold transition flex items-center gap-2">
+                        <i class="fas fa-paper-plane"></i>
+                        Get Quote
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="hero-bg h-screen flex items-center text-white">
+        <div class="max-w-7xl mx-auto px-6 pt-20">
+            <div class="max-w-2xl">
+                <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md px-4 py-2 rounded-3xl text-sm mb-6">
+                    <i class="fas fa-map-marker-alt"></i>
+                    Yiwu International Trade City, China
+                </div>
+                
+                <h1 class="text-6xl md:text-7xl font-bold leading-none mb-6">
+                    Direct from Yiwu.<br>
+                    <span class="text-red-400">Reliable SOHO Partner.</span>
+                </h1>
+                
+                <p class="text-xl text-gray-100 mb-10">
+                    Hi, I'm Mike. A one-man foreign trade SOHO based inside Yiwu Market. 
+                    I help small & medium businesses worldwide source trendy, high-quality products at factory prices.
+                </p>
+                
+                <div class="flex flex-wrap gap-4">
+                    <button onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })" 
+                            class="bg-white text-red-600 hover:bg-gray-100 px-8 py-4 rounded-2xl font-semibold text-lg flex items-center gap-3 transition">
+                        Start Sourcing Now
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                    
+                    <a href="#products" 
+                       class="border border-white/70 hover:border-white px-8 py-4 rounded-2xl font-medium text-lg flex items-center gap-3 transition">
+                        Browse Products
+                    </a>
+                </div>
+                
+                <div class="mt-12 flex items-center gap-8 text-sm">
+                    <div class="flex items-center gap-2">
+                        <i class="fas fa-check-circle text-green-400"></i>
+                        <span>10+ Years Experience</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i class="fas fa-check-circle text-green-400"></i>
+                        <span>5000+ Happy Clients</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i class="fas fa-check-circle text-green-400"></i>
+                        <span>Fast Response (≤4h)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Trust badges -->
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex gap-8 text-xs uppercase tracking-widest">
+            <div class="text-center">
+                <div class="text-3xl font-bold">100+</div>
+                <div class="text-white/70">Countries Served</div>
+            </div>
+            <div class="h-8 w-px bg-white/30"></div>
+            <div class="text-center">
+                <div class="text-3xl font-bold">24/7</div>
+                <div class="text-white/70">Market Access</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Mike -->
+    <section id="about" class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div>
+                    <img src="https://picsum.photos/id/64/800/900" 
+                         alt="Mike in Yiwu Market" 
+                         class="rounded-3xl shadow-2xl">
+                </div>
+                
+                <div class="space-y-8">
+                    <div>
+                        <span class="uppercase tracking-widest text-red-600 font-medium">Meet Your SOHO Partner</span>
+                        <h2 class="text-5xl font-bold leading-tight mt-3">Hello, I'm Mike from Yiwu</h2>
+                    </div>
+                    
+                    <div class="prose text-lg text-gray-600">
+                        <p>I've been operating as a solo foreign trader (SOHO) inside the Yiwu International Trade City for over 10 years. No big company, no middlemen — just me, my laptop, and direct relationships with hundreds of factories and stall owners in the market.</p>
+                        <p>I specialize in helping overseas buyers find the right products, negotiate the best prices, inspect quality, and arrange safe shipping — all with personal attention.</p>
+                    </div>
+                    
+                    <div class="grid grid-cols-3 gap-6">
+                        <div class="text-center">
+                            <div class="text-4xl font-bold text-red-600">5000+</div>
+                            <div class="text-sm text-gray-500 mt-1">Orders Handled</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl font-bold text-red-600">98%</div>
+                            <div class="text-sm text-gray-500 mt-1">Repeat Rate</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl font-bold text-red-600">4h</div>
+                            <div class="text-sm text-gray-500 mt-1">Avg. Response</div>
+                        </div>
+                    </div>
+                    
+                    <button onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })"
+                            class="inline-flex items-center gap-3 bg-gray-900 text-white px-8 py-4 rounded-2xl hover:bg-black transition">
+                        <i class="fas fa-weixin text-xl"></i>
+                        <span class="font-medium">Talk to me on WeChat / WhatsApp</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products -->
+    <section id="products" class="py-24">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="text-red-600 font-medium">HOT CATEGORIES</span>
+                <h2 class="text-5xl font-bold mt-3">Trending Products from Yiwu</h2>
+                <p class="mt-4 text-gray-600 max-w-md mx-auto">New arrivals updated daily. MOQ as low as 100pcs for most items.</p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                <!-- Product 1 -->
+                <div class="product-card bg-white rounded-3xl overflow-hidden border border-gray-100">
+                    <div class="h-64 bg-gray-200 relative">
+                        <img src="https://picsum.photos/id/201/600/400" alt="Jewelry" class="w-full h-full object-cover">
+                        <div class="absolute top-4 right-4 bg-white px-3 py-1 text-xs font-bold rounded-2xl shadow">New</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="font-medium">Stainless Steel Fashion Jewelry</div>
+                        <div class="text-sm text-gray-500 mt-1">Necklaces • Earrings • Bracelets</div>
+                        <div class="mt-4 flex justify-between items-end">
+                            <div>
+                                <span class="text-xs text-gray-400">From</span>
+                                <span class="text-2xl font-semibold text-red-600">$0.35</span>
+                            </div>
+                            <button class="text-red-600 hover:text-red-700 text-sm font-medium">Inquiry →</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="product-card bg-white rounded-3xl overflow-hidden border border-gray-100">
+                    <div class="h-64 bg-gray-200 relative">
+                        <img src="https://picsum.photos/id/251/600/400" alt="Home" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="font-medium">Household & Kitchen Gadgets</div>
+                        <div class="text-sm text-gray-500 mt-1">2025 Trending Items</div>
+                        <div class="mt-4 flex justify-between items-end">
+                            <div>
+                                <span class="text-xs text-gray-400">From</span>
+                                <span class="text-2xl font-semibold text-red-600">$0.80</span>
+                            </div>
+                            <button class="text-red-600 hover:text-red-700 text-sm font-medium">Inquiry →</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="product-card bg-white rounded-3xl overflow-hidden border border-gray-100">
+                    <div class="h-64 bg-gray-200 relative">
+                        <img src="https://picsum.photos/id/180/600/400" alt="Beauty" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="font-medium">Beauty & Personal Care Tools</div>
+                        <div class="text-sm text-gray-500 mt-1">LED Mirrors, Hair Tools...</div>
+                        <div class="mt-4 flex justify-between items-end">
+                            <div>
+                                <span class="text-xs text-gray-400">From</span>
+                                <span class="text-2xl font-semibold text-red-600">$1.20</span>
+                            </div>
+                            <button class="text-red-600 hover:text-red-700 text-sm font-medium">Inquiry →</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="product-card bg-white rounded-3xl overflow-hidden border border-gray-100">
+                    <div class="h-64 bg-gray-200 relative">
+                        <img src="https://picsum.photos/id/315/600/400" alt="Toys" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="font-medium">Toys & Educational Items</div>
+                        <div class="text-sm text-gray-500 mt-1">Safe & Certified</div>
+                        <div class="mt-4 flex justify-between items-end">
+                            <div>
+                                <span class="text-xs text-gray-400">From</span>
+                                <span class="text-2xl font-semibold text-red-600">$0.65</span>
+                            </div>
+                            <button class="text-red-600 hover:text-red-700 text-sm font-medium">Inquiry →</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <button onclick="alert('In a real website this would link to full catalog or WhatsApp')"
+                        class="border-2 border-gray-300 hover:border-red-600 px-10 py-4 rounded-2xl font-semibold text-lg transition">
+                    View Full Catalog (5000+ SKUs)
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="py-24 bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-12 gap-12 items-center">
+                <div class="md:col-span-5">
+                    <h2 class="text-5xl font-bold leading-tight">One-Man Team.<br>Full-Service Sourcing.</h2>
+                    <p class="mt-6 text-gray-400 text-lg">From product search to door delivery — I handle everything personally.</p>
+                </div>
+                
+                <div class="md:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div class="bg-white/10 backdrop-blur-lg border border-white/10 rounded-3xl p-8">
+                        <i class="fas fa-search text-4xl mb-6 text-red-400"></i>
+                        <h3 class="font-semibold text-2xl">Product Sourcing</h3>
+                        <p class="text-gray-400 mt-3">Tell me what you need. I walk the market and find the best suppliers same day.</p>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-lg border border-white/10 rounded-3xl p-8">
+                        <i class="fas fa-clipboard-check text-4xl mb-6 text-red-400"></i>
+                        <h3 class="font-semibold text-2xl">Quality Inspection</h3>
+                        <p class="text-gray-400 mt-3">I personally inspect every order before shipment. Photos & videos provided.</p>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-lg border border-white/10 rounded-3xl p-8">
+                        <i class="fas fa-truck text-4xl mb-6 text-red-400"></i>
+                        <h3 class="font-semibold text-2xl">Consolidation & Shipping</h3>
+                        <p class="text-gray-400 mt-3">Mix different suppliers into one shipment. Best freight rates negotiated.</p>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-lg border border-white/10 rounded-3xl p-8">
+                        <i class="fas fa-handshake text-4xl mb-6 text-red-400"></i>
+                        <h3 class="font-semibold text-2xl">Custom & OEM</h3>
+                        <p class="text-gray-400 mt-3">Private label, packaging customization, new product development support.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-24">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-5xl font-bold">Ready to Source Smarter?</h2>
+                <p class="mt-4 text-xl text-gray-600">Send me your requirements. I'll reply within a few hours.</p>
+            </div>
+            
+            <form id="contactForm" class="bg-white shadow-xl rounded-3xl p-10 md:p-16">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Your Name *</label>
+                        <input type="text" class="w-full px-6 py-4 border border-gray-200 rounded-2xl focus:outline-none focus:border-red-500" placeholder="John Smith" required>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Company / Store</label>
+                        <input type="text" class="w-full px-6 py-4 border border-gray-200 rounded-2xl focus:outline-none focus:border-red-500" placeholder="Optional">
+                    </div>
+                </div>
+                
+                <div class="mt-8">
+                    <label class="block text-sm font-medium mb-2">WhatsApp / Phone or Email *</label>
+                    <input type="text" class="w-full px-6 py-4 border border-gray-200 rounded-2xl focus:outline-none focus:border-red-500" placeholder="+1 (xxx) xxx-xxxx or email" required>
+                </div>
+                
+                <div class="mt-8">
+                    <label class="block text-sm font-medium mb-2">What are you looking for? (Products, MOQ, target price...)</label>
+                    <textarea rows="6" class="w-full px-6 py-4 border border-gray-200 rounded-3xl focus:outline-none focus:border-red-500" placeholder="Example: 500pcs stainless steel necklaces, budget $1.5/pc..."></textarea>
+                </div>
+                
+                <button type="button" onclick="submitForm()" 
+                        class="mt-10 w-full bg-red-600 hover:bg-red-700 py-5 text-white text-xl font-semibold rounded-3xl transition flex items-center justify-center gap-3">
+                    <i class="fas fa-paper-plane"></i>
+                    SEND INQUIRY TO MIKE
+                </button>
+                
+                <div class="text-center text-sm text-gray-500 mt-8">
+                    Or contact me directly:<br>
+                    <span class="font-medium text-gray-700">WhatsApp: +86 123 4567 8910</span> • 
+                    <span class="font-medium text-gray-700">WeChat: yiwumike</span>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-16">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-start">
+                <div>
+                    <div class="flex items-center gap-3 text-white">
+                        <div class="w-8 h-8 bg-red-600 rounded-2xl flex items-center justify-center text-2xl font-bold">Y</div>
+                        <span class="text-3xl font-bold">YiwuDirect</span>
+                    </div>
+                    <p class="mt-4 max-w-xs">Personal SOHO Foreign Trader<br>Booth 12345, District 2, Yiwu International Trade City</p>
+                </div>
+                
+                <div class="mt-10 md:mt-0 grid grid-cols-3 gap-12">
+                    <div>
+                        <div class="font-medium text-white mb-4">Quick Links</div>
+                        <div class="space-y-2 text-sm">
+                            <div>Product Catalog</div>
+                            <div>Shipping Guide</div>
+                            <div>FAQ</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="font-medium text-white mb-4">Legal</div>
+                        <div class="space-y-2 text-sm">
+                            <div>Privacy</div>
+                            <div>Terms</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="font-medium text-white mb-4">Follow</div>
+                        <div class="flex gap-4 text-2xl">
+                            <i class="fab fa-whatsapp hover:text-white cursor-pointer"></i>
+                            <i class="fab fa-weixin hover:text-white cursor-pointer"></i>
+                            <i class="fab fa-linkedin hover:text-white cursor-pointer"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-16 pt-8 text-center text-xs">
+                © 2026 Mike SOHO Yiwu. All Rights Reserved. | Built for global buyers who value personal service.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Tailwind script already included
+        function submitForm() {
+            alert("✅ Thank you! This is a demo. In real website your message would be sent to Mike via email/WhatsApp integration.");
+        }
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                if (this.getAttribute('href') !== '#') {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Fake live online status (demo)
+        console.log("%cYiwuDirect - Mike SOHO Website Demo Ready", "color: #e63939; font-weight: bold");
+    </script>
+</body>
+</html>
