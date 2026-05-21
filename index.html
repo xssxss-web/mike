@@ -195,105 +195,179 @@
                     <button onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })"
                             class="inline-flex items-center gap-3 bg-gray-900 text-white px-8 py-4 rounded-2xl hover:bg-black transition">
                         <i class="fas fa-weixin text-xl"></i>
-                        <span class="font-medium">Talk to me on WeChat / WhatsApp</span>
+                        <span class="font-medium">Talk to me on Email / WhatsApp</span>
                     </button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Products -->
-    <section id="products" class="py-24">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <span class="text-red-600 font-medium">HOT CATEGORIES</span>
-                <h2 class="text-5xl font-bold mt-3">Trending Products from Yiwu</h2>
-                <p class="mt-4 text-gray-600 max-w-md mx-auto">New arrivals updated daily. MOQ as low as 100pcs for most items.</p>
-            </div>
+<!-- ==================== Product Categories Showcase Start ==================== -->
+<section id="products" class="py-16 bg-gray-70">
+    <div class="max-w-7xl mx-auto px-6">
+        
+        <div class="text-center mb-16">
             
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-                <!-- Product 1 -->
-                <div class="product-card bg-white rounded-3xl overflow-hidden border border-gray-100">
-                    <div class="h-64 bg-gray-200 relative">
-                        <img src="https://picsum.photos/id/201/600/400" alt="Jewelry" class="w-full h-full object-cover">
-                        <div class="absolute top-4 right-4 bg-white px-3 py-1 text-xs font-bold rounded-2xl shadow">New</div>
-                    </div>
-                    <div class="p-6">
-                        <div class="font-medium">Stainless Steel Fashion Jewelry</div>
-                        <div class="text-sm text-gray-500 mt-1">Necklaces • Earrings • Bracelets</div>
-                        <div class="mt-4 flex justify-between items-end">
-                            <div>
-                                <span class="text-xs text-gray-400">From</span>
-                                <span class="text-2xl font-semibold text-red-600">$0.35</span>
-                            </div>
-                            <button class="text-red-600 hover:text-red-700 text-sm font-medium">Inquiry →</button>
-                        </div>
-                    </div>
+            <h2 class="text-4xl font-bold text-gray-900 mb-4">Trending Products from Yiwu</h2>
+            <p class="text-gray-600 text-lg">8 Major Categories · 5000+ SKUs One-Stop Sourcing.  MOQ as low as 100pcs for most items.</p>
+        </div>
+
+        <!-- First Row -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
+            
+            <div class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all group">
+                <div class="h-64 overflow-hidden">
+                    <img src="https://picsum.photos/id/20/600/400" alt="Stainless Steel Jewelry" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                 </div>
-                
-                <!-- Product 2 -->
-                <div class="product-card bg-white rounded-3xl overflow-hidden border border-gray-100">
-                    <div class="h-64 bg-gray-200 relative">
-                        <img src="https://picsum.photos/id/251/600/400" alt="Home" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-6">
-                        <div class="font-medium">Household & Kitchen Gadgets</div>
-                        <div class="text-sm text-gray-500 mt-1">2025 Trending Items</div>
-                        <div class="mt-4 flex justify-between items-end">
-                            <div>
-                                <span class="text-xs text-gray-400">From</span>
-                                <span class="text-2xl font-semibold text-red-600">$0.80</span>
-                            </div>
-                            <button class="text-red-600 hover:text-red-700 text-sm font-medium">Inquiry →</button>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Product 3 -->
-                <div class="product-card bg-white rounded-3xl overflow-hidden border border-gray-100">
-                    <div class="h-64 bg-gray-200 relative">
-                        <img src="https://picsum.photos/id/180/600/400" alt="Beauty" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-6">
-                        <div class="font-medium">Beauty & Personal Care Tools</div>
-                        <div class="text-sm text-gray-500 mt-1">LED Mirrors, Hair Tools...</div>
-                        <div class="mt-4 flex justify-between items-end">
-                            <div>
-                                <span class="text-xs text-gray-400">From</span>
-                                <span class="text-2xl font-semibold text-red-600">$1.20</span>
-                            </div>
-                            <button class="text-red-600 hover:text-red-700 text-sm font-medium">Inquiry →</button>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Product 4 -->
-                <div class="product-card bg-white rounded-3xl overflow-hidden border border-gray-100">
-                    <div class="h-64 bg-gray-200 relative">
-                        <img src="https://picsum.photos/id/315/600/400" alt="Toys" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-6">
-                        <div class="font-medium">Toys & Educational Items</div>
-                        <div class="text-sm text-gray-500 mt-1">Safe & Certified</div>
-                        <div class="mt-4 flex justify-between items-end">
-                            <div>
-                                <span class="text-xs text-gray-400">From</span>
-                                <span class="text-2xl font-semibold text-red-600">$0.65</span>
-                            </div>
-                            <button class="text-red-600 hover:text-red-700 text-sm font-medium">Inquiry →</button>
-                        </div>
+                <div class="p-6">
+                    <h3 class="font-semibold text-xl mb-1">Stainless Steel Fashion Jewelry</h3>
+                    <p class="text-gray-500 text-sm mb-3">Necklaces · Earrings · Bracelets</p>
+                    <div class="flex items-center justify-between mt-4">
+                        <p class="text-xl font-bold">
+                            From <span class="text-red-600">$0.35</span>
+                        </p>
+                        <a href="#contact" class="text-red-600 font-medium hover:text-red-700">Inquiry →</a>
                     </div>
                 </div>
             </div>
-            
-            <div class="text-center mt-12">
-                <button onclick="alert('In a real website this would link to full catalog or WhatsApp')"
-                        class="border-2 border-gray-300 hover:border-red-600 px-10 py-4 rounded-2xl font-semibold text-lg transition">
-                    View Full Catalog (5000+ SKUs)
-                </button>
+
+            <div class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all group">
+                <div class="h-64 overflow-hidden">
+                    <img src="https://picsum.photos/id/251/600/400" alt="Kitchen Gadgets" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                </div>
+                <div class="p-6">
+                    <h3 class="font-semibold text-xl mb-1">Household & Kitchen Gadgets</h3>
+                    <p class="text-gray-500 text-sm mb-3">2025 Trending Items</p>
+                    <div class="flex items-center justify-between mt-4">
+                        <p class="text-xl font-bold">
+                            From <span class="text-red-600">$0.80</span>
+                        </p>
+                        <a href="#contact" class="text-red-600 font-medium hover:text-red-700">Inquiry →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all group">
+                <div class="h-64 overflow-hidden">
+                    <img src="https://picsum.photos/id/106/600/400" alt="Beauty Tools" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                </div>
+                <div class="p-6">
+                    <h3 class="font-semibold text-xl mb-1">Beauty & Personal Care Tools</h3>
+                    <p class="text-gray-500 text-sm mb-3">LED Mirrors · Hair Tools</p>
+                    <div class="flex items-center justify-between mt-4">
+                        <p class="text-xl font-bold">
+                            From <span class="text-red-600">$1.20</span>
+                        </p>
+                        <a href="#contact" class="text-red-600 font-medium hover:text-red-700">Inquiry →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all group">
+                <div class="h-64 overflow-hidden">
+                    <img src="https://picsum.photos/id/133/600/400" alt="Toys" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                </div>
+                <div class="p-6">
+                    <h3 class="font-semibold text-xl mb-1">Toys & Educational Items</h3>
+                    <p class="text-gray-500 text-sm mb-3">Safe & Certified</p>
+                    <div class="flex items-center justify-between mt-4">
+                        <p class="text-xl font-bold">
+                            From <span class="text-red-600">$0.65</span>
+                        </p>
+                        <a href="#contact" class="text-red-600 font-medium hover:text-red-700">Inquiry →</a>
+                    </div>
+                </div>
             </div>
         </div>
-    </section>
+
+        <!-- Second Row -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+            
+            <div class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all group">
+                <div class="h-64 overflow-hidden">
+                    <img src="https://picsum.photos/id/180/600/400" alt="Hardware Tools" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                </div>
+                <div class="p-6">
+                    <h3 class="font-semibold text-xl mb-1">Hardware Tools</h3>
+                    <p class="text-gray-500 text-sm mb-3">Hand Tools · Power Tools</p>
+                    <div class="flex items-center justify-between mt-4">
+                        <p class="text-xl font-bold">
+                            From <span class="text-red-600">$1.50</span>
+                        </p>
+                        <a href="#contact" class="text-red-600 font-medium hover:text-red-700">Inquiry →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all group">
+                <div class="h-64 overflow-hidden">
+                    <img src="https://picsum.photos/id/201/600/400" alt="Consumer Electronics" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                </div>
+                <div class="p-6">
+                    <h3 class="font-semibold text-xl mb-1">Consumer Electronics</h3>
+                    <p class="text-gray-500 text-sm mb-3">Chargers · Earphones · Speakers</p>
+                    <div class="flex items-center justify-between mt-4">
+                        <p class="text-xl font-bold">
+                            From <span class="text-red-600">$0.45</span>
+                        </p>
+                        <a href="#contact" class="text-red-600 font-medium hover:text-red-700">Inquiry →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all group">
+                <div class="h-64 overflow-hidden">
+                    <img src="https://picsum.photos/id/669/600/400" alt="Solar Products" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                </div>
+                <div class="p-6">
+                    <h3 class="font-semibold text-xl mb-1">Solar & New Energy</h3>
+                    <p class="text-gray-500 text-sm mb-3">Solar Panels · Solar Lights</p>
+                    <div class="flex items-center justify-between mt-4">
+                        <p class="text-xl font-bold">
+                            From <span class="text-red-600">$8.50</span>
+                        </p>
+                        <a href="#contact" class="text-red-600 font-medium hover:text-red-700">Inquiry →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all group">
+                <div class="h-64 overflow-hidden">
+                    <img src="https://picsum.photos/id/870/600/400" alt="Fashion Bags" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                </div>
+                <div class="p-6">
+                    <h3 class="font-semibold text-xl mb-1">Fashion Bags & Accessories</h3>
+                    <p class="text-gray-500 text-sm mb-3">Bags · Belts · Accessories</p>
+                    <div class="flex items-center justify-between mt-4">
+                        <p class="text-xl font-bold">
+                            From <span class="text-red-600">$1.80</span>
+                        </p>
+                        <a href="#contact" class="text-red-600 font-medium hover:text-red-700">Inquiry →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-12">
+            <a href="#contact" 
+               class="inline-block bg-red-600 hover:bg-red-700 text-white font-medium px-10 py-4 rounded-2xl text-lg transition-colors">
+                Get Quote Now & Contact Us for Details 
+
+
+            </a>
+        </div>
+
+    </div>
+</section>
+<!-- ==================== Product Categories Showcase End ==================== -->
 
     <!-- Services -->
     <section id="services" class="py-24 bg-gray-900 text-white">
