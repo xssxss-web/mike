@@ -93,102 +93,102 @@
         </div>
     </nav>
 
-    <!-- Hero -->
-<header class="hero-bg h-screen flex items-center text-white">
-    <div class="max-w-7xl mx-auto px-6 pt-20 w-full">
+<!-- Hero -->
+<header class="hero-bg min-h-screen flex items-center text-white relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 pt-20 pb-20 w-full relative z-10">
         
-        <!-- 新增：左右分栏 Grid -->
-        <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="grid md:grid-cols-2 gap-10 md:gap-12 items-start">
             
-            <!-- 左侧：原有文字内容 -->
+            <!-- 左侧文字 -->
             <div class="max-w-2xl">
                 <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md px-4 py-2 rounded-3xl text-sm mb-6">
                     <i class="fas fa-map-marker-alt"></i>
                     Yiwu International Trade City, China
                 </div>
                 
-                <h1 class="text-3xl md:text-4xl font-bold leading-none mb-6">
-                    Yiwu Sourcing Agent & China Sourcing Partner in Yiwu International Trade City.<br>
-                    <span class="text-red-400">Reliable SOHO Partner.</span>
+                <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6">
+                    Yiwu Sourcing Agent & China Sourcing Partner in Yiwu International Trade City.
+                    <span class="text-red-400 block mt-2">Reliable SOHO Partner.</span>
                 </h1>
                 
-                <p class="text-xl text-gray-100 mb-10">
-                    Hi, I'm Mike. A one-man foreign trade SOHO based inside Yiwu Market. Professional <strong>Yiwu Sourcing Agent</strong> and <strong>China Sourcing Agent</strong> based directly in Yiwu International Trade City. 
-                    I help small & medium businesses worldwide source trendy, high-quality products at factory prices.
+                <p class="text-lg md:text-xl text-gray-100 mb-10 leading-relaxed">
+                    Hi, I'm Mike. A one-man foreign trade SOHO based inside Yiwu Market. Professional <strong>Yiwu Sourcing Agent</strong> and <strong>China Sourcing Agent</strong> . 
+                    
                 </p>
                 
-                <div class="flex flex-wrap gap-4">
+                <div class="flex flex-col sm:flex-row gap-4">
                     <button onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })" 
-                            class="bg-white text-red-600 hover:bg-gray-100 px-8 py-4 rounded-2xl font-semibold text-lg flex items-center gap-3 transition">
+                            class="bg-white text-red-600 hover:bg-gray-100 px-8 py-4 rounded-2xl font-semibold text-lg flex items-center justify-center gap-3 transition">
                         Start Sourcing Now
                         <i class="fas fa-arrow-right"></i>
                     </button>
                     
                     <a href="#products" 
-                       class="border border-white/70 hover:border-white px-8 py-4 rounded-2xl font-medium text-lg flex items-center gap-3 transition">
+                       class="border border-white/70 hover:border-white px-8 py-4 rounded-2xl font-medium text-lg flex items-center justify-center gap-3 transition">
                         Browse Products
                     </a>
                 </div>
-                
-                <div class="mt-12 flex items-center gap-8 text-sm">
-                    <div class="flex items-center gap-2">
-                        <i class="fas fa-check-circle text-green-400"></i>
-                        <span>10+ Years Experience</span>
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <i class="fas fa-check-circle text-green-400"></i>
-                        <span>500+ Happy Clients</span>
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <i class="fas fa-check-circle text-green-400"></i>
-                        <span>Fast Response (≤4h)</span>
-                    </div>
-                </div>
             </div>
 
-            <!-- 右侧：Benefits 列表 -->
-            <div class="hidden md:block">
-                <ul class="hero-benefits grid md:grid-cols-1 gap-4 text-base bg-white/10 backdrop-blur-md p-8 rounded-3xl border border-white/20">
+            <!-- 右侧 Benefits 卡片 -->
+            <div class="mt-6 md:mt-0">
+                <ul class="bg-black/40 backdrop-blur-none border border-white/30 p-6 md:p-8 rounded-3xl text-white space-y-5 shadow-2xl">
                     <li class="flex items-start gap-3">
-                        <span class="text-green-400 text-xl mt-0.5">✅</span>
+                        <span class="text-green-400 text-2xl mt-0.5 flex-shrink-0">✅</span>
                         <span><strong>Low MOQ</strong> — Start from 10-100pcs per style</span>
                     </li>
                     <li class="flex items-start gap-3">
-                        <span class="text-green-400 text-xl mt-0.5">✅</span>
+                        <span class="text-green-400 text-2xl mt-0.5 flex-shrink-0">✅</span>
                         <span><strong>Direct factory prices</strong>, no middleman</span>
                     </li>
                     <li class="flex items-start gap-3">
-                        <span class="text-green-400 text-xl mt-0.5">✅</span>
+                        <span class="text-green-400 text-2xl mt-0.5 flex-shrink-0">✅</span>
                         <span><strong>Strict quality inspection</strong> with photos/videos</span>
                     </li>
                     <li class="flex items-start gap-3">
-                        <span class="text-green-400 text-xl mt-0.5">✅</span>
+                        <span class="text-green-400 text-2xl mt-0.5 flex-shrink-0">✅</span>
                         <span><strong>Fast sampling & reliable shipping</strong> worldwide</span>
                     </li>
-                     <li class="flex items-start gap-3">
-                        <span class="text-green-400 text-xl mt-0.5">✅</span>
-                        <span><strong>Transparent fee — Only 1%-3% service fee on total order value</strong> worldwide</span>
+                    <li class="flex items-start gap-3">
+                        <span class="text-green-400 text-2xl mt-0.5 flex-shrink-0">✅</span>
+                        <span><strong>Transparent fee — Only 1%-3% service fee</strong> on total order value worldwide</span>
                     </li>
                 </ul>
             </div>
 
         </div>
-    </div>
 
-        
-        <!-- Trust badges -->
-        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex gap-8 text-xs uppercase tracking-widest">
-            <div class="text-center">
-                <div class="text-3xl font-bold">100+</div>
-                <div class="text-white/70">Countries Served</div>
+        <!-- 经验小标签（放在卡片下方） -->
+        <div class="mt-12 flex flex-wrap justify-center md:justify-start gap-x-8 gap-y-4 text-sm">
+            <div class="flex items-center gap-2">
+                <i class="fas fa-check-circle text-green-400"></i>
+                <span>10+ Years Experience</span>
             </div>
-            <div class="h-8 w-px bg-white/30"></div>
-            <div class="text-center">
-                <div class="text-3xl font-bold">24/7</div>
-                <div class="text-white/70">Market Access</div>
+            <div class="flex items-center gap-2">
+                <i class="fas fa-check-circle text-green-400"></i>
+                <span>500+ Happy Clients</span>
+            </div>
+            <div class="flex items-center gap-2">
+                <i class="fas fa-check-circle text-green-400"></i>
+                <span>Fast Response (≤4h)</span>
             </div>
         </div>
-    </header>
+
+    </div>
+
+    <!-- Trust badges（100+ 和 24/7） -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-8 text-xs uppercase tracking-widest z-20 bg-black/9 backdrop-blur-none px-8 py-4 rounded-3xl border border-white/20">
+        <div class="text-center">
+            <div class="text-3xl font-bold">100+</div>
+            <div class="text-white/80">Countries Served</div>
+        </div>
+        <div class="h-8 w-px bg-white/30"></div>
+        <div class="text-center">
+            <div class="text-3xl font-bold">24/7</div>
+            <div class="text-white/80">Market Access</div>
+        </div>
+    </div>
+</header>
 
     <!-- About Mike -->
     <section id="about" class="py-24 bg-gray-50">
@@ -208,8 +208,10 @@
                     
                     <div class="prose text-lg text-gray-600">
                         <p>I've been operating as a solo foreign trader (SOHO) inside the Yiwu International Trade City for over 10 years. No big company, no middlemen — just me, my laptop, and direct relationships with hundreds of factories and stall owners in the market.</p>
-                        <p>I specialize in helping overseas buyers find the right products, negotiate the best prices, inspect quality, and arrange safe shipping — all with personal attention.</p>
-                        <p>Building 3, Qianmaodian New Village, Houzhai Street, Yiwu，Zhejiang Province, China.（Yiwu Gongbei Trading Co., Ltd.）</p>
+                        <p>I specialize in helping small &amp; medium businesses worldwide source trendy, high-quality products at factory prices. I help overseas buyers find the right products, negotiate the best prices, inspect quality, and arrange safe shipping — all with personal attention.</p>
+                        <p> <i class="fas fa-building"></i><span class="text-gray-900 font-bold">Company Address:</span> 
+    Unit 2, Building 3, Qianmaodian New Village, Houzhai, Yiwu City, Zhejiang Province, China
+</p>
                     </div>
                     
                     <div class="grid grid-cols-3 gap-6">
@@ -455,7 +457,7 @@
 
         <details class="faq-item rounded-2xl overflow-hidden">
             <summary class="font-semibold text-lg cursor-pointer p-6 bg-slate-800 text-white hover:bg-slate-700 transition-all duration-300 list-none">What is the minimum order quantity (MOQ) in Yiwu?</summary>
-            <p class="p-6 bg-emerald-900/40 text-emerald-50 leading-relaxed border-t border-emerald-800/50">Most products can start from <strong class="text-amber-400">50-100 pieces per style</strong>. This is one of the biggest advantages of sourcing in Yiwu compared to other Chinese manufacturing cities. I can also help mix different styles to meet your MOQ.</p>
+            <p class="p-6 bg-emerald-900/40 text-emerald-50 leading-relaxed border-t border-emerald-800/50">Most products can start from <strong class="text-amber-400">10-100 pieces per style</strong>. This is one of the biggest advantages of sourcing in Yiwu compared to other Chinese manufacturing cities. I can also help mix different styles to meet your MOQ.</p>
         </details>
 
         <details class="faq-item rounded-2xl overflow-hidden">
@@ -560,6 +562,10 @@
 
             <div class="mt-16 text-center">
                 <p class="text-gray-500">Or click any above to contact me directly 👆</p>
+                <p class="text-gray-700 text-base md:text-lg"><i class="fas fa-building"></i>
+    <span class="text-gray-900 font-bold">Company Address:</span> 
+    Unit 2, Building 3, Qianmaodian New Village, Houzhai, Yiwu City, Zhejiang Province, China
+</p>
             </div>
         </div>
     </div>
