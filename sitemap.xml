@@ -3,7 +3,7 @@
 
     <!-- 首页 -->
     <url>
-        <loc>https://www.mikeok.com/</loc>
+        <loc>https://mikeok.com/</loc>
         <lastmod>2026-05-31</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
@@ -11,7 +11,7 @@
 
     <!-- 服务页面 -->
     <url>
-        <loc>https://www.mikeok.com/Services.htm</loc>
+        <loc>https://mikeok.com/Services.htm</loc>
         <lastmod>2026-05-31</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
