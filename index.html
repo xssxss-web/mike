@@ -87,12 +87,47 @@
 
                 <!-- Menu -->
                 <div class="hidden md:flex items-center space-x-8 text-sm font-medium">
-                    <a href="#" class="nav-link text-gray-700 hover:text-red-600">Home</a>
-                    <a href="#products" class="nav-link text-gray-700 hover:text-red-600">Products</a>
-                    <a href="#about" class="nav-link text-gray-700 hover:text-red-600">About Mike</a>
-                    <a href="Services.html" class="nav-link text-gray-700 hover:text-red-600">Services</a>
-                    <a href="#contact" class="nav-link text-gray-700 hover:text-red-600">Contact</a>
-                </div>
+
+    <a href="#" class="nav-link">Home</a>
+
+    <!-- Products Dropdown -->
+    <div class="relative group">
+        <a href="#" class="nav-link flex items-center">
+            Products
+            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M19 9l-7 7-7-7"></path>
+            </svg>
+        </a>
+
+        <div class="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-200 z-50">
+
+            <a href="solar.html"
+                class="block px-4 py-3 hover:bg-gray-100">
+                Solar Products
+            </a>
+
+            <a href="toy.html"
+                class="block px-4 py-3 hover:bg-gray-100">
+                Toys
+            </a>
+
+
+        </div>
+
+    </div>
+
+
+
+    <a href="#about" class="nav-link">About Mike</a>
+
+    <a href="Services.html" class="nav-link">Services</a>
+
+    <a href="#contact" class="nav-link">Contact</a>
+
+
+
+</div>
 
                 <div class="flex items-center gap-4">
                     <div class="text-xs bg-green-100 text-green-700 px-3 py-1.5 rounded-full font-medium flex items-center gap-1">
