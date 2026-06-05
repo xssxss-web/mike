@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="High-quality solar energy solutions: Solar PV Panels, Solar Inverters, Energy Storage Batteries, Solar Street Lights, Complete Solar Systems and Accessories. Professional supplier with competitive prices.">
+    <meta name="keywords" content="solar panels, solar inverters, solar batteries, solar energy storage, solar street lights, solar power system, photovoltaic panels, solar accessories">
+    
+    <title>Solar Energy Systems | Solar Panels · Inverters · Storage Batteries · Complete Solutions</title>
+
+<!-- Canonical - 推荐使用这个 -->
+    <link rel="canonical" href="https://mikeok.com/solar" />
+    
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:title" content="Solar Energy Systems | Solar Panels, Inverters, Batteries & Accessories">
+    <meta property="og:description" content="Premium solar photovoltaic products at factory prices. Solar panels, inverters, energy storage, and full system solutions.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourdomain.com/solar-energy">
+    <meta property="og:image" content="https://picsum.photos/id/1015/1200/630">
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Solar Photovoltaic Products Center",
+      "description": "High performance solar energy solutions",
+      "url": "https://yourdomain.com/solar-energy",
+      "mainEntity": {
+        "@type": "ProductCollection",
+        "name": "Solar Product Series"
+      }
+    }
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body { font-family: 'Inter', system-ui, sans-serif; }
+        .product-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+        .hero-bg {
+            background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.55)), url('https://picsum.photos/id/1015/2000/1200') center/cover no-repeat;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-2xl flex items-center justify-center text-white text-3xl">☀️</div>
+                <div>
+                    <span class="text-2xl font-bold text-gray-900">SunPower Solar</span>
+                    <span class="text-xs block text-emerald-600 -mt-1">Clean Energy Solutions</span>
+                </div>
+            </div>
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+                <a href="https://mikeok.com" class="hover:text-emerald-600 transition-colors">Home</a>
+                <a href="#" class="text-emerald-600 font-semibold">Solar Products</a>
+                <a href="#" class="hover:text-emerald-600 transition-colors">Solutions</a>
+                <a href="#" class="hover:text-emerald-600 transition-colors">Projects</a>
+                <a href="#" class="hover:text-emerald-600 transition-colors">About Us</a>
+            </nav>
+            <div class="flex items-center gap-4">
+                <button onclick="window.location.href='tel:+86 18006891977'" 
+                        class="flex items-center gap-2 bg-white border border-emerald-600 text-emerald-600 px-5 py-2.5 rounded-full hover:bg-emerald-50 transition-colors">
+                    <i class="fa-solid fa-phone"></i>
+                    <span class="font-medium">+86 18006891977</span>
+                </button>
+                <button onclick="inquiryAll()" 
+                        class="bg-emerald-600 text-white px-6 py-2.5 rounded-full hover:bg-emerald-700 transition-colors font-medium flex items-center gap-2">
+                    <i class="fa-solid fa-paper-plane"></i>
+                    Get Quote
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero-bg h-[420px] flex items-center text-white">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <div class="max-w-2xl mx-auto">
+                <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">Powering a Greener Future</h1>
+                <p class="text-xl md:text-2xl mb-8 text-white/90">Premium Solar PV Systems<br>Solar Panels • Inverters • Storage • Complete Solutions</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#products" 
+                       class="inline-block bg-white text-emerald-700 font-semibold px-10 py-4 rounded-2xl text-lg hover:bg-emerald-50 transition-colors">
+                        Browse Products
+                    </a>
+                    <button onclick="inquiryAll()" 
+                            class="inline-block border-2 border-white font-semibold px-10 py-4 rounded-2xl text-lg hover:bg-white/10 transition-colors">
+                        Get Best Price
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Breadcrumb -->
+    <div class="max-w-7xl mx-auto px-6 py-4 text-sm text-gray-500 flex items-center gap-2">
+        <a href="#" class="hover:text-emerald-600">Home</a> 
+        <span class="text-gray-300">›</span> 
+        <span class="text-emerald-600 font-medium">Solar Products</span>
+    </div>
+
+    <!-- Products Section -->
+    <section id="products" class="max-w-7xl mx-auto px-6 py-16">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12">
+            <div>
+                <span class="px-4 py-1.5 bg-emerald-100 text-emerald-700 rounded-full text-sm font-medium">2026 Best Sellers</span>
+                <h2 class="text-4xl font-bold text-gray-900 mt-4">Complete Solar Energy Solutions</h2>
+                <p class="text-gray-600 mt-3 max-w-md">High efficiency, reliable performance for residential, commercial and industrial applications.</p>
+            </div>
+            <a href="#" class="mt-6 md:mt-0 flex items-center gap-2 text-emerald-600 hover:text-emerald-700 font-medium">
+                View All Products 
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+
+        <!-- 3 Column Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="product-grid">
+            <!-- Products populated by JavaScript -->
+        </div>
+    </section>
+
+    <!-- Trust Signals -->
+    <div class="bg-white py-8 border-t border-b">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-3 md:grid-cols-6 gap-8 text-center">
+                <div>
+                    <div class="text-3xl font-bold text-emerald-600">15+</div>
+                    <div class="text-sm text-gray-500">Years Experience</div>
+                </div>
+                <div>
+                    <div class="text-3xl font-bold text-emerald-600">5000+</div>
+                    <div class="text-sm text-gray-500">Projects Delivered</div>
+                </div>
+                <div>
+                    <div class="text-3xl font-bold text-emerald-600">98%</div>
+                    <div class="text-sm text-gray-500">Customer Satisfaction</div>
+                </div>
+                <div>
+                    <div class="text-3xl font-bold text-emerald-600">CE / TUV</div>
+                    <div class="text-sm text-gray-500">Certified</div>
+                </div>
+                <div>
+                    <div class="text-3xl font-bold text-emerald-600">24h</div>
+                    <div class="text-sm text-gray-500">Technical Support</div>
+                </div>
+                <div>
+                    <div class="text-3xl font-bold text-emerald-600">Global</div>
+                    <div class="text-sm text-gray-500">Shipping</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+                <div>
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-9 h-9 bg-emerald-500 rounded-2xl flex items-center justify-center text-2xl">☀️</div>
+                        <span class="text-2xl font-bold">SunPower Solar</span>
+                    </div>
+                    <p class="text-gray-400">Dedicated to advancing global clean energy with high-performance solar solutions.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Products</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">Solar Panels</a></li>
+                        <li><a href="#" class="hover:text-white">Solar Inverters</a></li>
+                        <li><a href="#" class="hover:text-white">Energy Storage</a></li>
+                        <li><a href="#" class="hover:text-white">Solar Street Lights</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Contact Us</h4>
+                    <ul class="space-y-3 text-gray-400">
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-phone w-5"></i> +86 180 0689 1977</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-envelope w-5"></i> okmikezhao@gmail.com</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-location-dot w-5"></i> YIWU Solar Industrial Park, China</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Follow Us</h4>
+                    <div class="flex gap-4 text-2xl">
+                        <i class="fa-brands fa-linkedin hover:text-emerald-400 cursor-pointer"></i>
+                        <i class="fa-brands fa-facebook hover:text-emerald-400 cursor-pointer"></i>
+                    </div>
+                    <div class="mt-8">
+                        <button onclick="inquiryAll()" 
+                                class="w-full bg-emerald-600 hover:bg-emerald-700 py-4 rounded-2xl font-medium">
+                            Request Quote Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center text-gray-500 text-sm mt-16 pt-8 border-t border-gray-800">
+                © 2018-2026 SunPower Solar Technology Co., Ltd. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const products = [
+            {
+                title: "Solar PV Panels",
+                subtitle: "Monocrystalline High Efficiency",
+                desc: "550W–720W modules with 25-year performance warranty. Up to 23% efficiency.",
+                price: "0.18",
+                unit: "W",
+                img: "https://picsum.photos/id/1015/600/400",
+                alt: "Solar Photovoltaic Panels"
+            },
+            {
+                title: "Solar Inverters",
+                subtitle: "Grid-Tie & Off-Grid",
+                desc: "Residential and commercial inverters with smart monitoring and high reliability.",
+                price: "89",
+                unit: "",
+                img: "https://picsum.photos/id/201/600/400",
+                alt: "Solar Inverter"
+            },
+            {
+                title: "Solar Storage Batteries",
+                subtitle: "LiFePO4 Lithium Battery",
+                desc: "5kWh to 100kWh energy storage systems for home and commercial use.",
+                price: "135",
+                unit: "kWh",
+                img: "https://picsum.photos/id/866/600/400",
+                alt: "Solar Energy Storage Battery"
+            },
+            {
+                title: "Solar Street Lights",
+                subtitle: "All-in-One Smart Lighting",
+                desc: "100W–300W intelligent solar street lights with motion sensor.",
+                price: "65",
+                unit: "",
+                img: "https://picsum.photos/id/1016/600/400",
+                alt: "Solar Street Light"
+            },
+            {
+                title: "Solar Home Systems",
+                subtitle: "Complete Off-Grid Kits",
+                desc: "3kW–10kW full solar power systems including panels, inverter and battery.",
+                price: "1280",
+                unit: "",
+                img: "https://picsum.photos/id/133/600/400",
+                alt: "Solar Home System"
+            },
+            {
+                title: "Solar Mounting & Accessories",
+                subtitle: "Installation Systems",
+                desc: "Roof & ground mounting brackets, cables, connectors, and monitoring equipment.",
+                price: "0.65",
+                unit: "",
+                img: "https://picsum.photos/id/1074/600/400",
+                alt: "Solar Mounting Accessories"
+            }
+        ];
+
+        function renderProducts() {
+            const container = document.getElementById('product-grid');
+            container.innerHTML = '';
+
+            products.forEach(product => {
+                const cardHTML = `
+                <div class="product-card bg-white rounded-3xl overflow-hidden border border-gray-100 group">
+                    <div class="relative">
+                        <img src="${product.img}" 
+                             alt="${product.alt}" 
+                             class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-2xl text-xs font-medium text-emerald-700 shadow">
+                            Hot Sale
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="font-bold text-xl text-gray-900">${product.title}</h3>
+                                <p class="text-emerald-600 text-sm font-medium">${product.subtitle}</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mt-3 text-[15px] line-clamp-2">${product.desc}</p>
+                        
+                        <div class="mt-6 flex items-end gap-1">
+                            <span class="text-xs text-gray-500">From</span>
+                            <span class="text-3xl font-bold text-emerald-600">$${product.price}</span>
+                            ${product.unit ? `<span class="text-gray-500 text-sm">/${product.unit}</span>` : ''}
+                        </div>
+                        
+                        <div class="mt-6 flex gap-3">
+                            <button onclick="inquiry('${product.title}')" 
+                                    class="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white py-3.5 rounded-2xl text-sm font-medium transition-colors">
+                                Get Quote →
+                            </button>
+                            <button onclick="viewDetail('${product.title}')" 
+                                    class="flex-1 border border-gray-300 hover:border-gray-400 py-3.5 rounded-2xl text-sm font-medium transition-colors">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                </div>`;
+                container.innerHTML += cardHTML;
+            });
+        }
+
+        function inquiry(productName) {
+            alert(`Here is our contact information: WhatsApp: +86 180 0689 1977, Email: okmikezhao@gmail.com.`);
+        }
+
+        function inquiryAll() {
+            alert('Thank you. Here is our contact information: WhatsApp: +86 180 0689 1977, Email: okmikezhao@gmail.com.    Our solar energy experts will provide you with customized solutions and highly competitive quotes..');
+        }
+
+        function viewDetail(title) {
+            alert(`Redirecting to ${title} product page... (Demo Mode)`);
+        }
+
+        // Initialize
+        window.onload = function() {
+            renderProducts();
+            
+            // Smooth scroll
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    if (this.getAttribute('href') === '#products') {
+                        e.preventDefault();
+                        document.getElementById('products').scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        };
+    </script>
+</body>
+</html>
