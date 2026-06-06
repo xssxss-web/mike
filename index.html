@@ -92,30 +92,33 @@
 
     <!-- Products Dropdown -->
     <div class="relative group">
-        <a href="#products" class="nav-link flex items-center">
-            Products
-            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M19 9l-7 7-7-7"></path>
-            </svg>
+    <a href="#products" 
+       class="nav-link flex items-center px-4 py-4">   <!-- 增加 py-4 扩大触发区域 -->
+        Products
+        <svg class="w-4 h-4 ml-1 transition-transform group-hover:rotate-180" 
+             fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M19 9l-7 7-7-7"></path>
+        </svg>
+    </a>
+
+    <!-- 改进后的下拉菜单 -->
+    <div class="absolute left-0 mt-1 w-48 bg-white shadow-xl rounded-xl 
+                opacity-0 invisible 
+                group-hover:opacity-100 group-hover:visible 
+                transition-all duration-200 z-50
+                pt-1">   <!-- pt-1 增加缓冲 -->
+
+        <a href="products/solar/index.html"
+           class="block px-4 py-3 hover:bg-gray-100 rounded-t-xl">
+            Solar Products
         </a>
-
-        <div class="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-200 z-50">
-
-            <a href="products/solar/index.html"
-                class="block px-4 py-3 hover:bg-gray-100">
-                Solar Products
-            </a>
-
-            <a href="toy.html"
-                class="block px-4 py-3 hover:bg-gray-100">
-                Toys
-            </a>
-
-
-        </div>
-
+        <a href="outdoor.html"
+           class="block px-4 py-3 hover:bg-gray-100 rounded-b-xl">
+            Outdoor products
+        </a>
     </div>
+</div>
 
 
 
