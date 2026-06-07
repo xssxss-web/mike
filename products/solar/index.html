@@ -66,7 +66,40 @@
             </div>
             <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
                 <a href="https://mikeok.com" class="hover:text-emerald-600 transition-colors">Home</a>
-                <a href="#" class="text-emerald-600 font-semibold">Solar Products</a>
+                 <!--<a href="#" class="text-emerald-600 font-semibold">Solar Products</a>-->
+                 <!-- Products Dropdown -->
+    <div class="relative group">
+    <a href="#" 
+       class="nav-link flex items-center px-4 py-4">   <!-- 增加 py-4 扩大触发区域 -->
+       Solar Products
+        <svg class="w-4 h-4 ml-1 transition-transform group-hover:rotate-180" 
+             fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M19 9l-7 7-7-7"></path>
+        </svg>
+    </a>
+
+    <!-- 改进后的下拉菜单 -->
+    <div class="absolute left-0 mt-1 w-48 bg-white shadow-xl rounded-xl 
+                opacity-0 invisible 
+                group-hover:opacity-100 group-hover:visible 
+                transition-all duration-200 z-50
+                pt-1">   <!-- pt-1 增加缓冲 -->
+
+
+         <!-- 二级菜单 -->
+          
+                    <a href="/products/solar/portable-solar-panels/"
+                         class="block px-4 py-3 hover:bg-gray-100 rounded-t-xl">
+                        Portable Solar Panels
+                    </a>
+           
+
+        
+
+      
+    </div>
+</div>
                 <a href="#" class="hover:text-emerald-600 transition-colors">Solutions</a>
                 <a href="#" class="hover:text-emerald-600 transition-colors">Projects</a>
                 <a href="#" class="hover:text-emerald-600 transition-colors">About Us</a>
