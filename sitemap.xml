@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-    <!-- 首页 -->
+    <!-- 首页home -->
     <url>
         <loc>https://mikeok.com/</loc>
         <lastmod>2026-05-31</lastmod>
@@ -9,13 +9,14 @@
         <priority>1.0</priority>
     </url>
 
-    <!-- 服务页面 -->
+    <!-- 服务页面services -->
     <url>
         <loc>https://mikeok.com/services/</loc>
         <lastmod>2026-06-07</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
+     <!-- 产品页products -->
     <url>
   <loc>https://mikeok.com/products/solar/</loc>
   <lastmod>2026-06-05</lastmod>
@@ -31,6 +32,7 @@
   <lastmod>2026-06-08</lastmod>
   <priority>0.8</priority>
 </url>
+    <!-- 联系页contact -->
      <url>
   <loc>https://mikeok.com/contact/</loc>
   <lastmod>2026-06-06</lastmod>
