@@ -12,21 +12,36 @@
     <meta property="og:description" content="Reliable SOHO sourcing agent in Yiwu International Trade City. Low MOQ, transparent 1-3% fee, personal quality control.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://mikeok.com">
-    <meta property="og:image" content="https://mikeok.com/og-image.jpg"> <!-- 建议上传一张专业图片 -->
+    <meta property="og:image" content="https://mikeok.com/og-image.jpg">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Yiwu Sourcing Agent | Mike - Low MOQ China Sourcing Partner in Yiwu">
+    <meta name="twitter:description" content="Reliable SOHO sourcing agent in Yiwu International Trade City. Low MOQ, transparent 1-3% fee, personal quality control.">
+    <meta name="twitter:image" content="https://mikeok.com/og-image.jpg">
     
     <!-- Additional SEO Tags -->
     <meta name="keywords" content="Yiwu sourcing agent, China sourcing agent, Yiwu agent, low MOQ supplier, small quantity sourcing from China, Yiwu International Trade City, Yiwu jewelry wholesale, Yiwu hats, kitchenware, hardware tools, electronics, solar products, pet supplies, pet products, household items, home goods, fashion accessories, consumer electronics, Yiwu wholesale market">
     <meta name="robots" content="index, follow">
     <meta name="author" content="Mike - Yiwu Sourcing Agent">
-    <link rel="canonical" href="https://mikeok.com">
     
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700&display=swap');
-        
         :root {
             --primary: #e63939;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
         
         .hero-bg {
@@ -44,6 +59,7 @@
         
         .nav-link {
             position: relative;
+            padding: 1rem 0;
         }
         
         .nav-link:after {
@@ -53,110 +69,126 @@
             height: 2px;
             bottom: -2px;
             left: 0;
-            background-color: #e63939;
+            background-color: var(--primary);
             transition: width 0.3s ease;
         }
         
         .nav-link:hover:after {
             width: 100%;
         }
-    </style>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-0H2PGF3J9Q"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-0H2PGF3J9Q');
-</script>
+        /* 优化桌面下拉菜单动画，解决闪烁 */
+        .dropdown-menu {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.2s ease;
+        }
+        .group:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+    </style>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0H2PGF3J9Q"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0H2PGF3J9Q');
+    </script>
 </head>
 <body class="font-sans antialiased text-gray-800">
-    <!-- Navbar -->
+    <!-- 全新响应式导航（桌面 + 手机完整可用） -->
     <nav class="bg-white border-b sticky top-0 z-50 shadow-sm">
         <div class="max-w-7xl mx-auto px-6">
             <div class="flex justify-between items-center h-16">
                 <!-- Logo -->
                 <div class="flex items-center space-x-3">
-                    <div class="w-9 h-9 bg-red-600 rounded-xl flex items-center justify-center text-white font-bold text-2xl">Y</div>
+                    <div class="w-9 h-9 bg-[var(--primary)] rounded-xl flex items-center justify-center text-white font-bold text-2xl">Y</div>
                     <div>
                         <span class="text-2xl font-bold tracking-tight">YiwuDirect</span>
                         <span class="text-xs text-gray-500 block -mt-1">by Mike</span>
                     </div>
                 </div>
 
-                <!-- Menu -->
+                <!-- 桌面端菜单 -->
                 <div class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                    <a href="/" class="nav-link">Home</a>
 
-    <a href="#" class="nav-link">Home</a>
+                    <!-- Products 下拉 -->
+                    <div class="relative group">
+                        <a href="#products" class="nav-link flex items-center px-4 py-4">
+                            Products
+                            <svg class="w-4 h-4 ml-1 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </a>
+                        <div class="dropdown-menu absolute left-0 mt-1 w-48 bg-white shadow-xl rounded-xl z-50 pt-1">
+                            <a href="products/solar/index.html" class="block px-4 py-3 hover:bg-gray-100 rounded-t-xl">Solar Products</a>
+                            <a href="/products/solar/portable-solar-panels/" class="block px-4 py-3 hover:bg-gray-100">Portable Solar Panels</a>
+                            <a href="/products/wind/" class="block px-4 py-3 hover:bg-gray-100">Wind Power Products</a>
+                            <a href="outdoor.html" class="block px-4 py-3 hover:bg-gray-100 rounded-b-xl">Outdoor products</a>
+                        </div>
+                    </div>
 
-    <!-- Products Dropdown -->
-    <div class="relative group">
-    <a href="#products" 
-       class="nav-link flex items-center px-4 py-4">   <!-- 增加 py-4 扩大触发区域 -->
-        Products
-        <svg class="w-4 h-4 ml-1 transition-transform group-hover:rotate-180" 
-             fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M19 9l-7 7-7-7"></path>
-        </svg>
-    </a>
+                    <a href="#about" class="nav-link">About Mike</a>
+                    <a href="/services/index.html" class="nav-link">Services</a>
+                    <a href="/contact/index.html" class="nav-link">Contact</a>
+                </div>
 
-    <!-- 改进后的下拉菜单 -->
-    <div class="absolute left-0 mt-1 w-48 bg-white shadow-xl rounded-xl 
-                opacity-0 invisible 
-                group-hover:opacity-100 group-hover:visible 
-                transition-all duration-200 z-50
-                pt-1">   <!-- pt-1 增加缓冲 -->
-
-        <a href="products/solar/index.html"
-           class="block px-4 py-3 hover:bg-gray-100 rounded-t-xl">
-            Solar Products
-        </a>
-         <!-- 二级菜单 -->
-          
-         <a href="/products/solar/portable-solar-panels/"
-                         class="block px-4 py-3 hover:bg-gray-100 rounded-t-xl">
-                        Portable Solar Panels
-                    </a>
-           
-         <a href="/products/wind/"
-                         class="block px-4 py-3 hover:bg-gray-100 rounded-t-xl">
-                        Wind Power Products
-                    </a>
-        
-
-      
-
-        <a href="outdoor.html"
-           class="block px-4 py-3 hover:bg-gray-100 rounded-b-xl">
-            Outdoor products
-        </a>
-    </div>
-</div>
-
-
-
-    <a href="#about" class="nav-link">About Mike</a>
-
-    <a href="/services/index.html" class="nav-link">Services</a>
-
-    <a href="/contact/index.html" class="nav-link">Contact</a>
-
-
-
-</div>
-
+                <!-- 右侧按钮 + 移动端汉堡图标 -->
                 <div class="flex items-center gap-4">
-                    <div class="text-xs bg-green-100 text-green-700 px-3 py-1.5 rounded-full font-medium flex items-center gap-1">
+                    <div class="hidden md:flex text-xs bg-green-100 text-green-700 px-3 py-1.5 rounded-full font-medium items-center gap-1">
                         <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
                         Online in Yiwu
                     </div>
-                    <button onclick="window.location.href='#contact'" 
-                            class="bg-red-600 hover:bg-red-700 text-white px-6 py-2.5 rounded-xl text-sm font-semibold transition flex items-center gap-2">
+                    <button onclick="window.location.href='/contact/index.html'" 
+                            class="bg-[var(--primary)] hover:bg-red-700 text-white px-4 md:px-6 py-2.5 rounded-xl text-sm font-semibold transition flex items-center gap-2">
                         <i class="fas fa-paper-plane"></i>
-                        Get Quote
+                        <span class="hidden md:inline">Get Quote</span>
                     </button>
+
+                    <!-- 移动端汉堡按钮 -->
+                    <button id="mobileMenuBtn" class="md:hidden text-gray-800 focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- 移动端导航菜单（默认隐藏） -->
+            <div id="mobileMenu" class="md:hidden hidden pb-4">
+                <div class="flex flex-col space-y-2 text-sm font-medium">
+                    <a href="/" class="py-2 border-b border-gray-100">Home</a>
+
+                    <!-- 移动端 Products 二级菜单 -->
+                    <div class="relative">
+                        <button id="mobileProdBtn" class="w-full text-left py-2 border-b border-gray-100 flex justify-between items-center">
+                            Products
+                            <svg class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div id="mobileProdMenu" class="hidden pl-4 mt-2 space-y-2 text-gray-600">
+                            <a href="products/solar/index.html" class="block py-1">Solar Products</a>
+                            <a href="/products/solar/portable-solar-panels/" class="block py-1">Portable Solar Panels</a>
+                            <a href="/products/wind/" class="block py-1">Wind Power Products</a>
+                            <a href="outdoor.html" class="block py-1">Outdoor products</a>
+                        </div>
+                    </div>
+
+                    <a href="#about" class="py-2 border-b border-gray-100">About Mike</a>
+                    <a href="/services/index.html" class="py-2 border-b border-gray-100">Services</a>
+                    <a href="/contact/index.html" class="py-2 border-b border-gray-100">Contact</a>
+
+                    <div class="text-xs bg-green-100 text-green-700 px-3 py-1.5 rounded-full font-medium flex items-center gap-1 mt-3 w-fit">
+                        <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+                        Online in Yiwu
+                    </div>
                 </div>
             </div>
         </div>
@@ -838,7 +870,24 @@
      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
    </svg>
 </a>
+    <!-- 移动端菜单交互 JS（放在 body 最后） -->
+<script>
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const prodBtn = document.getElementById('mobileProdBtn');
+    const prodMenu = document.getElementById('mobileProdMenu');
+
+    // 展开/收起移动端主菜单
+    mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    // 展开/收起移动端产品子菜单
+    prodBtn.addEventListener('click', () => {
+        prodMenu.classList.toggle('hidden');
+        prodBtn.querySelector('svg').classList.toggle('rotate-180');
+    });
+</script>
 </body>
 </html>
-</body>
-</html>
+
