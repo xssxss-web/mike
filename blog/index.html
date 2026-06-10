@@ -1,21 +1,43 @@
----
-layout: default
-title: MikeOK Blog
----
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MikeOK Blog - Yiwu Sourcing Insights</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            max-width: 900px; 
+            margin: 40px auto; 
+            padding: 20px; 
+            line-height: 1.7; 
+            color: #333;
+        }
+        h1 { color: #1a1a1a; border-bottom: 2px solid #0066cc; padding-bottom: 10px; }
+        ul { list-style: none; padding: 0; }
+        li { 
+            margin: 20px 0; 
+            padding: 15px; 
+            border: 1px solid #eee; 
+            border-radius: 8px;
+        }
+        a { color: #0066cc; text-decoration: none; font-weight: bold; }
+        a:hover { text-decoration: underline; }
+        small { color: #666; }
+    </style>
+</head>
+<body>
+    <h1>MikeOK Blog</h1>
+    <p>Yiwu Sourcing Tips, Product Guides & Export Knowledge from Mike in Yiwu</p>
+    
+    <h2>Latest Articles</h2>
+    <ul>
+        <li>
+            <a href="/blog/2026-06-10-first-blog-post.html">Yiwu Sourcing 2026: First Article</a>
+            <small> — 2026-06-10</small>
+        </li>
+    </ul>
 
-<h1>MikeOK Blog - Yiwu Sourcing Insights</h1>
-
-<p>Latest Posts:</p>
-
-<ul>
-  {% for post in site.posts %}
-    <li>
-      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-      <small> ({{ post.date | date: "%Y-%m-%d" }})</small>
-    </li>
-  {% endfor %}
-</ul>
-
-{% if site.posts.size == 0 %}
-  <p>还没有发布文章，请先在 _posts 文件夹添加文章。</p>
-{% endif %}
+    <p>更多文章会陆续更新...</p>
+</body>
+</html>
