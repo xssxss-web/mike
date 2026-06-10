@@ -1,14 +1,20 @@
 ---
 layout: default
-title: Blog
+title: MikeOK Blog
 ---
 
-<h1>My Blog</h1>
+<h1>MikeOK Blog</h1>
+<p>Welcome to my sourcing blog.</p>
+
 <ul>
   {% for post in site.posts %}
     <li>
-      <a href="{{ post.url }}">{{ post.title }}</a>
-      <small>{{ post.date | date: "%Y-%m-%d" }}</small>
+      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      <small> — {{ post.date | date: "%Y-%m-%d" }}</small>
     </li>
   {% endfor %}
 </ul>
+
+{% if site.posts.size == 0 %}
+  <p>还没有文章，马上发布第一篇吧！</p>
+{% endif %}
