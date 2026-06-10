@@ -1,1 +1,12 @@
 
+title: MikeOK Blog - Yiwu Sourcing Insights
+description: Yiwu sourcing tips, product guides, and export knowledge from Mike in Yiwu
+baseurl: ""          # 保持为空，因为是根域名
+url: "https://mikeok.com"
+theme: minima        # 先用默认主题，后期可换漂亮主题
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# 博客设置
+show_excerpts: true
