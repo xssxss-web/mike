@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /login/
+Disallow: /cart/
+Disallow: /checkout/
+Disallow: /account/
+Sitemap: https://mikeok.com/sitemap.xml
+LLMs-txt: https://mikeok.com/llms.txt
