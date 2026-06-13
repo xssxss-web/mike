@@ -5,35 +5,139 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Electronics, Hardware Tools, Solar Products, Kitchenware & Outdoor Products Sourcing Guide | MikeOK Blog</title>
     <script src="https://cdn.tailwindcss.com"></script>
-     <link rel="canonical" href="https://mikeok.com/blog/" />
+    <link rel="canonical" href="https://mikeok.com/blog/" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <meta name="description" content="Expert insights on electronics, hardware tools, solar products, kitchenware, outdoor products, China sourcing, quality control, product development, and global supply chain solutions from MikeOK.">
     
+    <!-- SEO & AI 抓取配置 -->
+    <meta name="description" content="Expert insights on electronics, hardware tools, solar products, kitchenware, outdoor products, China sourcing, quality control, product development, and global supply chain solutions from MikeOK.">
+    <meta name="robots" content="index,follow,ai,imageai">
+
     <style>
-        .post-card:hover { transform: translateY(-8px); }
+        /* 全局主色定义 */
+        :root {
+            --primary: #10b981;
+        }
+        .post-card {
+            transition: all 0.3s ease;
+        }
+        .post-card:hover { 
+            transform: translateY(-8px); 
+        }
         .markdown-content { line-height: 1.8; }
         .markdown-content h1, .markdown-content h2 { margin: 1.5em 0 0.8em; }
+        /* 导航链接样式 */
+        .nav-link {
+            @apply py-4 hover:text-emerald-600 transition-colors;
+        }
+        /* 下拉菜单默认隐藏 */
+        .dropdown-menu {
+            display: none;
+        }
+        .group:hover .dropdown-menu {
+            display: block;
+        }
     </style>
 </head>
 <body class="bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-gray-100 transition-colors">
+    <!-- 统一单导航栏 -->
+    <nav class="bg-white dark:bg-gray-900 border-b sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-9 h-9 bg-[var(--primary)] rounded-xl flex items-center justify-center text-white font-bold text-2xl">M</div>
+                    <div>
+                        <span class="text-2xl font-bold tracking-tight">Mike's Insight</span>
+                        <span class="text-xs text-gray-500 dark:text-gray-400 block -mt-1"></span>
+                    </div>
+                </div>
 
-    <!-- Navbar -->
-    <nav class="bg-white dark:bg-gray-900 shadow-md sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
-            <a href="index.html" class="text-2xl font-bold text-emerald-600">Mike's Insight</a>
-            
-            <div class="flex items-center gap-6">
-                <button id="searchBtn" class="text-xl hover:text-emerald-600"><i class="fas fa-search"></i></button>
-                <button id="themeToggle" class="text-xl hover:text-emerald-600">
-                    <i class="fas fa-moon"></i>
-                </button>
+                <!-- 桌面端菜单 -->
+                <div class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                    <a href="/" class="nav-link">Home</a>
+                    <!-- Products 下拉 -->
+                    <div class="relative group">
+                        <a href="#products" class="nav-link flex items-center px-4 py-4">
+                            Products
+                            <svg class="w-4 h-4 ml-1 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </a>
+                        <div class="dropdown-menu absolute left-0 mt-1 w-48 bg-white dark:bg-gray-800 shadow-xl rounded-xl z-50 pt-1">
+                            <a href="products/solar/index.html" class="block px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-t-xl">Solar Products</a>
+                            <a href="/products/solar/portable-solar-panels/" class="block px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700">Portable Solar Panels</a>
+                            <a href="/products/wind/" class="block px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700">Wind Power Products</a>
+                            <a href="outdoor.html" class="block px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-b-xl">Outdoor products</a>
+                        </div>
+                    </div>
+                    <a href="#about" class="nav-link">About Mike</a>
+                    <a href="/services/index.html" class="nav-link">Services</a>
+                    <a href="/blog/index.html" class="nav-link text-emerald-600">Insights</a>
+                    <a href="/contact/index.html" class="nav-link">Contact</a>
+                </div>
+
+                <!-- 右侧功能按钮 -->
+                <div class="flex items-center gap-4">
+                    <button id="searchBtn" class="text-xl hover:text-emerald-600 transition-colors">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <button id="themeToggle" class="text-xl hover:text-emerald-600 transition-colors">
+                        <i class="fas fa-moon"></i>
+                    </button>
+
+                    <div class="hidden md:flex text-xs bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300 px-3 py-1.5 rounded-full font-medium items-center gap-1">
+                        <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+                        Online in Yiwu
+                    </div>
+                    <button onclick="window.location.href='/contact/index.html'" 
+                            class="bg-[var(--primary)] hover:bg-emerald-700 text-white px-4 md:px-6 py-2.5 rounded-xl text-sm font-semibold transition flex items-center gap-2">
+                        <i class="fas fa-paper-plane"></i>
+                        <span class="hidden md:inline">Get Quote</span>
+                    </button>
+
+                    <!-- 移动端汉堡按钮 -->
+                    <button id="mobileMenuBtn" class="md:hidden focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- 移动端导航菜单 -->
+            <div id="mobileMenu" class="md:hidden hidden pb-4">
+                <div class="flex flex-col space-y-2 text-sm font-medium">
+                    <a href="/" class="py-2 border-b border-gray-100 dark:border-gray-800">Home</a>
+                    <!-- 移动端 Products 二级菜单 -->
+                    <div class="relative">
+                        <button id="mobileProdBtn" class="w-full text-left py-2 border-b border-gray-100 dark:border-gray-800 flex justify-between items-center">
+                            Products
+                            <svg class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div id="mobileProdMenu" class="hidden pl-4 mt-2 space-y-2 text-gray-600 dark:text-gray-400">
+                            <a href="products/solar/index.html" class="block py-1">Solar Products</a>
+                            <a href="/products/solar/portable-solar-panels/" class="block py-1">Portable Solar Panels</a>
+                            <a href="/products/wind/" class="block py-1">Wind Power Products</a>
+                            <a href="outdoor.html" class="block py-1">Outdoor products</a>
+                        </div>
+                    </div>
+                    <a href="#about" class="py-2 border-b border-gray-100 dark:border-gray-800">About Mike</a>
+                    <a href="/services/index.html" class="py-2 border-b border-gray-100 dark:border-gray-800">Services</a>
+                    <a href="/blog/index.html" class="py-2 border-b border-gray-100 dark:border-gray-800 text-emerald-600">Insights</a>
+                    <a href="/contact/index.html" class="py-2 border-b border-gray-100 dark:border-gray-800">Contact</a>
+
+                    <div class="text-xs bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300 px-3 py-1.5 rounded-full font-medium flex items-center gap-1 mt-3 w-fit">
+                        <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+                        Online in Yiwu
+                    </div>
+                </div>
             </div>
         </div>
     </nav>
 
     <div class="max-w-7xl mx-auto px-6 py-10 flex gap-10">
-        
         <!-- Main Content -->
         <main class="flex-1">
             <h1 class="text-5xl font-bold mb-2">Latest Articles</h1>
@@ -47,7 +151,6 @@
         <!-- Sidebar -->
         <aside class="w-80 hidden lg:block">
             <div class="sticky top-24 space-y-10">
-
                 <!-- Search -->
                 <div>
                     <h3 class="font-semibold mb-3 flex items-center gap-2"><i class="fas fa-search"></i> Search</h3>
@@ -59,12 +162,12 @@
                 <div>
                     <h3 class="font-semibold mb-3">Categories</h3>
                     <div class="flex flex-wrap gap-2">
-                        <span class="px-4 py-2 bg-emerald-100 dark:bg-emerald-900 text-emerald-700 dark:text-emerald-300 rounded-full text-sm cursor-pointer hover:bg-emerald-200">Solar Energy</span>
-                        <span class="px-4 py-2 bg-emerald-100 dark:bg-emerald-900 text-emerald-700 dark:text-emerald-300 rounded-full text-sm cursor-pointer hover:bg-emerald-200">Wind Power</span>
-                        <span class="px-4 py-2 bg-emerald-100 dark:bg-emerald-900 text-emerald-700 dark:text-emerald-300 rounded-full text-sm cursor-pointer hover:bg-emerald-200">Energy Storage</span>
-                        <span class="px-4 py-2 bg-emerald-100 dark:bg-emerald-900 text-emerald-700 dark:text-emerald-300 rounded-full text-sm cursor-pointer hover:bg-emerald-200">Sustainability</span>
-                        <span class="px-4 py-2 bg-emerald-100 dark:bg-emerald-900 text-emerald-700 dark:text-emerald-300 rounded-full text-sm cursor-pointer hover:bg-emerald-200">Policy & Future</span>
-                        <span class="px-4 py-2 bg-emerald-100 dark:bg-emerald-900 text-emerald-700 dark:text-emerald-300 rounded-full text-sm cursor-pointer hover:bg-emerald-200">Amazon FBA</span>
+                        <span class="px-4 py-2 bg-emerald-100 dark:bg-emerald-900 text-emerald-700 dark:text-emerald-300 rounded-full text-sm cursor-pointer hover:bg-emerald-200 dark:hover:bg-emerald-800" onclick="filterByCat('Solar Energy')">Solar Energy</span>
+                        <span class="px-4 py-2 bg-emerald-100 dark:bg-emerald-900 text-emerald-700 dark:text-emerald-300 rounded-full text-sm cursor-pointer hover:bg-emerald-200 dark:hover:bg-emerald-800" onclick="filterByCat('Wind Power')">Wind Power</span>
+                        <span class="px-4 py-2 bg-emerald-100 dark:bg-emerald-900 text-emerald-700 dark:text-emerald-300 rounded-full text-sm cursor-pointer hover:bg-emerald-200 dark:hover:bg-emerald-800" onclick="filterByCat('Energy Storage')">Energy Storage</span>
+                        <span class="px-4 py-2 bg-emerald-100 dark:bg-emerald-900 text-emerald-700 dark:text-emerald-300 rounded-full text-sm cursor-pointer hover:bg-emerald-200 dark:hover:bg-emerald-800" onclick="filterByCat('Sustainability')">Sustainability</span>
+                        <span class="px-4 py-2 bg-emerald-100 dark:bg-emerald-900 text-emerald-700 dark:text-emerald-300 rounded-full text-sm cursor-pointer hover:bg-emerald-200 dark:hover:bg-emerald-800" onclick="filterByCat('Policy & Future')">Policy & Future</span>
+                        <span class="px-4 py-2 bg-emerald-100 dark:bg-emerald-900 text-emerald-700 dark:text-emerald-300 rounded-full text-sm cursor-pointer hover:bg-emerald-200 dark:hover:bg-emerald-800" onclick="filterByCat('Amazon FBA')">Amazon FBA</span>
                     </div>
                 </div>
 
@@ -98,11 +201,9 @@
     </footer>
 
     <script>
-        // Sample Posts Data
+        // 文章数据（补全所有url，删除无用id）
         const posts = [
-            
-              {
-                
+            {
                 title: "The Hidden Competitive Advantage of Successful Amazon Sellers: Complete Control Over Products and Supply Chains",
                 url: "amazon-sourcing-quality-control-supply-chain-management.html",
                 date: "June 10, 2026",
@@ -110,9 +211,7 @@
                 excerpt: "Why Amazon Sellers Are Facing More Challenges Than Ever",
                 image: "/images/FBA.jpeg"
             },
-            
             {
-                
                 title: "Global Green Energy Status and Future Trends in 2026",
                 url: "Global-Green-Energy-Status-and-Future-Trends.html",
                 date: "June 10, 2026",
@@ -120,19 +219,17 @@
                 excerpt: "Solar power continues to break records as the fastest growing energy source in the world.",
                 image: "/images/hero-solar1.jpeg"
             },
-            
             {
-                id: 1,
                 title: "Global Solar Energy Outlook 2026",
+                url: "Global-Solar-Energy-Outlook-2026.html",
                 date: "June 10, 2026",
                 category: "Solar Energy",
                 excerpt: "Solar power continues to break records as the fastest growing energy source in the world.",
                 image: "/images/hero-solar.jpg"
             },
             {
-                
                 title: "Why Energy Storage is the Key to Renewable Future",
-                 url: "energy-storage-renewable-future.html",
+                url: "energy-storage-renewable-future.html",
                 date: "June 5, 2026",
                 category: "Energy Storage",
                 excerpt: "From lithium to solid-state and hydrogen storage — the revolution is happening now.",
@@ -140,13 +237,13 @@
             }
         ];
 
-        // Render Posts
+        // 渲染文章列表
         function renderPosts(filteredPosts) {
             const container = document.getElementById('postsContainer');
             container.innerHTML = filteredPosts.map(post => `
                 <div class="post-card bg-white dark:bg-gray-900 rounded-2xl overflow-hidden shadow-lg transition-all cursor-pointer"
                      onclick="location.href='${post.url}'">
-                    <img src="${post.image}" class="w-full h-48 object-cover">
+                    <img src="${post.image}" alt="${post.title}" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <div class="text-emerald-600 text-xs font-medium">${post.date} • ${post.category}</div>
                         <h3 class="font-semibold text-lg mt-2 mb-3">${post.title}</h3>
@@ -156,8 +253,28 @@
             `).join('');
         }
 
-        // Search Functionality
-        document.getElementById('searchInput').addEventListener('input', (e) => {
+        // 渲染热门文章
+        function renderPopularPosts() {
+            const popContainer = document.getElementById('popularPosts');
+            // 取前3篇作为热门文章
+            const popular = posts.slice(0, 3);
+            popContainer.innerHTML = popular.map(post => `
+                <a href="${post.url}" class="block hover:text-emerald-600 transition-colors">
+                    <div class="font-medium">${post.title}</div>
+                    <div class="text-xs text-gray-500 dark:text-gray-400 mt-1">${post.date}</div>
+                </a>
+            `).join('');
+        }
+
+        // 分类筛选
+        function filterByCat(catName) {
+            const filtered = posts.filter(p => p.category === catName);
+            renderPosts(filtered);
+        }
+
+        // 搜索功能
+        const searchInput = document.getElementById('searchInput');
+        searchInput.addEventListener('input', (e) => {
             const term = e.target.value.toLowerCase();
             const filtered = posts.filter(p => 
                 p.title.toLowerCase().includes(term) || 
@@ -166,15 +283,47 @@
             renderPosts(filtered);
         });
 
-        // Theme Toggle
-        const themeToggle = document.getElementById('themeToggle');
-        themeToggle.addEventListener('click', () => {
-            document.documentElement.classList.toggle('dark');
-            localStorage.theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+        // 顶部搜索按钮 → 聚焦输入框
+        document.getElementById('searchBtn').addEventListener('click', () => {
+            searchInput.focus();
         });
 
-        // Initial Render
+        // 明暗模式切换 + 本地存储记忆
+        const themeToggle = document.getElementById('themeToggle');
+        // 读取本地主题
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+            themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+        } else {
+            document.documentElement.classList.remove('dark');
+            themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+        }
+
+        themeToggle.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+            const isDark = document.documentElement.classList.contains('dark');
+            localStorage.theme = isDark ? 'dark' : 'light';
+            themeToggle.innerHTML = isDark ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+        });
+
+        // 移动端菜单展开/收起
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // 移动端产品子菜单
+        const mobileProdBtn = document.getElementById('mobileProdBtn');
+        const mobileProdMenu = document.getElementById('mobileProdMenu');
+        mobileProdBtn.addEventListener('click', () => {
+            mobileProdMenu.classList.toggle('hidden');
+            mobileProdBtn.querySelector('svg').classList.toggle('rotate-180');
+        });
+
+        // 页面初始化渲染
         renderPosts(posts);
+        renderPopularPosts();
     </script>
 </body>
 </html>
