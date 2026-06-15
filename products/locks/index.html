@@ -522,28 +522,29 @@ html {
             <div class="flex items-center space-x-3">
                 <div class="w-9 h-9 bg-[var(--primary)] rounded-xl flex items-center justify-center text-white font-bold text-2xl">Y</div>
                 <div>
-                    <span class="text-2xl font-bold tracking-tight">YiwuDirect</span>
-                    <span class="text-xs text-gray-500 block -mt-1">by Mike</span>
+                    <span class="text-2xl font-bold tracking-tight">MikeOK</span>
+                    <span class="text-xs text-gray-500 block -mt-1">Locks & Security</span>
                 </div>
             </div>
 
-            <!-- 桌面端菜单 -->
+            <!-- 桌面端一级菜单 -->
             <div class="hidden md:flex items-center space-x-8 text-sm font-medium">
                 <a href="/" class="nav-link">Home</a>
 
-                <!-- Products 下拉 -->
+                <!-- Locks-security 改为【一级菜单 + 二级下拉】 -->
                 <div class="relative group">
-                    <a href="#products" class="nav-link flex items-center px-4 py-4">
-                        Products
+                    <a href="/products/locks/" class="nav-link flex items-center px-4 py-4">
+                        Locks-security
                         <svg class="w-4 h-4 ml-1 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                         </svg>
                     </a>
+                    <!-- 原三级菜单 变为 二级下拉 -->
                     <div class="dropdown-menu absolute left-0 mt-1 w-48 bg-white shadow-xl rounded-xl z-50 pt-1">
-                        <a href="products/solar/index.html" class="block px-4 py-3 hover:bg-gray-100 rounded-t-xl">Solar Products</a>
-                        <a href="/products/solar/portable-solar-panels/" class="block px-4 py-3 hover:bg-gray-100">Portable Solar Panels</a>
-                        <a href="/products/wind/" class="block px-4 py-3 hover:bg-gray-100">Wind Power Products</a>
-                        <a href="outdoor.html" class="block px-4 py-3 hover:bg-gray-100 rounded-b-xl">Outdoor products</a>
+                        <a href="/products/locks/smart-locks.html" class="block px-4 py-3 hover:bg-gray-100 rounded-t-xl">Smart Locks</a>
+                        <a href="/products/locks/door-locks.html" class="block px-4 py-3 hover:bg-gray-100">Door Locks</a>
+                        <a href="/products/locks/padlocks.html" class="block px-4 py-3 hover:bg-gray-100">Padlocks</a>
+                        <a href="/products/locks/bike-locks.html" class="block px-4 py-3 hover:bg-gray-100 rounded-b-xl">Bike Locks</a>
                     </div>
                 </div>
 
@@ -559,9 +560,8 @@ html {
                     <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
                     Online in Yiwu
                 </div>
-                <!-- 修复按钮hover颜色 -->
                 <button onclick="window.location.href='/contact/index.html'" 
-                        class="bg-[var(--primary)] hover:bg-emerald-700 text-white px-4 md:px-6 py-2.5 rounded-xl text-sm font-semibold transition flex items-center gap-2">
+                        class="bg-[var(--primary)] hover:bg-red-700 text-white px-4 md:px-6 py-2.5 rounded-xl text-sm font-semibold transition flex items-center gap-2">
                     <i class="fas fa-paper-plane"></i>
                     <span class="hidden md:inline">Get Quote</span>
                 </button>
@@ -575,28 +575,28 @@ html {
             </div>
         </div>
 
-        <!-- 移动端导航菜单（默认隐藏） -->
+        <!-- 移动端导航 -->
         <div id="mobileMenu" class="md:hidden hidden pb-4">
             <div class="flex flex-col space-y-2 text-sm font-medium">
                 <a href="/" class="py-2 border-b border-gray-100">Home</a>
 
-                <!-- 移动端 Products 二级菜单 -->
+                <!-- 移动端 Locks 一级菜单 + 二级下拉 -->
                 <div class="relative">
-                    <button id="mobileProdBtn" class="w-full text-left py-2 border-b border-gray-100 flex justify-between items-center">
-                        Products
-                        <svg class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <button id="mobileLockBtn" class="w-full text-left py-2 border-b border-gray-100 flex justify-between items-center">
+                        Locks-security
+                        <svg id="mobileLockIcon" class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                         </svg>
                     </button>
-                    <div id="mobileProdMenu" class="hidden pl-4 mt-2 space-y-2 text-gray-600">
-                        <a href="products/solar/index.html" class="block py-1">Solar Products</a>
-                        <a href="/products/solar/portable-solar-panels/" class="block py-1">Portable Solar Panels</a>
-                        <a href="/products/wind/" class="block py-1">Wind Power Products</a>
-                        <a href="outdoor.html" class="block py-1">Outdoor products</a>
+                    <div id="mobileLockSubMenu" class="hidden pl-4 mt-2 space-y-2 text-gray-600">
+                        <a href="/products/locks/smart-locks.html" class="block py-1">Smart Locks</a>
+                        <a href="/products/locks/door-locks.html" class="block py-1">Door Locks</a>
+                        <a href="/products/locks/padlocks.html" class="block py-1">Padlocks</a>
+                        <a href="/products/locks/bike-locks.html" class="block py-1">Bike Locks</a>
                     </div>
                 </div>
 
-                <a href="#about" class="py-2 border-b border-gray-100">About Mike</a>
+                <a href="#about" class="py-2 border-b border-gray-100">About US</a>
                 <a href="/services/index.html" class="py-2 border-b border-gray-100">Services</a>
                 <a href="/contact/index.html" class="py-2 border-b border-gray-100">Contact</a>
 
@@ -981,19 +981,20 @@ faqItems.forEach(item => {
 </script>
 <!-- 导航交互 JS -->
 <script>
-// 移动端主菜单展开/收起
+// 移动端整体菜单开关
 const mobileMenuBtn = document.getElementById('mobileMenuBtn');
 const mobileMenu = document.getElementById('mobileMenu');
 mobileMenuBtn.addEventListener('click', () => {
     mobileMenu.classList.toggle('hidden');
 });
 
-// 移动端产品子菜单展开/收起
-const mobileProdBtn = document.getElementById('mobileProdBtn');
-const mobileProdMenu = document.getElementById('mobileProdMenu');
-mobileProdBtn.addEventListener('click', () => {
-    mobileProdMenu.classList.toggle('hidden');
-    mobileProdBtn.querySelector('svg').classList.toggle('rotate-180');
+// 移动端 Locks 二级菜单开关
+const mobileLockBtn = document.getElementById('mobileLockBtn');
+const mobileLockSubMenu = document.getElementById('mobileLockSubMenu');
+const mobileLockIcon = document.getElementById('mobileLockIcon');
+mobileLockBtn.addEventListener('click', () => {
+    mobileLockSubMenu.classList.toggle('hidden');
+    mobileLockIcon.classList.toggle('rotate-180');
 });
 </script>
 
