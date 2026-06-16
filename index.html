@@ -942,21 +942,41 @@
 </a>
     <!-- 移动端菜单交互 JS（放在 body 最后） -->
 <script>
-// 移动端产品总菜单展开
-const mobileProdBtn = document.getElementById('mobileProdBtn');
-const mobileProdMenu = document.getElementById('mobileProdMenu');
-mobileProdBtn.addEventListener('click', () => {
-    mobileProdMenu.classList.toggle('hidden');
-    mobileProdBtn.querySelector('svg').classList.toggle('rotate-180');
-});
+// 等待DOM加载完毕再执行
+document.addEventListener('DOMContentLoaded', function() {
+    // 1. 汉堡按钮：展开/收起整个移动端菜单
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const hamburgerIcon = mobileMenuBtn.querySelector('svg');
 
-// 移动端 Locks 三级菜单展开
-const mobileLockBtn = document.querySelector('.mobileLockBtn');
-const mobileLockMenu = document.querySelector('.mobileLockMenu');
-const mobileLockIcon = document.querySelector('.mobileLockIcon');
-mobileLockBtn.addEventListener('click', () => {
-    mobileLockMenu.classList.toggle('hidden');
-    mobileLockIcon.classList.toggle('rotate-180');
+    if(mobileMenuBtn && mobileMenu) {
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            hamburgerIcon.classList.toggle('rotate-180');
+        });
+    }
+
+    // 2. 移动端 Products 二级菜单展开
+    const mobileProdBtn = document.getElementById('mobileProdBtn');
+    const mobileProdMenu = document.getElementById('mobileProdMenu');
+    const prodArrow = mobileProdBtn.querySelector('svg');
+    if(mobileProdBtn && mobileProdMenu) {
+        mobileProdBtn.addEventListener('click', () => {
+            mobileProdMenu.classList.toggle('hidden');
+            prodArrow.classList.toggle('rotate-180');
+        });
+    }
+
+    // 3. 移动端 Locks 三级菜单展开
+    const mobileLockBtn = document.querySelector('.mobileLockBtn');
+    const mobileLockMenu = document.querySelector('.mobileLockMenu');
+    const mobileLockIcon = document.querySelector('.mobileLockIcon');
+    if(mobileLockBtn && mobileLockMenu && mobileLockIcon) {
+        mobileLockBtn.addEventListener('click', () => {
+            mobileLockMenu.classList.toggle('hidden');
+            mobileLockIcon.classList.toggle('rotate-180');
+        });
+    }
 });
 </script>
 </body>
