@@ -97,50 +97,10 @@ html{
 
 <body>
     <!-- Navbar 公共导航容器 -->
-   <div id="global-nav"></div>
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  const navContainer = document.getElementById('global-nav');
-  // 加载公共导航
-  fetch('../nav.html')
-    .then(res => res.text())
-    .then(html => {
-      navContainer.innerHTML = html;
-    })
-    .catch(err => console.error('导航加载失败', err));
-
-  // 事件委托：监听导航容器，动态生成的按钮自动生效
-  navContainer.addEventListener('click', function(e) {
-    // 1. 汉堡总菜单
-    const hamburger = e.target.closest('#mobileMenuBtn');
-    if (hamburger) {
-      const menuWrap = document.getElementById('mobileMenu');
-      const arrow = hamburger.querySelector('svg');
-      menuWrap.classList.toggle('hidden');
-      arrow.classList.toggle('rotate-180');
-      return;
-    }
-    // 2. Products 二级菜单
-    const prodToggle = e.target.closest('#mobileProdBtn');
-    if (prodToggle) {
-      const prodBox = document.getElementById('mobileProdMenu');
-      const arrow = prodToggle.querySelector('svg');
-      prodBox.classList.toggle('hidden');
-      arrow.classList.toggle('rotate-180');
-      return;
-    }
-    // 3. Locks 三级菜单
-    const lockToggle = e.target.closest('.mobileLockBtn');
-    if (lockToggle) {
-      const lockBox = lockToggle.nextElementSibling;
-      const arrow = lockToggle.querySelector('.mobileLockIcon');
-      lockBox.classList.toggle('hidden');
-      arrow.classList.toggle('rotate-180');
-      return;
-    }
-  })
-})
-</script>
+   
+    <div id="global-nav"></div>
+    <!-- 一行引入公共逻辑，自动适配目录层级 -->
+    <script src="/nav-loader.js"></script>
 
     <!-- Navbar hero区域 -->
 <section class="bg-gray-900 text-white py-24">
