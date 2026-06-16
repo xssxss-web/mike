@@ -161,6 +161,22 @@ html {
                         <a href="/products/wind/index.html" class="block px-6 py-2 hover:bg-gray-100">Wind Power Products</a>
                         
                         <!-- 三级锁菜单：独立group-sub容器，向右弹出新面板 -->
+<!-- Hardware&Industrial 二级条目（带三级子菜单） -->
+<div class="group-sub">
+    <a href="#" class="block px-6 py-2 hover:bg-gray-100 flex justify-between items-center">
+        Hardware&Industrial
+        <svg class="w-3 h-3 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+        </svg>
+    </a>
+    <!-- 三级子菜单面板 -->
+    <div class="dropdown-submenu">
+        <a href="/products/hardware-industrial/door-hardware.html" class="block px-6 py-2 hover:bg-gray-100">Door Hardware</a>
+    </div>
+</div>
+
+
+                         <!-- 二级带三级锁菜单：独立group-sub容器，向右弹出新面板 -->
                         <div class="group-sub">
                             <a href="/products/locks/index.html" class="block px-6 py-2 hover:bg-gray-100 flex justify-between items-center">
                                 Locks-security
@@ -219,6 +235,21 @@ html {
                     <a href="/products/solar/portable-panels.html" class="block py-1.5">Portable Solar Panels</a>
                     <a href="/products/wind/index.html" class="block py-1.5">Wind Power Products</a>
                     <!-- 移动端三级Locks -->
+
+
+                    <!-- 移动端 Hardware&Industrial 二级+三级Door Hardware -->
+<div>
+    <button class="mobileLockBtn w-full text-left py-1.5 flex justify-between items-center">
+        Hardware&Industrial
+        <svg class="w-3 h-3 mobileLockIcon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+        </svg>
+    </button>
+    <div class="mobileLockMenu hidden space-y-1">
+        <a href="/products/hardware-industrial/door-hardware.html" class="block py-1.5">Door Hardware</a>
+    </div>
+</div>
+                     <!-- 移动端 Hardware&Industrial 二级+三级  -->
                     <div>
                         <button class="mobileLockBtn w-full text-left py-1.5 flex justify-between items-center">
                             Locks-security
