@@ -1,62 +1,124 @@
-<!-- 全局公共导航组件 nav.html -->
+<!-- 全局公共导航：HTML + 全套导航专属样式，电脑/手机样式全部内置 -->
 <style>
-    :root {
-        --primary: #e63939;
-    }
+/* 全局导航基础变量 */
+:root {
+    --primary: #e63939;
+}
+html {
+    scroll-behavior: smooth;
+}
+/* 导航链接下划线 */
+.nav-link {
+    position: relative;
+    padding: 1rem 0;
+}
+.nav-link:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    left: 0;
+    bottom: -2px;
+    background: var(--primary);
+    transition: width 0.3s ease;
+}
+.nav-link:hover:after {
+    width: 100%;
+}
 
-    html {
-        scroll-behavior: smooth;
-    }
-    
-    .nav-link {
-        position: relative;
-        padding: 1rem 0;
-    }
-    
-    .nav-link:after {
-        content: '';
-        position: absolute;
-        width: 0;
-        height: 2px;
-        bottom: -2px;
-        left: 0;
-        background-color: var(--primary);
-        transition: width 0.3s ease;
-    }
-    
-    .nav-link:hover:after {
-        width: 100%;
-    }
+/* ========== 电脑端桌面下拉核心CSS（纯CSS hover展开，无需JS） ========== */
+.group {
+    position: relative;
+}
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 9999;
+    width: 12rem;
+    background: #fff;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+    border-radius: 0.75rem;
+    padding: 0.5rem 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.2s ease;
+    pointer-events: none;
+}
+.group:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+/* 桌面三级横向弹出 */
+.group/lock {
+    position: relative;
+}
+.group/lock .dropdown-submenu {
+    position: absolute;
+    left: 100%;
+    top: 0;
+    width: 12rem;
+    background: #fff;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+    border-radius: 0.75rem;
+    padding: 0.5rem 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.2s ease;
+    pointer-events: none;
+}
+.group/lock:hover .dropdown-submenu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+}
 
-    /* 桌面下拉菜单动画，消除闪烁 */
-    .dropdown-menu {
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(10px);
-        transition: all 0.2s ease;
-    }
-    .group:hover .dropdown-menu {
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0);
-    }
-    /* 箭头旋转样式 */
-    .rotate-180 {
-        transform: rotate(180deg);
-    }
-    .transition-transform {
-        transition: transform 0.3s ease;
-    }
-    * {
-    transform: scaleX(1) !important;
+/* 箭头旋转通用样式（电脑+手机共用） */
+.transition-transform {
+    transition: transform 0.3s ease;
+}
+.rotate-180 {
+    transform: rotate(180deg);
+}
+.group svg.transition-transform {
+    transition: transform 0.3s ease;
+}
+.group:hover svg.transition-transform {
+    transform: rotate(180deg);
+}
+
+/* ========== 移动端菜单样式（全部内置，页面无需补充） ========== */
+#mobileMenu {
+    display: none;
+}
+#mobileMenu.hidden {
+    display: none;
+}
+#mobileMenu:not(.hidden) {
+    display: block;
 }
 .mobileLockMenu {
-    transform: none !important;
-    transform-origin: left top !important;
+    display: none;
+}
+.mobileLockMenu.hidden {
+    display: none;
+}
+.mobileLockMenu:not(.hidden) {
+    display: block;
+}
+/* 移动端三级向内缩进，禁止横向溢出翻转文字 */
+.mobileLockMenu {
+    padding-left: 2rem;
+    margin-top: 0.25rem;
 }
 </style>
 
-<!-- Google Analytics 统计（全站公用，保留） -->
+<!-- Google Analytics 统计 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-0H2PGF3J9Q"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -65,75 +127,69 @@
   gtag('config', 'G-0H2PGF3J9Q');
 </script>
 
-<!-- 完整导航 HTML 结构 -->
-<nav class="bg-white border-b sticky top-0 z-50 shadow-sm">
+<!-- 导航HTML结构 -->
+<nav class="bg-white border-b border-gray-200 sticky top-0 z-[9999] shadow-sm">
     <div class="max-w-7xl mx-auto px-6">
         <div class="flex justify-between items-center h-16">
             <!-- Logo -->
-            <div class="flex items-center space-x-3">
-                <div class="w-9 h-9 bg-[var(--primary)] rounded-xl flex items-center justify-center text-white font-bold text-2xl">M</div>
+            <div class="flex items-center gap-3">
+                <div class="w-9 h-9 bg-[var(--primary)] rounded-xl flex items-center justify-center text-white font-bold text-2xl">Y</div>
                 <div>
-                    <span class="text-2xl font-bold tracking-tight">MikeOK</span>
-                    <span class="text-xs text-gray-500 block -mt-1">Professional&Trustworthy</span>
+                    <span class="text-2xl font-semibold tracking-tight text-gray-900">MikeOK</span>
+                    <p class="text-xs text-gray-500 -mt-1">Professional&Trustworthy</p>
                 </div>
             </div>
 
-            <!-- 桌面端菜单 -->
-            <div class="hidden md:flex items-center space-x-8 text-sm font-medium">
+            <!-- 桌面导航菜单 -->
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-700">
                 <a href="/" class="nav-link">Home</a>
-
-                <!-- Products 下拉 -->
-                <div class="relative group">
-                    <a href="#products" class="nav-link flex items-center px-4 py-4">
+                <!-- Products 一级下拉 -->
+                <div class="group">
+                    <a href="#products" class="nav-link flex items-center gap-1">
                         Products
-                        <svg class="w-4 h-4 ml-1 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                         </svg>
                     </a>
-                    <div class="dropdown-menu absolute left-0 mt-1 w-48 bg-white shadow-xl rounded-xl z-50 pt-1">
-                        <a href="products/solar/index.html" class="block px-4 py-3 hover:bg-gray-100 rounded-t-xl">Solar Products</a>
-                        <a href="/products/solar/portable-solar-panels/" class="block px-4 py-3 hover:bg-gray-100">Portable Solar Panels</a>
-                        <a href="/products/wind/" class="block px-4 py-3 hover:bg-gray-100">Wind Power Products</a>
-                        
-                        <!-- Locks-security 三级菜单 -->
-                        <div class="relative group/lock">
-                            <a href="/products/locks/" class="block px-4 py-3 hover:bg-gray-100 rounded-b-xl flex justify-between items-center">
+                    <div class="dropdown-menu">
+                        <a href="/products/solar/index.html" class="block px-6 py-2 hover:bg-gray-100">Solar Products</a>
+                        <a href="/products/solar/portable-panels.html" class="block px-6 py-2 hover:bg-gray-100">Portable Solar Panels</a>
+                        <a href="/products/wind/index.html" class="block px-6 py-2 hover:bg-gray-100">Wind Power Products</a>
+                        <!-- 桌面三级Locks子菜单 -->
+                        <div class="group/lock relative">
+                            <a href="/products/locks/index.html" class="block px-6 py-2 hover:bg-gray-100 flex justify-between items-center">
                                 Locks-security
-                                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <svg class="w-3 h-3 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                                 </svg>
                             </a>
-                            <!-- 三级子菜单 -->
-                            <div class="absolute left-full top-0 ml-1 w-48 bg-white shadow-xl rounded-xl z-50 hidden group-hover/lock:block">
-                                <a href="/products/locks/smart-locks.html" class="block px-4 py-3 hover:bg-gray-100 rounded-t-xl">Smart Locks</a>
-                                <a href="/products/locks/door-locks.html" class="block px-4 py-3 hover:bg-gray-100">Door Locks</a>
-                                <a href="/products/locks/padlocks.html" class="block px-4 py-3 hover:bg-gray-100">Padlocks</a>
-                                <a href="/products/locks/bike-locks.html" class="block px-4 py-3 hover:bg-gray-100 rounded-b-xl">Bike Locks</a>
+                            <div class="dropdown-submenu">
+                                <a href="/products/locks/smart-locks.html" class="block px-6 py-2 hover:bg-gray-100">Smart Locks</a>
+                                <a href="/products/locks/door-locks.html" class="block px-6 py-2 hover:bg-gray-100">Door Locks</a>
+                                <a href="/products/locks/padlocks.html" class="block px-6 py-2 hover:bg-gray-100">Padlocks</a>
+                                <a href="/products/locks/bike-locks.html" class="block px-6 py-2 hover:bg-gray-100">Bike Locks</a>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <a href="#about" class="nav-link">About Mike</a>
-                <a href="/services/index.html" class="nav-link">Services</a>
-                <a href="/blog/index.html" class="nav-link">Insights</a>
-                <a href="/contact/index.html" class="nav-link">Contact</a>
+                <a href="/about/" class="nav-link">About Mike</a>
+                <a href="/services/" class="nav-link">Services</a>
+                <a href="/blog/" class="nav-link">Insights</a>
+                <a href="/contact/" class="nav-link">Contact</a>
             </div>
 
-            <!-- 右侧按钮 + 移动端汉堡图标 -->
+            <!-- 右侧按钮+汉堡 -->
             <div class="flex items-center gap-4">
-                <div class="hidden md:flex text-xs bg-green-100 text-green-700 px-3 py-1.5 rounded-full font-medium items-center gap-1">
+                <div class="hidden md:flex text-xs bg-green-100 text-green-700 px-4 py-1.5 rounded-full font-medium items-center gap-1">
                     <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
                     Online in Yiwu
                 </div>
-                <button onclick="window.location.href='/contact/index.html'" 
-                        class="bg-[var(--primary)] hover:bg-red-700 text-white px-4 md:px-6 py-2.5 rounded-xl text-sm font-semibold transition flex items-center gap-2">
-                    <i class="fas fa-paper-plane"></i>
+                <a href="/contact/" class="bg-[var(--primary)] hover:bg-red-700 text-white px-4 md:px-6 py-2.5 rounded-xl text-sm font-medium flex items-center gap-2 transition-all">
+                    <i class="fa-solid fa-paper-plane"></i>
                     <span class="hidden md:inline">Get Quote</span>
-                </button>
-
+                </a>
                 <!-- 移动端汉堡按钮 -->
-                <button id="mobileMenuBtn" class="md:hidden text-gray-800 focus:outline-none">
+                <button id="mobileMenuBtn" class="md:hidden text-gray-800 p-1">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                     </svg>
@@ -141,55 +197,42 @@
             </div>
         </div>
 
-        <!-- 移动端导航菜单（默认隐藏） -->
-        <div id="mobileMenu" class="md:hidden hidden pb-4">
-            <div class="flex flex-col space-y-2 text-sm font-medium">
-                <a href="/" class="py-2 border-b border-gray-100">Home</a>
-
-                <!-- 移动端 Products 二级菜单 -->
-                <div class="relative">
-                    <button id="mobileProdBtn" class="w-full text-left py-2 border-b border-gray-100 flex justify-between items-center">
-                        Products
-                        <svg class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                        </svg>
-                    </button>
-                    <div id="mobileProdMenu" class="hidden pl-4 mt-2 space-y-2 text-gray-600">
-                        <a href="products/solar/index.html" class="block py-1">Solar Products</a>
-                        <a href="/products/solar/portable-solar-panels/" class="block py-1">Portable Solar Panels</a>
-                        <a href="/products/wind/" class="block py-1">Wind Power Products</a>
-                        
-                        <!-- 移动端三级菜单 -->
-                   <!-- 移动端三级菜单（纯垂直缩进，无横向absolute弹出） -->
-<div>
-    <button class="mobileLockBtn w-full text-left py-1 flex justify-between items-center">
-        Locks-security
-        <svg class="w-3 h-3 mobileLockIcon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-        </svg>
-    </button>
-    <!-- 加大缩进 pl-8，和二级菜单区分层级，完全移除absolute定位 -->
-    <div class="mobileLockMenu hidden pl-8 mt-1 space-y-1 text-gray-500">
-        <a href="/products/locks/smart-locks.html" class="block py-1">Smart Locks</a>
-        <a href="/products/locks/door-locks.html" class="block py-1">Door Locks</a>
-        <a href="/products/locks/padlocks.html" class="block py-1">Padlocks</a>
-        <a href="/products/locks/bike-locks.html" class="block py-1">Bike Locks</a>
-    </div>
-</div>
+        <!-- 移动端全部菜单（垂直向内缩进，无横向absolute，彻底解决文字颠倒） -->
+        <div id="mobileMenu" class="hidden pb-4 border-t border-gray-100 mt-2 text-sm text-gray-700">
+            <a href="/" class="block py-3 border-b border-gray-100">Home</a>
+            <!-- 移动端Products二级 -->
+            <div>
+                <button id="mobileProdBtn" class="w-full text-left py-3 border-b border-gray-100 flex justify-between items-center">
+                    Products
+                    <svg class="w-4 h-4 mobileProdIcon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div id="mobileProdMenu" class="hidden pl-4 space-y-1 mt-1">
+                    <a href="/products/solar/index.html" class="block py-1.5">Solar Products</a>
+                    <a href="/products/solar/portable-panels.html" class="block py-1.5">Portable Solar Panels</a>
+                    <a href="/products/wind/index.html" class="block py-1.5">Wind Power Products</a>
+                    <!-- 移动端三级Locks（无absolute，仅pl缩进，不会溢出翻转文字） -->
+                    <div>
+                        <button class="mobileLockBtn w-full text-left py-1.5 flex justify-between items-center">
+                            Locks-security
+                            <svg class="w-3 h-3 mobileLockIcon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div class="mobileLockMenu hidden space-y-1">
+                            <a href="/products/locks/smart-locks.html" class="block py-1.5">Smart Locks</a>
+                            <a href="/products/locks/door-locks.html" class="block py-1.5">Door Locks</a>
+                            <a href="/products/locks/padlocks.html" class="block py-1.5">Padlocks</a>
+                            <a href="/products/locks/bike-locks.html" class="block py-1.5">Bike Locks</a>
+                        </div>
                     </div>
                 </div>
-
-                <a href="#about" class="py-2 border-b border-gray-100">About Mike</a>
-                <a href="/services/index.html" class="py-2 border-b border-gray-100">Services</a>
-                <a href="/contact/index.html" class="py-2 border-b border-gray-100">Contact</a>
-
-                <div class="text-xs bg-green-100 text-green-700 px-3 py-1.5 rounded-full font-medium flex items-center gap-1 mt-3 w-fit">
-                    <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
-                    Online in Yiwu
-                </div>
             </div>
+            <a href="/about/" class="block py-3 border-b border-gray-100">About Mike</a>
+            <a href="/services/" class="block py-3 border-b border-gray-100">Services</a>
+            <a href="/blog/" class="block py-3 border-b border-gray-100">Insights</a>
+            <a href="/contact/" class="block py-3 border-b border-gray-100">Contact</a>
         </div>
     </div>
 </nav>
-
-
