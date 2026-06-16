@@ -1,4 +1,4 @@
-<!-- 全局公共导航：HTML + 全套导航专属样式，电脑/手机样式全部内置 -->
+<!-- 全局公共导航：电脑/手机全套样式内置，电脑三级菜单独立右弹 -->
 <style>
 /* 全局导航基础变量 */
 :root {
@@ -26,18 +26,20 @@ html {
     width: 100%;
 }
 
-/* ========== 电脑端桌面下拉核心CSS（纯CSS hover展开，无需JS） ========== */
+/* ========== 电脑端下拉核心样式（修复三级混层核心代码） ========== */
+/* 一级下拉父容器基准定位 */
 .group {
-    position: relative;
+    position: relative !important;
 }
+/* 二级下拉面板 */
 .dropdown-menu {
     position: absolute;
     top: 100%;
     left: 0;
-    z-index: 9999;
+    z-index: 99999 !important;
     width: 12rem;
     background: #fff;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
     border-radius: 0.75rem;
     padding: 0.5rem 0;
     opacity: 0;
@@ -46,57 +48,55 @@ html {
     transition: all 0.2s ease;
     pointer-events: none;
 }
-.group:hover .dropdown-menu {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-    pointer-events: auto;
-}
-/* 桌面三级横向弹出 */
-.group/lock {
-    position: relative;
-}
-.group/lock .dropdown-submenu {
-    position: absolute;
-    left: 100%;
-    top: 0;
-    width: 12rem;
-    background: #fff;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
-    border-radius: 0.75rem;
-    padding: 0.5rem 0;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(10px);
-    transition: all 0.2s ease;
-    pointer-events: none;
-}
-.group/lock:hover .dropdown-submenu {
+.group:hover > .dropdown-menu {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
     pointer-events: auto;
 }
 
-/* 箭头旋转通用样式（电脑+手机共用） */
+/* 三级子菜单专属：强制向右弹出，独立面板，不挤在二级内 */
+.group-sub {
+    position: relative !important;
+}
+.dropdown-submenu {
+    position: absolute;
+    left: 100% !important;
+    top: 0;
+    margin-left: 4px;
+    width: 12rem;
+    background: #fff;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+    border-radius: 0.75rem;
+    padding: 0.5rem 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.2s ease;
+    pointer-events: none;
+}
+.group-sub:hover > .dropdown-submenu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+/* 箭头旋转通用 */
 .transition-transform {
     transition: transform 0.3s ease;
+}
+.group:hover > a svg.transition-transform {
+    transform: rotate(180deg);
+}
+.group-sub:hover > a svg.transition-transform {
+    transform: rotate(180deg);
 }
 .rotate-180 {
     transform: rotate(180deg);
 }
-.group svg.transition-transform {
-    transition: transform 0.3s ease;
-}
-.group:hover svg.transition-transform {
-    transform: rotate(180deg);
-}
-/* 三级子菜单箭头单独hover翻转 */
-.group/lock:hover svg.transition-transform {
-    transform: rotate(180deg);
-}
 
-/* ========== 移动端菜单样式（全部内置，页面无需补充） ========== */
+/* ========== 移动端菜单样式（完全保留原样，不做任何修改） ========== */
 #mobileMenu {
     display: none;
 }
@@ -115,7 +115,6 @@ html {
 .mobileLockMenu:not(.hidden) {
     display: block;
 }
-/* 移动端三级向内缩进，禁止横向溢出翻转文字 */
 .mobileLockMenu {
     padding-left: 2rem;
     margin-top: 0.25rem;
@@ -132,7 +131,7 @@ html {
 </script>
 
 <!-- 导航HTML结构 -->
-<nav class="bg-white border-b border-gray-200 sticky top-0 z-[9999] shadow-sm">
+<nav class="bg-white border-b border-gray-200 sticky top-0 z-[99999] shadow-sm">
     <div class="max-w-7xl mx-auto px-6">
         <div class="flex justify-between items-center h-16">
             <!-- Logo -->
@@ -144,29 +143,32 @@ html {
                 </div>
             </div>
 
-            <!-- 桌面导航菜单【已修复三级菜单混层，新增relative、箭头类】 -->
+            <!-- 桌面导航菜单【彻底重构三级菜单层级，无混层】 -->
             <div class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-700">
                 <a href="/" class="nav-link">Home</a>
-                <!-- Products 一级下拉 外层补relative -->
-                <div class="group relative">
+                <!-- Products 一级下拉 -->
+                <div class="group">
                     <a href="#products" class="nav-link flex items-center gap-1">
                         Products
                         <svg class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                         </svg>
                     </a>
+                    <!-- 二级下拉面板 -->
                     <div class="dropdown-menu">
                         <a href="/products/solar/index.html" class="block px-6 py-2 hover:bg-gray-100">Solar Products</a>
                         <a href="/products/solar/portable-panels.html" class="block px-6 py-2 hover:bg-gray-100">Portable Solar Panels</a>
                         <a href="/products/wind/index.html" class="block px-6 py-2 hover:bg-gray-100">Wind Power Products</a>
-                        <!-- 桌面三级Locks子菜单：svg补transition-transform类 -->
-                        <div class="group/lock relative">
+                        
+                        <!-- 三级锁菜单：独立group-sub容器，向右弹出新面板 -->
+                        <div class="group-sub">
                             <a href="/products/locks/index.html" class="block px-6 py-2 hover:bg-gray-100 flex justify-between items-center">
                                 Locks-security
                                 <svg class="w-3 h-3 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                                 </svg>
                             </a>
+                            <!-- 三级独立白色面板，完全脱离二级容器向右弹出 -->
                             <div class="dropdown-submenu">
                                 <a href="/products/locks/smart-locks.html" class="block px-6 py-2 hover:bg-gray-100">Smart Locks</a>
                                 <a href="/products/locks/door-locks.html" class="block px-6 py-2 hover:bg-gray-100">Door Locks</a>
@@ -201,7 +203,7 @@ html {
             </div>
         </div>
 
-        <!-- 移动端全部菜单 完全原样不动 -->
+        <!-- 移动端全部菜单 100%原样保留，无任何修改 -->
         <div id="mobileMenu" class="hidden pb-4 border-t border-gray-100 mt-2 text-sm text-gray-700">
             <a href="/" class="block py-3 border-b border-gray-100">Home</a>
             <!-- 移动端Products二级 -->
@@ -216,7 +218,7 @@ html {
                     <a href="/products/solar/index.html" class="block py-1.5">Solar Products</a>
                     <a href="/products/solar/portable-panels.html" class="block py-1.5">Portable Solar Panels</a>
                     <a href="/products/wind/index.html" class="block py-1.5">Wind Power Products</a>
-                    <!-- 移动端三级Locks（无absolute，仅pl缩进，不会溢出翻转文字） -->
+                    <!-- 移动端三级Locks -->
                     <div>
                         <button class="mobileLockBtn w-full text-left py-1.5 flex justify-between items-center">
                             Locks-security
