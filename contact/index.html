@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<!-- 优化 viewport 移动端适配 -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<!-- 优化 viewport 移动端适配，移除禁止缩放 -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact Mike Zhao | Yiwu Sourcing Agent | China Product Sourcing Services</title>
 
 <meta name="description" content="Contact Mike Zhao, your trusted Yiwu sourcing agent in China. Get supplier sourcing, product quotations, quality inspection, Amazon FBA preparation and worldwide shipping support.">
@@ -28,8 +28,8 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<!-- 只引入一次字体，合并权重 -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<!-- 删除未使用Playfair Display字体，减少请求 -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <!-- 样式统一整合 -->
@@ -42,16 +42,6 @@ body{
 }
 html{
     scroll-behavior:smooth;
-}
-.hero-bg {
-    background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.55)), url('/images/hero1.jpg') center/cover no-repeat;
-}
-.product-card {
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-.product-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
 }
 .nav-link {
     position: relative;
@@ -82,6 +72,17 @@ html{
     transform: translateY(10px);
     transition: all 0.2s ease;
 }
+/* 导航箭头旋转必备样式 */
+.rotate-180 {
+    transform: rotate(180deg);
+}
+.transition-transform {
+    transition: transform 0.3s ease;
+}
+/* WhatsApp悬浮按钮hover动效 */
+.whatsapp-float:hover {
+    transform: scale(1.1);
+}
 </style>
 
 <!-- Google Analytics -->
@@ -94,232 +95,128 @@ html{
 </script>
 </head>
 
-    <!-- Navbar -->
+<body>
+    <!-- Navbar 公共导航容器 -->
     <div id="global-nav"></div>
-<script>
-fetch('/nav.html')
-  .then(res => res.text())
-  .then(html => document.getElementById('global-nav').innerHTML = html)
-</script>
+    <script>
+        // 等待DOM加载完成再拉取导航，避免获取null
+        document.addEventListener('DOMContentLoaded', () => {
+            // 子目录contact页面使用../向上一级读取nav.html，防止404
+            fetch('../nav.html')
+              .then(res => res.text())
+              .then(html => document.getElementById('global-nav').innerHTML = html)
+              .catch(err => console.error('导航加载失败：', err))
+        })
+    </script>
  
-
-
-
-    
 <section class="bg-gray-900 text-white py-24">
-
 <div class="max-w-6xl mx-auto px-6 text-center">
-
 <span class="bg-red-600 px-5 py-2 rounded-full text-sm font-semibold">
 CONTACT MIKE
 </span>
-
 <h1 class="text-5xl md:text-6xl font-bold mt-6 mb-6">
 Ready To Source From China?
 </h1>
-
 <p class="text-xl text-gray-300 max-w-3xl mx-auto">
 Send me your product requirements and I will reply
 with sourcing options, quotations and shipping solutions.
 Usually within a few hours.
 </p>
-
 </div>
-
 </section>
 
 <section class="py-20 bg-white">
-
 <div class="max-w-6xl mx-auto px-6">
-
 <div class="grid md:grid-cols-4 gap-6">
-
-<div class="bg-gray-50 p-8 rounded-3xl text-center">
-
+<div class="bg-gray-50 p-8 rounded-3xl text-center hover:shadow-lg transition-all">
 <div class="text-4xl mb-4">📧</div>
-
-<h3 class="font-bold text-xl mb-3">
-Email
-</h3>
-
-<a href="mailto:okmikezhao@gmail.com"
-class="text-red-600">
+<h3 class="font-bold text-xl mb-3">Email</h3>
+<a href="mailto:okmikezhao@gmail.com" class="text-red-600" rel="noopener noreferrer">
 okmikezhao@gmail.com
 </a>
-
 </div>
-
-<div class="bg-gray-50 p-8 rounded-3xl text-center">
-
+<div class="bg-gray-50 p-8 rounded-3xl text-center hover:shadow-lg transition-all">
 <div class="text-4xl mb-4">📱</div>
-
-<h3 class="font-bold text-xl mb-3">
-WhatsApp
-</h3>
-
-<a href="https://wa.me/8618006891977"
-class="text-red-600">
+<h3 class="font-bold text-xl mb-3">WhatsApp</h3>
+<a href="https://wa.me/8618006891977" target="_blank" rel="noopener noreferrer" class="text-red-600">
 +86 180 0689 1977
 </a>
-
 </div>
-
-<div class="bg-gray-50 p-8 rounded-3xl text-center">
-
+<div class="bg-gray-50 p-8 rounded-3xl text-center hover:shadow-lg transition-all">
 <div class="text-4xl mb-4">💬</div>
-
-<h3 class="font-bold text-xl mb-3">
-WeChat
-</h3>
-
-<div>
-18006891977
+<h3 class="font-bold text-xl mb-3">WeChat</h3>
+<div>18006891977</div>
 </div>
-
-</div>
-
-<div class="bg-gray-50 p-8 rounded-3xl text-center">
-
+<div class="bg-gray-50 p-8 rounded-3xl text-center hover:shadow-lg transition-all">
 <div class="text-4xl mb-4">☎️</div>
-
-<h3 class="font-bold text-xl mb-3">
-Phone
-</h3>
-
-<div>
-+86 180 0689 1977
+<h3 class="font-bold text-xl mb-3">Phone</h3>
+<a href="tel:+8618006891977" class="text-red-600">+86 180 0689 1977</a>
 </div>
-
 </div>
-
 </div>
-
-</div>
-
 </section>
 
-
 <section class="py-20">
-
 <div class="max-w-5xl mx-auto px-6">
-
 <h2 class="text-4xl font-bold text-center mb-12">
 How To Get A Faster Quotation
 </h2>
-
 <div class="grid md:grid-cols-2 gap-8">
-
-<div class="bg-gray-50 p-8 rounded-3xl">
-
-<h3 class="font-bold text-xl mb-4">
-Send Product Photos
-</h3>
-
-<p>
-Pictures help identify the exact product quickly.
-</p>
-
+<div class="bg-gray-50 p-8 rounded-3xl hover:shadow-md transition-all">
+<h3 class="font-bold text-xl mb-4">Send Product Photos</h3>
+<p>Pictures help identify the exact product quickly.</p>
 </div>
-
-<div class="bg-gray-50 p-8 rounded-3xl">
-
-<h3 class="font-bold text-xl mb-4">
-Target Quantity
-</h3>
-
-<p>
-MOQ and pricing depend on order quantity.
-</p>
-
+<div class="bg-gray-50 p-8 rounded-3xl hover:shadow-md transition-all">
+<h3 class="font-bold text-xl mb-4">Target Quantity</h3>
+<p>MOQ and pricing depend on order quantity.</p>
 </div>
-
-<div class="bg-gray-50 p-8 rounded-3xl">
-
-<h3 class="font-bold text-xl mb-4">
-Target Market
-</h3>
-
-<p>
-Tell us your target market, whether you sell in North America,
+<div class="bg-gray-50 p-8 rounded-3xl hover:shadow-md transition-all">
+<h3 class="font-bold text-xl mb-4">Target Market</h3>
+<p>Tell us your target market, whether you sell in North America,
 Europe, Australia, the Middle East, Africa, Southeast Asia,
 Japan, Korea or South America.
-so we can recommend suitable suppliers, packaging and shipping solutions.
-</p>
-
+so we can recommend suitable suppliers, packaging and shipping solutions.</p>
 </div>
-
-<div class="bg-gray-50 p-8 rounded-3xl">
-
-<h3 class="font-bold text-xl mb-4">
-Customization Needs
-</h3>
-
-<p>
-Logo printing, packaging or OEM requirements.
-</p>
-
+<div class="bg-gray-50 p-8 rounded-3xl hover:shadow-md transition-all">
+<h3 class="font-bold text-xl mb-4">Customization Needs</h3>
+<p>Logo printing, packaging or OEM requirements.</p>
 </div>
-
 </div>
-
 </div>
-
 </section>
 
-<section class="bg-gray-900 text-white py-20" style="background: linear-gradient(rgba(17, 24, 39, 0.45), rgba(17, 24, 39, 0.45)), url('/images/map1.jpg') center/cover no-repeat;">
-
+<section class="bg-gray-900 text-white py-20 bg-cover bg-center" style="background-image: linear-gradient(rgba(17, 24, 39, 0.45), rgba(17, 24, 39, 0.45)), url('/images/map1.jpg');">
 <div class="max-w-5xl mx-auto px-6 text-center">
-
-<!-- 标题加了文字阴影，更醒目 -->
-<h2 class="text-4xl font-bold" style="margin-bottom: 8rem; text-shadow: 0 2px 8px rgba(0,0,0,0.5);">
+<h2 class="text-4xl font-bold mb-12" style="text-shadow: 0 2px 8px rgba(0,0,0,0.5);">
 Office Address
 </h2>
-
-<!-- 地址文本加了半透明背景+圆角+内边距，阅读更舒服 -->
-<p class="text-xl leading-relaxed" style="background: rgba(0,0,0,0.35); padding: 1.5rem 2rem; border-radius: 0.75rem; display: inline-block;">
-
+<p class="text-xl leading-relaxed inline-block bg-black/35 px-8 py-6 rounded-xl">
 Yiwu Gongbei Trading Firm<br>
-
 Unit 2, Building 3,<br>
-
 Qianmaodian New Village,<br>
-
 Houzhai Street,<br>
-
 Yiwu City,<br>
-
 Zhejiang Province,<br>
-
 China
-
 </p>
-
 </div>
-
 </section>
 
 <section class="bg-red-600 text-white py-20">
-
 <div class="max-w-5xl mx-auto text-center px-6">
-
 <h2 class="text-5xl font-bold mb-6">
 Let's Find The Right Supplier For You
 </h2>
-
 <p class="text-xl mb-10">
 Send product photos, specifications or target prices.
 I will reply with supplier options and quotations within a few hours.
 </p>
-
-<a
-href="https://wa.me/8618006891977"
-class="bg-white text-red-600 px-10 py-5 rounded-2xl font-bold">
+<a href="https://wa.me/8618006891977" target="_blank" rel="noopener noreferrer" class="bg-white text-red-600 px-10 py-5 rounded-2xl font-bold inline-block hover:bg-gray-100 transition-all">
 Chat On WhatsApp
 </a>
-
 </div>
-
 </section>
+
  <!-- Footer -->
 <footer class="bg-[#0f172a] text-gray-300 py-12 border-t border-gray-700">
   <div class="max-w-7xl mx-auto px-6">
@@ -341,24 +238,24 @@ Chat On WhatsApp
         <div class="mt-6 space-y-2 text-sm">
           <p class="flex items-center gap-2">
             <i class="fa-solid fa-envelope text-red-500"></i>
-            <a href="mailto:mike@mikeok.com" class="hover:text-white">mike@mikeok.com</a>
+            <a href="mailto:mike@mikeok.com" class="hover:text-white transition-colors">mike@mikeok.com</a>
           </p>
           <p class="flex items-center gap-2">
             <i class="fa-solid fa-phone text-red-500"></i>
-            <a href="tel:+861234567890" class="hover:text-white">+86 180 0689 1977</a>
+            <a href="tel:+8618006891977" class="hover:text-white transition-colors">+86 180 0689 1977</a>
           </p>
         </div>
       </div>
 
-      <!-- Quick Links -->
+      <!-- Quick Links 替换空#为真实路径 -->
       <div class="lg:col-span-2">
         <h4 class="text-white font-semibold mb-4">Quick Links</h4>
         <ul class="space-y-3 text-sm">
-          <li><a href="#" class="hover:text-white transition">Product Catalog</a></li>
-          <li><a href="#" class="hover:text-white transition">Shipping Guide</a></li>
-          <li><a href="#" class="hover:text-white transition">FAQ</a></li>
-          <li><a href="#" class="hover:text-white transition">About Us</a></li>
-          <li><a href="#" class="hover:text-white transition">Contact Us</a></li>
+          <li><a href="/products/" class="hover:text-white transition-colors">Product Catalog</a></li>
+          <li><a href="/services/shipping.html" class="hover:text-white transition-colors">Shipping Guide</a></li>
+          <li><a href="/faq.html" class="hover:text-white transition-colors">FAQ</a></li>
+          <li><a href="/about/" class="hover:text-white transition-colors">About Us</a></li>
+          <li><a href="/contact/" class="hover:text-white transition-colors">Contact Us</a></li>
         </ul>
       </div>
 
@@ -366,10 +263,10 @@ Chat On WhatsApp
       <div class="lg:col-span-2">
         <h4 class="text-white font-semibold mb-4">Company</h4>
         <ul class="space-y-3 text-sm">
-          <li><a href="#" class="hover:text-white transition">Our Story</a></li>
-          <li><a href="#" class="hover:text-white transition">Why Choose Us</a></li>
-          <li><a href="#" class="hover:text-white transition">Our Factory</a></li>
-          <li><a href="#" class="hover:text-white transition">Blog</a></li>
+          <li><a href="/about/" class="hover:text-white transition-colors">Our Story</a></li>
+          <li><a href="/services/" class="hover:text-white transition-colors">Why Choose Us</a></li>
+          <li><a href="/products/" class="hover:text-white transition-colors">Our Factory</a></li>
+          <li><a href="/blog/" class="hover:text-white transition-colors">Blog</a></li>
         </ul>
       </div>
 
@@ -377,16 +274,16 @@ Chat On WhatsApp
       <div class="lg:col-span-3">
         <h4 class="text-white font-semibold mb-4">Legal</h4>
         <ul class="space-y-3 text-sm mb-8">
-          <li><a href="#" class="hover:text-white transition">Privacy Policy</a></li>
-          <li><a href="#" class="hover:text-white transition">Terms of Service</a></li>
-          <li><a href="#" class="hover:text-white transition">Cookies Policy</a></li>
+          <li><a href="/privacy.html" class="hover:text-white transition-colors">Privacy Policy</a></li>
+          <li><a href="/terms.html" class="hover:text-white transition-colors">Terms of Service</a></li>
+          <li><a href="/cookies.html" class="hover:text-white transition-colors">Cookies Policy</a></li>
         </ul>
 
         <h4 class="text-white font-semibold mb-4">Follow Us</h4>
         <div class="flex gap-4">
-          <a href="#" class="hover:text-white text-2xl transition"><i class="fa-brands fa-whatsapp"></i></a>
-          <a href="#" class="hover:text-white text-2xl transition"><i class="fa-brands fa-weixin"></i></a>
-          <a href="#" class="hover:text-white text-2xl transition"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="https://wa.me/8618006891977" target="_blank" rel="noopener noreferrer" class="hover:text-white text-2xl transition-colors"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="#" target="_blank" rel="noopener noreferrer" class="hover:text-white text-2xl transition-colors"><i class="fa-brands fa-weixin"></i></a>
+          <a href="#" target="_blank" rel="noopener noreferrer" class="hover:text-white text-2xl transition-colors"><i class="fa-brands fa-linkedin"></i></a>
         </div>
       </div>
     </div>
@@ -397,32 +294,17 @@ Chat On WhatsApp
     </div>
   </div>
 </footer>
+
 <!-- WhatsApp 悬浮按钮 - 官方图标版  -->
 <a href="https://wa.me/8618006891977" 
    target="_blank" 
    rel="noopener noreferrer"
-   style="position: fixed; 
-          bottom: 20px; 
-          right: 20px; 
-          background: #25D366; 
-          color: white; 
-          width: 65px; 
-          height: 65px; 
-          border-radius: 50%; 
-          display: flex; 
-          align-items: center; 
-          justify-content: center; 
-          box-shadow: 0 5px 15px rgba(0,0,0,0.3); 
-          z-index: 9999; 
-          text-decoration: none;
-          transition: all 0.3s ease;">
-   
+   class="whatsapp-float fixed bottom-5 right-5 w-[65px] h-[65px] rounded-full bg-[#25D366] text-white flex items-center justify-center shadow-xl z-[9999] transition-all duration-300 no-underline">
    <!-- WhatsApp 官方 SVG 图标 -->
    <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" fill="currentColor" viewBox="0 0 24 24">
      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
    </svg>
 </a> 
-     
-  
+
 </body>
 </html>
