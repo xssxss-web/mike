@@ -91,6 +91,10 @@ html {
 .group:hover svg.transition-transform {
     transform: rotate(180deg);
 }
+/* 三级子菜单箭头单独hover翻转 */
+.group/lock:hover svg.transition-transform {
+    transform: rotate(180deg);
+}
 
 /* ========== 移动端菜单样式（全部内置，页面无需补充） ========== */
 #mobileMenu {
@@ -140,11 +144,11 @@ html {
                 </div>
             </div>
 
-            <!-- 桌面导航菜单 -->
+            <!-- 桌面导航菜单【已修复三级菜单混层，新增relative、箭头类】 -->
             <div class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-700">
                 <a href="/" class="nav-link">Home</a>
-                <!-- Products 一级下拉 -->
-                <div class="group">
+                <!-- Products 一级下拉 外层补relative -->
+                <div class="group relative">
                     <a href="#products" class="nav-link flex items-center gap-1">
                         Products
                         <svg class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -155,7 +159,7 @@ html {
                         <a href="/products/solar/index.html" class="block px-6 py-2 hover:bg-gray-100">Solar Products</a>
                         <a href="/products/solar/portable-panels.html" class="block px-6 py-2 hover:bg-gray-100">Portable Solar Panels</a>
                         <a href="/products/wind/index.html" class="block px-6 py-2 hover:bg-gray-100">Wind Power Products</a>
-                        <!-- 桌面三级Locks子菜单 -->
+                        <!-- 桌面三级Locks子菜单：svg补transition-transform类 -->
                         <div class="group/lock relative">
                             <a href="/products/locks/index.html" class="block px-6 py-2 hover:bg-gray-100 flex justify-between items-center">
                                 Locks-security
@@ -197,7 +201,7 @@ html {
             </div>
         </div>
 
-        <!-- 移动端全部菜单（垂直向内缩进，无横向absolute，彻底解决文字颠倒） -->
+        <!-- 移动端全部菜单 完全原样不动 -->
         <div id="mobileMenu" class="hidden pb-4 border-t border-gray-100 mt-2 text-sm text-gray-700">
             <a href="/" class="block py-3 border-b border-gray-100">Home</a>
             <!-- 移动端Products二级 -->
