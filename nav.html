@@ -183,45 +183,4 @@
     </div>
 </nav>
 
-<!-- 移动端菜单交互 JS（导航专属逻辑，适配fetch异步加载） -->
-<script>
-// 把原来DOMContentLoaded监听删掉，改用延迟执行
-function initMobileNavMenu() {
-    // 1. 汉堡按钮 展开/收起移动端总菜单
-    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-    const hamburgerIcon = mobileMenuBtn?.querySelector('svg');
 
-    if(mobileMenuBtn && mobileMenu) {
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-            hamburgerIcon.classList.toggle('rotate-180');
-        });
-    }
-
-    // 2. 移动端 Products 二级菜单
-    const mobileProdBtn = document.getElementById('mobileProdBtn');
-    const mobileProdMenu = document.getElementById('mobileProdMenu');
-    const prodArrow = mobileProdBtn?.querySelector('svg');
-    if(mobileProdBtn && mobileProdMenu) {
-        mobileProdBtn.addEventListener('click', () => {
-            mobileProdMenu.classList.toggle('hidden');
-            prodArrow.classList.toggle('rotate-180');
-        });
-    }
-
-    // 3. 移动端 Locks 三级菜单
-    const mobileLockBtn = document.querySelector('.mobileLockBtn');
-    const mobileLockMenu = document.querySelector('.mobileLockMenu');
-    const mobileLockIcon = document.querySelector('.mobileLockIcon');
-    if(mobileLockBtn && mobileLockMenu && mobileLockIcon) {
-        mobileLockBtn.addEventListener('click', () => {
-            mobileLockMenu.classList.toggle('hidden');
-            mobileLockIcon.classList.toggle('rotate-180');
-        });
-    }
-}
-
-// 延迟80毫秒，等待主页面innerHTML渲染完导航DOM再执行绑定
-setTimeout(initMobileNavMenu, 80);
-</script>
