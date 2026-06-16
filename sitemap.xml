@@ -61,6 +61,18 @@
   <lastmod>2026-06-15</lastmod>
   <priority>0.8</priority>
 </url>
+ <!-- 五金产品 -->
+      <url>
+  <loc>https://www.mikeok.com/products/hardware-industrial/door-hardware/</loc>
+  <lastmod>2026-06-15</lastmod>
+  <priority>0.8</priority>
+</url>
+
+        <url>
+  <loc>https://www.mikeok.com/products/hardware-industrial/fasteners/</loc>
+  <lastmod>2026-06-15</lastmod>
+  <priority>0.8</priority>
+</url>
     <!-- 联系页contact -->
      <url>
   <loc>https://mikeok.com/contact/</loc>
