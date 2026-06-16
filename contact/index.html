@@ -97,18 +97,52 @@ html{
 
 <body>
     <!-- Navbar 公共导航容器 -->
-    <div id="global-nav"></div>
-    <script>
-        // 等待DOM加载完成再拉取导航，避免获取null
-        document.addEventListener('DOMContentLoaded', () => {
-            // 子目录contact页面使用../向上一级读取nav.html，防止404
-            fetch('../nav.html')
-              .then(res => res.text())
-              .then(html => document.getElementById('global-nav').innerHTML = html)
-              .catch(err => console.error('导航加载失败：', err))
-        })
-    </script>
- 
+   <div id="global-nav"></div>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const navContainer = document.getElementById('global-nav');
+  // 加载公共导航
+  fetch('../nav.html')
+    .then(res => res.text())
+    .then(html => {
+      navContainer.innerHTML = html;
+    })
+    .catch(err => console.error('导航加载失败', err));
+
+  // 事件委托：监听导航容器，动态生成的按钮自动生效
+  navContainer.addEventListener('click', function(e) {
+    // 1. 汉堡总菜单
+    const hamburger = e.target.closest('#mobileMenuBtn');
+    if (hamburger) {
+      const menuWrap = document.getElementById('mobileMenu');
+      const arrow = hamburger.querySelector('svg');
+      menuWrap.classList.toggle('hidden');
+      arrow.classList.toggle('rotate-180');
+      return;
+    }
+    // 2. Products 二级菜单
+    const prodToggle = e.target.closest('#mobileProdBtn');
+    if (prodToggle) {
+      const prodBox = document.getElementById('mobileProdMenu');
+      const arrow = prodToggle.querySelector('svg');
+      prodBox.classList.toggle('hidden');
+      arrow.classList.toggle('rotate-180');
+      return;
+    }
+    // 3. Locks 三级菜单
+    const lockToggle = e.target.closest('.mobileLockBtn');
+    if (lockToggle) {
+      const lockBox = lockToggle.nextElementSibling;
+      const arrow = lockToggle.querySelector('.mobileLockIcon');
+      lockBox.classList.toggle('hidden');
+      arrow.classList.toggle('rotate-180');
+      return;
+    }
+  })
+})
+</script>
+
+    <!-- Navbar hero区域 -->
 <section class="bg-gray-900 text-white py-24">
 <div class="max-w-6xl mx-auto px-6 text-center">
 <span class="bg-red-600 px-5 py-2 rounded-full text-sm font-semibold">
