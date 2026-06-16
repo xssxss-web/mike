@@ -1,0 +1,223 @@
+<!-- 全局公共导航组件 nav.html -->
+<style>
+    :root {
+        --primary: #e63939;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+    
+    .nav-link {
+        position: relative;
+        padding: 1rem 0;
+    }
+    
+    .nav-link:after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: -2px;
+        left: 0;
+        background-color: var(--primary);
+        transition: width 0.3s ease;
+    }
+    
+    .nav-link:hover:after {
+        width: 100%;
+    }
+
+    /* 桌面下拉菜单动画，消除闪烁 */
+    .dropdown-menu {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(10px);
+        transition: all 0.2s ease;
+    }
+    .group:hover .dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+    /* 箭头旋转样式 */
+    .rotate-180 {
+        transform: rotate(180deg);
+    }
+    .transition-transform {
+        transition: transform 0.3s ease;
+    }
+</style>
+
+<!-- Google Analytics 统计（全站公用，保留） -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0H2PGF3J9Q"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-0H2PGF3J9Q');
+</script>
+
+<!-- 完整导航 HTML 结构 -->
+<nav class="bg-white border-b sticky top-0 z-50 shadow-sm">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="flex justify-between items-center h-16">
+            <!-- Logo -->
+            <div class="flex items-center space-x-3">
+                <div class="w-9 h-9 bg-[var(--primary)] rounded-xl flex items-center justify-center text-white font-bold text-2xl">Y</div>
+                <div>
+                    <span class="text-2xl font-bold tracking-tight">YiwuDirect</span>
+                    <span class="text-xs text-gray-500 block -mt-1">by Mike</span>
+                </div>
+            </div>
+
+            <!-- 桌面端菜单 -->
+            <div class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                <a href="/" class="nav-link">Home</a>
+
+                <!-- Products 下拉 -->
+                <div class="relative group">
+                    <a href="#products" class="nav-link flex items-center px-4 py-4">
+                        Products
+                        <svg class="w-4 h-4 ml-1 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </a>
+                    <div class="dropdown-menu absolute left-0 mt-1 w-48 bg-white shadow-xl rounded-xl z-50 pt-1">
+                        <a href="products/solar/index.html" class="block px-4 py-3 hover:bg-gray-100 rounded-t-xl">Solar Products</a>
+                        <a href="/products/solar/portable-solar-panels/" class="block px-4 py-3 hover:bg-gray-100">Portable Solar Panels</a>
+                        <a href="/products/wind/" class="block px-4 py-3 hover:bg-gray-100">Wind Power Products</a>
+                        
+                        <!-- Locks-security 三级菜单 -->
+                        <div class="relative group/lock">
+                            <a href="/products/locks/" class="block px-4 py-3 hover:bg-gray-100 rounded-b-xl flex justify-between items-center">
+                                Locks-security
+                                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                </svg>
+                            </a>
+                            <!-- 三级子菜单 -->
+                            <div class="absolute left-full top-0 ml-1 w-48 bg-white shadow-xl rounded-xl z-50 hidden group-hover/lock:block">
+                                <a href="/products/locks/smart-locks.html" class="block px-4 py-3 hover:bg-gray-100 rounded-t-xl">Smart Locks</a>
+                                <a href="/products/locks/door-locks.html" class="block px-4 py-3 hover:bg-gray-100">Door Locks</a>
+                                <a href="/products/locks/padlocks.html" class="block px-4 py-3 hover:bg-gray-100">Padlocks</a>
+                                <a href="/products/locks/bike-locks.html" class="block px-4 py-3 hover:bg-gray-100 rounded-b-xl">Bike Locks</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="#about" class="nav-link">About Mike</a>
+                <a href="/services/index.html" class="nav-link">Services</a>
+                <a href="/blog/index.html" class="nav-link">Insights</a>
+                <a href="/contact/index.html" class="nav-link">Contact</a>
+            </div>
+
+            <!-- 右侧按钮 + 移动端汉堡图标 -->
+            <div class="flex items-center gap-4">
+                <div class="hidden md:flex text-xs bg-green-100 text-green-700 px-3 py-1.5 rounded-full font-medium items-center gap-1">
+                    <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+                    Online in Yiwu
+                </div>
+                <button onclick="window.location.href='/contact/index.html'" 
+                        class="bg-[var(--primary)] hover:bg-red-700 text-white px-4 md:px-6 py-2.5 rounded-xl text-sm font-semibold transition flex items-center gap-2">
+                    <i class="fas fa-paper-plane"></i>
+                    <span class="hidden md:inline">Get Quote</span>
+                </button>
+
+                <!-- 移动端汉堡按钮 -->
+                <button id="mobileMenuBtn" class="md:hidden text-gray-800 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- 移动端导航菜单（默认隐藏） -->
+        <div id="mobileMenu" class="md:hidden hidden pb-4">
+            <div class="flex flex-col space-y-2 text-sm font-medium">
+                <a href="/" class="py-2 border-b border-gray-100">Home</a>
+
+                <!-- 移动端 Products 二级菜单 -->
+                <div class="relative">
+                    <button id="mobileProdBtn" class="w-full text-left py-2 border-b border-gray-100 flex justify-between items-center">
+                        Products
+                        <svg class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div id="mobileProdMenu" class="hidden pl-4 mt-2 space-y-2 text-gray-600">
+                        <a href="products/solar/index.html" class="block py-1">Solar Products</a>
+                        <a href="/products/solar/portable-solar-panels/" class="block py-1">Portable Solar Panels</a>
+                        <a href="/products/wind/" class="block py-1">Wind Power Products</a>
+                        
+                        <!-- 移动端三级菜单 -->
+                        <div class="relative">
+                            <button class="mobileLockBtn w-full text-left py-1 flex justify-between items-center">
+                                Locks-security
+                                <svg class="w-3 h-3 mobileLockIcon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </button>
+                            <div class="mobileLockMenu hidden pl-4 mt-1 space-y-1 text-gray-500">
+                                <a href="/products/locks/smart-locks.html" class="block py-1">Smart Locks</a>
+                                <a href="/products/locks/door-locks.html" class="block py-1">Door Locks</a>
+                                <a href="/products/locks/padlocks.html" class="block py-1">Padlocks</a>
+                                <a href="/products/locks/bike-locks.html" class="block py-1">Bike Locks</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="#about" class="py-2 border-b border-gray-100">About Mike</a>
+                <a href="/services/index.html" class="py-2 border-b border-gray-100">Services</a>
+                <a href="/contact/index.html" class="py-2 border-b border-gray-100">Contact</a>
+
+                <div class="text-xs bg-green-100 text-green-700 px-3 py-1.5 rounded-full font-medium flex items-center gap-1 mt-3 w-fit">
+                    <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+                    Online in Yiwu
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- 移动端菜单交互 JS（导航专属逻辑） -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // 1. 汉堡按钮 展开/收起移动端总菜单
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const hamburgerIcon = mobileMenuBtn.querySelector('svg');
+
+    if(mobileMenuBtn && mobileMenu) {
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            hamburgerIcon.classList.toggle('rotate-180');
+        });
+    }
+
+    // 2. 移动端 Products 二级菜单
+    const mobileProdBtn = document.getElementById('mobileProdBtn');
+    const mobileProdMenu = document.getElementById('mobileProdMenu');
+    const prodArrow = mobileProdBtn.querySelector('svg');
+    if(mobileProdBtn && mobileProdMenu) {
+        mobileProdBtn.addEventListener('click', () => {
+            mobileProdMenu.classList.toggle('hidden');
+            prodArrow.classList.toggle('rotate-180');
+        });
+    }
+
+    // 3. 移动端 Locks 三级菜单
+    const mobileLockBtn = document.querySelector('.mobileLockBtn');
+    const mobileLockMenu = document.querySelector('.mobileLockMenu');
+    const mobileLockIcon = document.querySelector('.mobileLockIcon');
+    if(mobileLockBtn && mobileLockMenu && mobileLockIcon) {
+        mobileLockBtn.addEventListener('click', () => {
+            mobileLockMenu.classList.toggle('hidden');
+            mobileLockIcon.classList.toggle('rotate-180');
+        });
+    }
+});
+</script>
