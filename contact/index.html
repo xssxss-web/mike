@@ -95,56 +95,13 @@ html{
 </head>
 
     <!-- Navbar -->
-   <nav class="bg-white border-b sticky top-0 z-50 shadow-sm">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="flex justify-between items-center h-16">
-                <!-- Logo -->
-              <div class="flex items-center space-x-3">
-                    <div class="w-9 h-9 bg-[var(--primary)] rounded-xl flex items-center justify-center text-white font-bold text-2xl">Y</div>
-                    <div>
-                        <span class="text-2xl font-bold tracking-tight">YiwuSourcing</span>
-                        <span class="text-xs text-gray-500 block -mt-1">by Mike</span>
-                    </div>
-                </div>
-
-                <!-- 桌面端菜单 -->
-               <div class="hidden md:flex items-center space-x-8 text-sm font-medium">
-                    <a href="https://mikeok.com/" class="nav-link">Home</a>
-
-                    <!-- Products 下拉菜单 -->
-                  <div class="relative group">
-                        <a href="#products" class="nav-link flex items-center px-4 py-4">
-                            Products
-                            <svg class="w-4 h-4 ml-1 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                            </svg>
-                        </a>
-
-                     <div class="dropdown-menu absolute left-0 mt-1 w-48 bg-white shadow-xl rounded-xl z-50 pt-1">
-                            <a href="products/solar/index.html" class="block px-4 py-3 hover:bg-gray-100 rounded-t-xl">Solar Products</a>
-                            <a href="/products/solar/portable-solar-panels/" class="block px-4 py-3 hover:bg-gray-100">Portable Solar Panels</a>
-                            <a href="outdoor.html" class="block px-4 py-3 hover:bg-gray-100 rounded-b-xl">Outdoor products</a>
-                        </div>
-                    </div>
-
-                    <a href="#about" class="nav-link">About Mike</a>
-                    <a href="/services/index.html" class="nav-link">Services</a>
-                    <a href="#contact" class="nav-link">Contact</a>
-                </div>
-
-                <div class="flex items-center gap-4">
-                    <div class="text-xs bg-green-100 text-green-700 px-3 py-1.5 rounded-full font-medium flex items-center gap-1">
-                        <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
-                        Online in Yiwu
-                    </div>
-                    <button onclick="window.location.href='#contact'" class="bg-[var(--primary)] hover:bg-red-700 text-white px-6 py-2.5 rounded-xl text-sm font-semibold transition flex items-center gap-2">
-                        <i class="fas fa-paper-plane"></i>
-                        Get Quote
-                    </button>
-                </div>
-            </div>
-        </div>
-    </nav>
+    <div id="global-nav"></div>
+<script>
+fetch('/nav.html')
+  .then(res => res.text())
+  .then(html => document.getElementById('global-nav').innerHTML = html)
+</script>
+ 
 </body>
 </html> 
 
