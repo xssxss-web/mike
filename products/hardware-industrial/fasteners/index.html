@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 
+
   <!-- =========================
        META & SEO
   ========================= -->
@@ -12,17 +13,24 @@
         content="Industrial fasteners supplier from China. Source bolts, screws, nuts, washers, anchors, rivets and threaded rods from trusted manufacturing partners.">
   <meta name="keywords"
         content="bolts supplier, screws supplier, nuts supplier, washers supplier, industrial fasteners supplier, anchors supplier, rivets supplier">
-  <link rel="canonical" href="https://www.mikeok.com/products/hardware-industrial/fasteners/">
-
+ <link rel="canonical" href="https://www.mikeok.com/products/hardware-industrial/fasteners/">
+  <!-- 平滑滚动 -->
+  <!-- 引入依赖 -->
   <script src="https://cdn.tailwindcss.com"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-<!-- GA 统计 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-0H2PGF3J9Q"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <!-- GA统计完整代码 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0H2PGF3J9Q"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-0H2PGF3J9Q');
+  </script>
 
-  <!-- =========================
-       GLOBAL STYLES
-  ========================= -->
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
     /* =========================
        GLOBAL RESET
     ========================= */
@@ -42,6 +50,7 @@
     .container {
       width: 90%;
       max-width: 1200px;
+      min-width: 320px;
       margin: auto;
     }
 
@@ -455,10 +464,89 @@
     }
 
     /* =========================
-       RESPONSIVE (MOBILE)
+       RESPONSIVE MOBILE FIX 768px
     ========================= */
     @media (max-width: 768px) {
-      /* Mobile styles to be added */
+      section {
+        padding: 60px 0;
+      }
+      .hero {
+        padding: 60px 0;
+      }
+      .cta-section {
+        padding: 80px 0;
+      }
+
+      /* Hero 左右变上下 */
+      .hero-content {
+        flex-direction: column;
+        text-align: center;
+      }
+      .hero-text {
+        order: 1;
+      }
+      .hero-image {
+        order: 2;
+      }
+      .hero h1 {
+        font-size: 32px;
+      }
+      .hero p {
+        font-size: 16px;
+      }
+      .hero-buttons {
+        justify-content: center;
+      }
+      .btn-primary, .btn-secondary {
+        width: 100%;
+        text-align: center;
+        padding: 14px 20px;
+      }
+
+      /* 全局标题缩小 */
+      .section-title {
+        font-size: 28px;
+      }
+      .cta-box h2 {
+        font-size: 30px;
+      }
+      .cta-box p {
+        font-size: 16px;
+      }
+
+      /* 网格自动适配单列/双列 */
+      .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .solution-grid, .why-grid {
+        grid-template-columns: 1fr;
+      }
+      .gallery-grid {
+        grid-template-columns: repeat(2,1fr);
+      }
+      .related-grid {
+        grid-template-columns: repeat(2,1fr);
+      }
+
+      .cta-features {
+        gap:15px;
+      }
+    }
+
+    /* 超小手机 480px */
+    @media (max-width: 480px) {
+      .category-grid, .gallery-grid, .related-grid {
+        grid-template-columns: 1fr;
+      }
+      .category-card img, .solution-card img, .gallery-card img {
+        height: 180px;
+      }
+      .why-card {
+        padding:25px;
+      }
+      .related-card {
+        padding:25px;
+      }
     }
   </style>
 </head>
@@ -493,7 +581,7 @@
 
         <!-- Hero Image -->
         <div class="hero-image">
-          <img src="images/fasteners-hero.jpg" alt="Industrial Fasteners Supplier">
+          <img src="/images/fasteners-hero.jpg" alt="Industrial Fasteners Supplier" loading="lazy">
         </div>
 
       </div>
@@ -514,7 +602,7 @@
 
         <!-- Bolt Category -->
         <div class="category-card">
-          <img src="images/bolts.jpg" alt="Bolts">
+          <img src="/images/bolts.jpg" alt="Bolts" loading="lazy">
           <div class="category-content">
             <h3>Bolts</h3>
             <p>
@@ -527,7 +615,7 @@
 
         <!-- Screw Category -->
         <div class="category-card">
-          <img src="images/screws.jpg" alt="Screws">
+          <img src="/images/screws.jpg" alt="Screws" loading="lazy">
           <div class="category-content">
             <h3>Screws</h3>
             <p>
@@ -540,7 +628,7 @@
 
         <!-- Nut Category -->
         <div class="category-card">
-          <img src="images/nuts.jpg" alt="Nuts">
+          <img src="/images/nuts.jpg" alt="Nuts" loading="lazy">
           <div class="category-content">
             <h3>Nuts</h3>
             <p>
@@ -553,7 +641,7 @@
 
         <!-- Washer Category -->
         <div class="category-card">
-          <img src="images/washers.jpg" alt="Washers">
+          <img src="/images/washers.jpg" alt="Washers" loading="lazy">
           <div class="category-content">
             <h3>Washers</h3>
             <p>
@@ -565,7 +653,7 @@
 
         <!-- Anchor Category -->
         <div class="category-card">
-          <img src="images/anchors.jpg" alt="Anchors">
+          <img src="/images/anchors.jpg" alt="Anchors" loading="lazy">
           <div class="category-content">
             <h3>Anchors</h3>
             <p>
@@ -578,7 +666,7 @@
 
         <!-- Rivet Category -->
         <div class="category-card">
-          <img src="images/rivets.jpg" alt="Rivets">
+          <img src="/images/rivets.jpg" alt="Rivets" loading="lazy">
           <div class="category-content">
             <h3>Rivets</h3>
             <p>
@@ -590,7 +678,7 @@
 
         <!-- Threaded Rod Category -->
         <div class="category-card">
-          <img src="images/threaded-rods.jpg" alt="Threaded Rods">
+          <img src="/images/threaded-rods.jpg" alt="Threaded Rods" loading="lazy">
           <div class="category-content">
             <h3>Threaded Rods</h3>
             <p>
@@ -602,7 +690,7 @@
 
         <!-- Construction Fasteners Category -->
         <div class="category-card">
-          <img src="images/construction-fasteners.jpg" alt="Construction Fasteners">
+          <img src="/images/construction-fasteners.jpg" alt="Construction Fasteners" loading="lazy">
           <div class="category-content">
             <h3>Construction Fasteners</h3>
             <p>
@@ -630,7 +718,7 @@
 
         <!-- Construction Fasteners Solution -->
         <div class="solution-card">
-          <img src="images/construction-fasteners-solution.jpg" alt="Construction Fasteners">
+          <img src="/images/construction-fasteners-solution.jpg" alt="Construction Fasteners" loading="lazy">
           <div class="solution-content">
             <h3>Construction Fasteners</h3>
             <p>
@@ -642,7 +730,7 @@
 
         <!-- Industrial Fasteners Solution -->
         <div class="solution-card">
-          <img src="images/industrial-fasteners-solution.jpg" alt="Industrial Fasteners">
+          <img src="/images/industrial-fasteners-solution.jpg" alt="Industrial Fasteners" loading="lazy">
           <div class="solution-content">
             <h3>Industrial Fasteners</h3>
             <p>
@@ -654,7 +742,7 @@
 
         <!-- Solar Mounting Fasteners Solution -->
         <div class="solution-card">
-          <img src="images/solar-fasteners-solution.jpg" alt="Solar Mounting Fasteners">
+          <img src="/images/solar-fasteners-solution.jpg" alt="Solar Mounting Fasteners" loading="lazy">
           <div class="solution-content">
             <h3>Solar Mounting Fasteners</h3>
             <p>
@@ -666,7 +754,7 @@
 
         <!-- Infrastructure Fasteners Solution -->
         <div class="solution-card">
-          <img src="images/infrastructure-fasteners-solution.jpg" alt="Infrastructure Fasteners">
+          <img src="/images/infrastructure-fasteners-solution.jpg" alt="Infrastructure Fasteners" loading="lazy">
           <div class="solution-content">
             <h3>Infrastructure Fasteners</h3>
             <p>
@@ -694,7 +782,7 @@
 
         <!-- Hex Bolts -->
         <div class="gallery-card">
-          <img src="images/gallery-hex-bolts.jpg" alt="Hex Bolts">
+          <img src="/images/gallery-hex-bolts.jpg" alt="Hex Bolts" loading="lazy">
           <div class="gallery-overlay">
             <h3>Hex Bolts</h3>
           </div>
@@ -702,7 +790,7 @@
 
         <!-- Self Tapping Screws -->
         <div class="gallery-card">
-          <img src="images/gallery-self-tapping-screws.jpg" alt="Self Tapping Screws">
+          <img src="/images/gallery-self-tapping-screws.jpg" alt="Self Tapping Screws" loading="lazy">
           <div class="gallery-overlay">
             <h3>Self Tapping Screws</h3>
           </div>
@@ -710,7 +798,7 @@
 
         <!-- Hex Nuts -->
         <div class="gallery-card">
-          <img src="images/gallery-hex-nuts.jpg" alt="Hex Nuts">
+          <img src="/images/gallery-hex-nuts.jpg" alt="Hex Nuts" loading="lazy">
           <div class="gallery-overlay">
             <h3>Hex Nuts</h3>
           </div>
@@ -718,7 +806,7 @@
 
         <!-- Washers -->
         <div class="gallery-card">
-          <img src="images/gallery-washers.jpg" alt="Washers">
+          <img src="/images/gallery-washers.jpg" alt="Washers" loading="lazy">
           <div class="gallery-overlay">
             <h3>Washers</h3>
           </div>
@@ -726,7 +814,7 @@
 
         <!-- Expansion Anchors -->
         <div class="gallery-card">
-          <img src="images/gallery-expansion-anchors.jpg" alt="Expansion Anchors">
+          <img src="/images/gallery-expansion-anchors.jpg" alt="Expansion Anchors" loading="lazy">
           <div class="gallery-overlay">
             <h3>Expansion Anchors</h3>
           </div>
@@ -734,7 +822,7 @@
 
         <!-- Blind Rivets -->
         <div class="gallery-card">
-          <img src="images/gallery-blind-rivets.jpg" alt="Blind Rivets">
+          <img src="/images/gallery-blind-rivets.jpg" alt="Blind Rivets" loading="lazy">
           <div class="gallery-overlay">
             <h3>Blind Rivets</h3>
           </div>
@@ -858,7 +946,6 @@
     </div>
   </section>
 
-  
 <!-- 悬浮WhatsApp按钮（全站统一） -->
 <a href="https://wa.me/8618006891977" target="_blank" rel="noopener noreferrer" style="position:fixed;bottom:20px;right:20px;background:#25D366;width:65px;height:65px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 5px 15px rgba(0,0,0,0.3);z-index:9999;text-decoration:none;transition:0.3s;">
 <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" fill="white" viewBox="0 0 24 24">
