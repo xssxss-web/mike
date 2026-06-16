@@ -153,20 +153,22 @@
                         <a href="/products/wind/" class="block py-1">Wind Power Products</a>
                         
                         <!-- 移动端三级菜单 -->
-                        <div class="relative">
-                            <button class="mobileLockBtn w-full text-left py-1 flex justify-between items-center">
-                                Locks-security
-                                <svg class="w-3 h-3 mobileLockIcon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                                </svg>
-                            </button>
-                            <div class="mobileLockMenu hidden pl-4 mt-1 space-y-1 text-gray-500">
-                                <a href="/products/locks/smart-locks.html" class="block py-1">Smart Locks</a>
-                                <a href="/products/locks/door-locks.html" class="block py-1">Door Locks</a>
-                                <a href="/products/locks/padlocks.html" class="block py-1">Padlocks</a>
-                                <a href="/products/locks/bike-locks.html" class="block py-1">Bike Locks</a>
-                            </div>
-                        </div>
+                   <!-- 移动端三级菜单（纯垂直缩进，无横向absolute弹出） -->
+<div>
+    <button class="mobileLockBtn w-full text-left py-1 flex justify-between items-center">
+        Locks-security
+        <svg class="w-3 h-3 mobileLockIcon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+        </svg>
+    </button>
+    <!-- 加大缩进 pl-8，和二级菜单区分层级，完全移除absolute定位 -->
+    <div class="mobileLockMenu hidden pl-8 mt-1 space-y-1 text-gray-500">
+        <a href="/products/locks/smart-locks.html" class="block py-1">Smart Locks</a>
+        <a href="/products/locks/door-locks.html" class="block py-1">Door Locks</a>
+        <a href="/products/locks/padlocks.html" class="block py-1">Padlocks</a>
+        <a href="/products/locks/bike-locks.html" class="block py-1">Bike Locks</a>
+    </div>
+</div>
                     </div>
                 </div>
 
