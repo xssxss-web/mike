@@ -38,68 +38,84 @@
         /* =========================
         ABOUT HERO
         ========================= */
-        .about-hero{
-            position:relative;
-            min-height:700px;
-            display:flex;
-            align-items:center;
-            background:url("images/hero2.jpg") center center/cover no-repeat;
-            overflow:hidden;
-        }
-        .about-hero-overlay{
-            position:absolute;
-            inset:0;
-            background:
-            linear-gradient(
-                90deg,
-                rgba(0,0,0,.72) 0%,
-                rgba(0,0,0,.58) 40%,
-                rgba(0,0,0,.35) 100%
-            );
-        }
-        .about-hero .container{
-            position:relative;
-            z-index:2;
-        }
-        .about-hero-content{
-            max-width:820px;
-            color:#fff;
-        }
-        .hero-badge{
-            display:inline-block;
-            padding:10px 22px;
-            border-radius:40px;
-            background:rgba(255,255,255,.18);
-            backdrop-filter:blur(10px);
-            font-size:14px;
-            font-weight:600;
-            letter-spacing:.5px;
-            margin-bottom:28px;
-        }
-        .about-hero h1{
-            font-size:72px;
-            line-height:1.08;
-            font-weight:800;
-            margin-bottom:24px;
-        }
-        .hero-subtitle{
-            font-size:30px;
-            line-height:1.4;
-            font-weight:700;
-            color:#ff6b6b;
-            margin-bottom:30px;
-        }
-        .hero-description{
-            max-width:760px;
-            font-size:21px;
-            line-height:1.9;
-            color:rgba(255,255,255,.92);
-        }
-        .brand-highlight {
-            font-weight: 800;
-            color: #ff6b6b;
-        }
-
+      .about-hero{
+    position:relative;
+    min-height:700px;
+    display:flex;
+    align-items:center;
+    overflow:hidden;
+}
+/* 两张背景轮播容器 */
+.about-hero-bg {
+    position: absolute;
+    inset: 0;
+    width: 200%;
+    background-image: url("images/hero2.jpg"), url("images/hero1.jpg");
+    background-size: 50% 100%, 50% 100%;
+    background-repeat: no-repeat;
+    background-position: left center, right center;
+    animation: heroSlide 12s infinite ease-in-out;
+    z-index: 1;
+}
+@keyframes heroSlide {
+    0%, 45% { transform: translateX(0); }
+    50%, 95% { transform: translateX(-50%); }
+    100% { transform: translateX(0); }
+}
+.about-hero-overlay{
+    position:absolute;
+    inset:0;
+    z-index: 2;
+    background:
+    linear-gradient(
+        90deg,
+        rgba(0,0,0,.72) 0%,
+        rgba(0,0,0,.58) 40%,
+        rgba(0,0,0,.35) 100%
+    );
+}
+.about-hero .container{
+    position:relative;
+    z-index:3;
+}
+.about-hero-content{
+    max-width:820px;
+    color:#fff;
+}
+.hero-badge{
+    display:inline-block;
+    padding:10px 22px;
+    border-radius:40px;
+    background:rgba(255,255,255,.18);
+    backdrop-filter:blur(10px);
+    font-size:14px;
+    font-weight:600;
+    letter-spacing:.5px;
+    margin-bottom:28px;
+}
+.about-hero h1{
+    font-size:72px;
+    line-height:1.08;
+    font-weight:800;
+    margin-bottom:24px;
+}
+.hero-subtitle{
+    font-size:30px;
+    line-height:1.4;
+    font-weight:700;
+    color:#ff6b6b;
+    margin-bottom:30px;
+}
+.hero-description{
+    max-width:760px;
+    font-size:21px;
+    line-height:1.9;
+    color:rgba(255,255,255,.92);
+}
+.brand-highlight {
+    font-weight: 800;
+    color: #ff6b6b;
+}
         /* =========================
         WHO WE ARE
         ========================= */
