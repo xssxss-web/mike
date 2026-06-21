@@ -8,7 +8,7 @@
     <link rel="canonical" href="https://mikeok.com/blog/" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     
-    <!-- Google Analytics 全局统一放head，导航删除重复GA -->
+    <!-- Google Analytics 全局统一放head -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-0H2PGF3J9Q"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -22,10 +22,7 @@
     <meta name="robots" content="index,follow,ai,imageai">
 
     <style>
-        /* 全局主色定义，全站统一绿色 */
-        :root {
-            --primary: #10b981;
-        }
+        /* 仅页面内容专属样式，与导航完全隔离 */
         .post-card {
             transition: all 0.3s ease;
         }
@@ -34,218 +31,15 @@
         }
         .markdown-content { line-height: 1.8; }
         .markdown-content h1, .markdown-content h2 { margin: 1.5em 0 0.8em; }
-        /* 导航链接下划线动画 */
-        .nav-link {
-            position: relative;
-            padding: 1rem 0;
-        }
-        .nav-link:after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -2px;
-            left: 0;
-            background-color: var(--primary);
-            transition: width 0.3s ease;
-        }
-        .nav-link:hover:after {
-            width: 100%;
-        }
-        /* 桌面下拉平滑动画，无闪烁 */
-        .dropdown-menu {
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(10px);
-            transition: all 0.2s ease;
-        }
-        .group:hover .dropdown-menu {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-        /* 箭头旋转公共样式 */
-        .rotate-180 {
-            transform: rotate(180deg);
-        }
-        .transition-transform {
-            transition: transform 0.3s ease;
-        }
     </style>
 </head>
 <body class="bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-gray-100 transition-colors">
-    <!-- 【方案1 复用公共导航】 替换下方整块nav代码，使用外部nav.html加载 -->
-  <!-- 全局公共导航 -->
-<nav class="bg-white dark:bg-gray-900 border-b sticky top-0 z-50 shadow-sm">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="flex justify-between items-center h-16">
-                <!-- Logo -->
-                <div class="flex items-center space-x-3">
-                    <div class="w-9 h-9 bg-[var(--primary)] rounded-xl flex items-center justify-center text-white font-bold text-2xl">M</div>
-                    <div>
-                        <span class="text-2xl font-bold tracking-tight">Mike's Insight</span>
-                        <span class="text-xs text-gray-500 dark:text-gray-400 block -mt-1"></span>
-                    </div>
-                </div>
+    <!-- 导航占位容器 -->
+     <!-- 全局公共导航 -->
+<div id="global-nav"></div>
+<script src="/nav-loader.js"></script>
 
-            <!-- 桌面端菜单 -->
-            <div class="hidden md:flex items-center space-x-8 text-sm font-medium">
-                <a href="/" class="nav-link">Home</a>
-
-                <!-- Products 下拉 -->
-                <div class="relative group">
-                    <a href="#products" class="nav-link flex items-center px-4 py-4">
-                        Products
-                        <svg class="w-4 h-4 ml-1 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                        </svg>
-                    </a>
-                    <!-- 修复深色下拉背景 -->
-                    <div class="dropdown-menu absolute left-0 mt-1 w-48 bg-white dark:bg-gray-800 shadow-xl rounded-xl z-50 pt-1">
-                        <a href="products/solar/index.html" class="block px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-t-xl">Solar Products</a>
-                        <a href="/products/solar/portable-solar-panels/" class="block px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700">Portable Solar Panels</a>
-                        <a href="/products/wind/" class="block px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700">Wind Power Products</a>
-                        
-                        <!-- Locks-security 三级菜单 -->
-                        <div class="relative group/lock">
-                            <a href="/products/locks/" class="block px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-b-xl flex justify-between items-center">
-                                Locks-security
-                                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                                </svg>
-                            </a>
-                            <!-- 三级子菜单深色适配 -->
-                            <div class="absolute left-full top-0 ml-1 w-48 bg-white dark:bg-gray-800 shadow-xl rounded-xl z-50 hidden group-hover/lock:block">
-                                <a href="/products/locks/smart-locks.html" class="block px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-t-xl">Smart Locks</a>
-                                <a href="/products/locks/door-locks.html" class="block px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700">Door Locks</a>
-                                <a href="/products/locks/padlocks.html" class="block px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700">Padlocks</a>
-                                <a href="/products/locks/bike-locks.html" class="block px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-b-xl">Bike Locks</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <a href="#about" class="nav-link">About Mike</a>
-                <a href="/services/index.html" class="nav-link">Services</a>
-                <a href="/blog/index.html" class="nav-link text-[var(--primary)] font-semibold">Insights</a>
-                <a href="/contact/index.html" class="nav-link">Contact</a>
-            </div>
-
-            <!-- 右侧按钮 + 明暗切换 + 移动端汉堡图标 -->
-            <div class="flex items-center gap-4">
-                <div class="hidden md:flex text-xs bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300 px-3 py-1.5 rounded-full font-medium items-center gap-1">
-                    <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
-                    Online in Yiwu
-                </div>
-                <!-- 新增明暗切换按钮，修复themeToggle空报错 -->
-                <button id="themeToggle" class="text-gray-800 dark:text-gray-200 text-lg">
-                    <i class="fas fa-moon"></i>
-                </button>
-                <button onclick="window.location.href='/contact/index.html'" 
-                        class="bg-[var(--primary)] hover:opacity-90 text-white px-4 md:px-6 py-2.5 rounded-xl text-sm font-semibold transition flex items-center gap-2">
-                    <i class="fas fa-paper-plane"></i>
-                    <span class="hidden md:inline">Get Quote</span>
-                </button>
-
-                <!-- 移动端汉堡按钮 -->
-                <button id="mobileMenuBtn" class="md:hidden text-gray-800 dark:text-gray-200 focus:outline-none">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
-            </div>
-        </div>
-
-        <!-- 移动端导航菜单（默认隐藏）深色边框适配 -->
-        <div id="mobileMenu" class="md:hidden hidden pb-4">
-            <div class="flex flex-col space-y-2 text-sm font-medium">
-                <a href="/" class="py-2 border-b border-gray-100 dark:border-gray-800">Home</a>
-
-                <!-- 移动端 Products 二级菜单 -->
-                <div class="relative">
-                    <button id="mobileProdBtn" class="w-full text-left py-2 border-b border-gray-100 dark:border-gray-800 flex justify-between items-center">
-                        Products
-                        <svg class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                        </svg>
-                    </button>
-                    <div id="mobileProdMenu" class="hidden pl-4 mt-2 space-y-2 text-gray-600 dark:text-gray-300">
-                        <a href="products/solar/index.html" class="block py-1 hover:text-[var(--primary)]">Solar Products</a>
-                        <a href="/products/solar/portable-solar-panels/" class="block py-1 hover:text-[var(--primary)]">Portable Solar Panels</a>
-                        <a href="/products/wind/" class="block py-1 hover:text-[var(--primary)]">Wind Power Products</a>
-                        
-                        <!-- 移动端三级菜单 -->
-                        <div class="relative">
-                            <button class="mobileLockBtn w-full text-left py-1 flex justify-between items-center hover:text-[var(--primary)]">
-                                Locks-security
-                                <svg class="w-3 h-3 mobileLockIcon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                                </svg>
-                            </button>
-                            <div class="mobileLockMenu hidden pl-4 mt-1 space-y-1 text-gray-500 dark:text-gray-400">
-                                <a href="/products/locks/smart-locks.html" class="block py-1 hover:text-[var(--primary)]">Smart Locks</a>
-                                <a href="/products/locks/door-locks.html" class="block py-1 hover:text-[var(--primary)]">Door Locks</a>
-                                <a href="/products/locks/padlocks.html" class="block py-1 hover:text-[var(--primary)]">Padlocks</a>
-                                <a href="/products/locks/bike-locks.html" class="block py-1 hover:text-[var(--primary)]">Bike Locks</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <a href="#about" class="py-2 border-b border-gray-100 dark:border-gray-800">About Mike</a>
-                <a href="/services/index.html" class="py-2 border-b border-gray-100 dark:border-gray-800">Services</a>
-                <a href="/blog/index.html" class="py-2 border-b border-gray-100 dark:border-gray-800 text-[var(--primary)] font-semibold">Insights</a>
-                <a href="/contact/index.html" class="py-2 border-b border-gray-100 dark:border-gray-800">Contact</a>
-
-                <div class="text-xs bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300 px-3 py-1.5 rounded-full font-medium flex items-center gap-1 mt-3 w-fit">
-                    <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
-                    Online in Yiwu
-                </div>
-            </div>
-        </div>
-    </div>
-</nav>
-
-<!-- 移动端菜单交互 JS（导航专属逻辑） -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    // 1. 汉堡按钮 展开/收起移动端总菜单
-    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-    const hamburgerIcon = mobileMenuBtn.querySelector('svg');
-
-    if(mobileMenuBtn && mobileMenu) {
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-            hamburgerIcon.classList.toggle('rotate-180');
-        });
-    }
-
-    // 2. 移动端 Products 二级菜单
-    const mobileProdBtn = document.getElementById('mobileProdBtn');
-    const mobileProdMenu = document.getElementById('mobileProdMenu');
-    const prodArrow = mobileProdBtn.querySelector('svg');
-    if(mobileProdBtn && mobileProdMenu) {
-        mobileProdBtn.addEventListener('click', () => {
-            mobileProdMenu.classList.toggle('hidden');
-            prodArrow.classList.toggle('rotate-180');
-        });
-    }
-
-    // 3. 移动端 Locks 三级菜单
-    const mobileLockBtn = document.querySelector('.mobileLockBtn');
-    const mobileLockMenu = document.querySelector('.mobileLockMenu');
-    const mobileLockIcon = document.querySelector('.mobileLockIcon');
-    if(mobileLockBtn && mobileLockMenu && mobileLockIcon) {
-        mobileLockBtn.addEventListener('click', () => {
-            mobileLockMenu.classList.toggle('hidden');
-            mobileLockIcon.classList.toggle('rotate-180');
-        });
-    }
-});
-</script>
-
-
+    <!-- 页面主体内容 -->
     <div class="max-w-7xl mx-auto px-6 py-10 flex gap-10">
         <!-- Main Content -->
         <main class="flex-1">
@@ -310,109 +104,125 @@ document.addEventListener('DOMContentLoaded', function() {
     </footer>
 
     <script>
-        // 文章数据（补全所有url，删除无用id）
-        const posts = [
-            {
-                title: "The Hidden Competitive Advantage of Successful Amazon Sellers: Complete Control Over Products and Supply Chains",
-                url: "amazon-sourcing-quality-control-supply-chain-management.html",
-                date: "June 10, 2026",
-                category: "Amazon FBA",
-                excerpt: "Why Amazon Sellers Are Facing More Challenges Than Ever",
-                image: "/images/FBA.jpeg"
-            },
-            {
-                title: "Global Green Energy Status and Future Trends in 2026",
-                url: "Global-Green-Energy-Status-and-Future-Trends.html",
-                date: "June 10, 2026",
-                category: "Solar Energy",
-                excerpt: "Solar power continues to break records as the fastest growing energy source in the world.",
-                image: "/images/hero-solar1.jpeg"
-            },
-            {
-                title: "Global Solar Energy Outlook 2026",
-                url: "Global-Solar-Energy-Outlook-2026.html",
-                date: "June 10, 2026",
-                category: "Solar Energy",
-                excerpt: "Solar power continues to break records as the fastest growing energy source in the world.",
-                image: "/images/hero-solar.jpg"
-            },
-            {
-                title: "Why Energy Storage is the Key to Renewable Future",
-                url: "energy-storage-renewable-future.html",
-                date: "June 5, 2026",
-                category: "Energy Storage",
-                excerpt: "From lithium to solid-state and hydrogen storage — the revolution is happening now.",
-                image: "/images/chuneng.jpg"
+        // 1. 先加载导航，加载完成后再初始化页面所有功能
+        document.addEventListener('DOMContentLoaded', async function () {
+            let navLoaded = false;
+            // 加载导航
+            try {
+                const res = await fetch('nav-blog.html');
+                if (res.ok) {
+                    const html = await res.text();
+                    document.getElementById('navContainer').innerHTML = html;
+                    navLoaded = true;
+                }
+            } catch (err) {
+                console.warn('导航文件加载失败，不影响博客内容展示', err);
             }
-        ];
 
-        // 渲染文章列表
-        function renderPosts(filteredPosts) {
-            const container = document.getElementById('postsContainer');
-            container.innerHTML = filteredPosts.map(post => `
-                <div class="post-card bg-white dark:bg-gray-900 rounded-2xl overflow-hidden shadow-lg transition-all cursor-pointer"
-                     onclick="location.href='${post.url}'">
-                    <img src="${post.image}" alt="${post.title}" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <div class="text-emerald-600 text-xs font-medium">${post.date} • ${post.category}</div>
-                        <h3 class="font-semibold text-lg mt-2 mb-3">${post.title}</h3>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm line-clamp-3">${post.excerpt}</p>
+            // ========== 下面所有页面业务逻辑，等待导航加载完成后执行 ==========
+            const posts = [
+                {
+                    title: "The Hidden Competitive Advantage of Successful Amazon Sellers: Complete Control Over Products and Supply Chains",
+                    url: "amazon-sourcing-quality-control-supply-chain-management.html",
+                    date: "June 10, 2026",
+                    category: "Amazon FBA",
+                    excerpt: "Why Amazon Sellers Are Facing More Challenges Than Ever",
+                    image: "/images/FBA.jpeg"
+                },
+                {
+                    title: "Global Green Energy Status and Future Trends in 2026",
+                    url: "Global-Green-Energy-Status-and-Future-Trends.html",
+                    date: "June 10, 2026",
+                    category: "Solar Energy",
+                    excerpt: "Solar power continues to break records as the fastest growing energy source in the world.",
+                    image: "/images/hero-solar1.jpeg"
+                },
+                {
+                    title: "Global Solar Energy Outlook 2026",
+                    url: "Global-Solar-Energy-Outlook-2026.html",
+                    date: "June 10, 2026",
+                    category: "Solar Energy",
+                    excerpt: "Solar power continues to break records as the fastest growing energy source in the world.",
+                    image: "/images/hero-solar.jpg"
+                },
+                {
+                    title: "Why Energy Storage is the Key to Renewable Future",
+                    url: "energy-storage-renewable-future.html",
+                    date: "June 5, 2026",
+                    category: "Energy Storage",
+                    excerpt: "From lithium to solid-state and hydrogen storage — the revolution is happening now.",
+                    image: "/images/chuneng.jpg"
+                }
+            ];
+
+            // 渲染文章列表
+            function renderPosts(filteredPosts) {
+                const container = document.getElementById('postsContainer');
+                container.innerHTML = filteredPosts.map(post => `
+                    <div class="post-card bg-white dark:bg-gray-900 rounded-2xl overflow-hidden shadow-lg transition-all cursor-pointer"
+                         onclick="location.href='${post.url}'">
+                        <img src="${post.image}" alt="${post.title}" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <div class="text-emerald-600 text-xs font-medium">${post.date} • ${post.category}</div>
+                            <h3 class="font-semibold text-lg mt-2 mb-3">${post.title}</h3>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm line-clamp-3">${post.excerpt}</p>
+                        </div>
                     </div>
-                </div>
-            `).join('');
-        }
+                `).join('');
+            }
 
-        // 渲染热门文章
-        function renderPopularPosts() {
-            const popContainer = document.getElementById('popularPosts');
-            // 取前3篇作为热门文章
-            const popular = posts.slice(0, 3);
-            popContainer.innerHTML = popular.map(post => `
-                <a href="${post.url}" class="block hover:text-emerald-600 transition-colors">
-                    <div class="font-medium">${post.title}</div>
-                    <div class="text-xs text-gray-500 dark:text-gray-400 mt-1">${post.date}</div>
-                </a>
-            `).join('');
-        }
+            // 渲染热门文章
+            function renderPopularPosts() {
+                const popContainer = document.getElementById('popularPosts');
+                const popular = posts.slice(0, 3);
+                popContainer.innerHTML = popular.map(post => `
+                    <a href="${post.url}" class="block hover:text-emerald-600 transition-colors">
+                        <div class="font-medium">${post.title}</div>
+                        <div class="text-xs text-gray-500 dark:text-gray-400 mt-1">${post.date}</div>
+                    </a>
+                `).join('');
+            }
 
-        // 分类筛选
-        function filterByCat(catName) {
-            const filtered = posts.filter(p => p.category === catName);
-            renderPosts(filtered);
-        }
+            // 分类筛选
+            window.filterByCat = function (catName) {
+                const filtered = posts.filter(p => p.category === catName);
+                renderPosts(filtered);
+            }
 
-        // 搜索功能
-        const searchInput = document.getElementById('searchInput');
-        searchInput.addEventListener('input', (e) => {
-            const term = e.target.value.toLowerCase();
-            const filtered = posts.filter(p => 
-                p.title.toLowerCase().includes(term) || 
-                p.excerpt.toLowerCase().includes(term)
-            );
-            renderPosts(filtered);
+            // 搜索功能
+            const searchInput = document.getElementById('searchInput');
+            searchInput.addEventListener('input', (e) => {
+                const term = e.target.value.toLowerCase();
+                const filtered = posts.filter(p => 
+                    p.title.toLowerCase().includes(term) || 
+                    p.excerpt.toLowerCase().includes(term)
+                );
+                renderPosts(filtered);
+            });
+
+            // 明暗模式切换（增加空值判断，找不到按钮不报错）
+            const themeToggle = document.getElementById('themeToggle');
+            if (themeToggle) {
+                if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                    document.documentElement.classList.add('dark');
+                    themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+                } else {
+                    document.documentElement.classList.remove('dark');
+                    themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+                }
+
+                themeToggle.addEventListener('click', () => {
+                    document.documentElement.classList.toggle('dark');
+                    const isDark = document.documentElement.classList.contains('dark');
+                    localStorage.theme = isDark ? 'dark' : 'light';
+                    themeToggle.innerHTML = isDark ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+                });
+            }
+
+            // 页面初始化渲染文章（核心！无论导航加载成功与否，都会执行）
+            renderPosts(posts);
+            renderPopularPosts();
         });
-
-        // 明暗模式切换 + 本地存储记忆
-        const themeToggle = document.getElementById('themeToggle');
-        // 读取本地主题
-        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            document.documentElement.classList.add('dark');
-            themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-        } else {
-            document.documentElement.classList.remove('dark');
-            themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-        }
-
-        themeToggle.addEventListener('click', () => {
-            document.documentElement.classList.toggle('dark');
-            const isDark = document.documentElement.classList.contains('dark');
-            localStorage.theme = isDark ? 'dark' : 'light';
-            themeToggle.innerHTML = isDark ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
-        });
-
-        // 页面初始化渲染
-        renderPosts(posts);
-        renderPopularPosts();
     </script>
 </body>
 </html>
