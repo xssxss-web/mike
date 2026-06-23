@@ -3,46 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEO标题统一优化 -->
     <title>RV Solar Panel System Guide 2026 | 300W to 2000W Off-Grid Travel Power Solutions</title>
-<link rel="canonical" href="https://mikeok.com/products/solar/rv-solar-panel-system-guide/">
-<meta name="description" content="Complete guide to RV and mobile solar power systems. Compare 300W, 1200W and 2000W solar setups, lithium batteries, MPPT controllers, inverters and off-grid travel power solutions for long-term road trips and van life." />
-   <meta name="keywords" content="RV Solar Panels, Off Grid Solar System, Van Life Solar Setup, Mobile Solar Power, Travel Solar Power System, MPPT Solar Controller, Lithium Battery Storage, Solar Inverter, RV Battery System, Solar Camping Setup, Portable Solar Power, Solar Energy Storage" />
- <meta property="og:type" content="article">
-
-<meta property="og:title"
-content="RV Solar Panel System Guide 2026 | Off-Grid Travel Power Solutions">
-
-<meta property="og:description"
-content="Compare 300W, 1200W and 2000W solar setups for RVs, campers and long-term off-grid travel. Learn about lithium batteries, MPPT controllers and inverter sizing.">
-
-<meta property="og:url"
-content="https://mikeok.com/insights/rv-solar-panel-system-guide.html">
-
-<meta property="og:image"
-content="https://mikeok.com/images/blog/rv-solar-guide.jpg">
-<meta name="twitter:card" content="summary_large_image">
-
-<meta name="twitter:title"
-content="RV Solar Panel System Guide 2026">
-
-<meta name="twitter:description"
-content="Learn how to build reliable off-grid solar systems for RVs, campers and long-term travel.">
-
-<meta name="twitter:image"
-content="https://mikeok.com/images/blog/rv-solar-guide.jpg">
-
-<script src="https://cdn.tailwindcss.com"></script>
+    <!-- 修复canonical与OG URL不一致问题 -->
+    <link rel="canonical" href="https://mikeok.com/products/solar/rv-solar-panel-system-guide/">
+    <meta name="description" content="Complete guide to RV and mobile solar power systems. Compare 300W, 1200W and 2000W solar setups, lithium batteries, MPPT controllers, inverters and off-grid travel power solutions for long-term road trips and van life." />
+    <meta name="keywords" content="RV Solar Panels, Off Grid Solar System, Van Life Solar Setup, Mobile Solar Power, Travel Solar Power System, MPPT Solar Controller, Lithium Battery Storage, Solar Inverter, RV Battery System, Solar Camping Setup, Portable Solar Power, Solar Energy Storage" />
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="RV Solar Panel System Guide 2026 | Off-Grid Travel Power Solutions">
+    <meta property="og:description" content="Compare 300W, 1200W and 2000W solar setups for RVs, campers and long-term off-grid travel. Learn about lithium batteries, MPPT controllers and inverter sizing.">
+    <meta property="og:url" content="https://mikeok.com/products/solar/rv-solar-panel-system-guide/">
+    <meta property="og:image" content="https://mikeok.com/images/rv-solar-guide.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="RV Solar Panel System Guide 2026">
+    <meta name="twitter:description" content="Learn how to build reliable off-grid solar systems for RVs, campers and long-term travel.">
+    <meta name="twitter:image" content="https://mikeok.com/images/rv-solar-guide.jpg">
+    <!-- 预加载外链加速 -->
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700&display=swap');
-        
-        body { font-family: 'Inter', system-ui, sans-serif; }
-        .heading-font { font-family: 'Playfair Display', sans-serif; }
-        
+        /* 全局平滑滚动 */
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            /* 移动端防横向滚动溢出 */
+            overflow-x: hidden;
+        }
+        .heading-font {
+            font-family: 'Playfair Display', serif;
+        }
         .hero-bg {
             background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.75)), url('https://picsum.photos/id/1015/2000/1200') center/cover no-repeat;
+            /* 移动端高度自适应，不再固定h-screen挤手机 */
+            min-height: 100vh;
+            height: auto;
         }
-        
         .card-hover {
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
@@ -50,15 +55,33 @@ content="https://mikeok.com/images/blog/rv-solar-guide.jpg">
             transform: translateY(-12px);
             box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
         }
-        
+        /* 移动端触摸取消悬浮位移抖动 */
+        @media (max-width: 768px) {
+            .card-hover:hover {
+                transform: translateY(0);
+            }
+        }
         .power-bar {
             height: 6px;
             background: linear-gradient(90deg, #22c55e, #eab308);
         }
+        /* 汉堡菜单动画 */
+        .menu-line {
+            transition: 0.3s all ease;
+        }
+        .menu-open .line-1 {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+        .menu-open .line-2 {
+            opacity: 0;
+        }
+        .menu-open .line-3 {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
     </style>
 </head>
 <body class="bg-zinc-950 text-zinc-200">
-    <!-- HEADER -->
+    <!-- HEADER 新增移动端汉堡菜单 -->
     <header class="bg-black border-b border-zinc-800 sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
             <div class="flex items-center gap-3">
@@ -68,6 +91,7 @@ content="https://mikeok.com/images/blog/rv-solar-guide.jpg">
                 </div>
             </div>
             
+            <!-- PC导航 -->
             <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
                 <a href="#power-levels" class="hover:text-emerald-400 transition-colors">Power Levels</a>
                 <a href="#full-system" class="hover:text-emerald-400 transition-colors">Full Systems</a>
@@ -77,26 +101,44 @@ content="https://mikeok.com/images/blog/rv-solar-guide.jpg">
             
             <div class="flex items-center gap-4">
                 <a href="#custom" 
-                   class="px-6 py-3 bg-emerald-600 hover:bg-emerald-500 transition-colors rounded-2xl font-semibold text-sm flex items-center gap-2">
+                   class="hidden sm:inline-flex px-6 py-3 bg-emerald-600 hover:bg-emerald-500 transition-colors rounded-2xl font-semibold text-sm items-center gap-2">
                     <i class="fas fa-wrench"></i>
                     Get Custom Quote
                 </a>
+                <!-- 移动端汉堡按钮 -->
+                <button id="menuBtn" class="md:hidden flex flex-col gap-1.5 p-2" aria-label="Open navigation menu">
+                    <span class="menu-line line-1 w-6 h-0.5 bg-white block"></span>
+                    <span class="menu-line line-2 w-6 h-0.5 bg-white block"></span>
+                    <span class="menu-line line-3 w-6 h-0.5 bg-white block"></span>
+                </button>
             </div>
+        </div>
+        <!-- 移动端下拉导航菜单 -->
+        <div id="mobileMenu" class="hidden md:hidden bg-zinc-900 border-t border-zinc-800 px-6 py-6">
+            <nav class="flex flex-col gap-5 text-base font-medium">
+                <a href="#power-levels" class="hover:text-emerald-400 transition-colors py-2">Power Levels</a>
+                <a href="#full-system" class="hover:text-emerald-400 transition-colors py-2">Full Systems</a>
+                <a href="#packages" class="hover:text-emerald-400 transition-colors py-2">Ready Packages</a>
+                <a href="#tips" class="hover:text-emerald-400 transition-colors py-2">Pro Tips</a>
+                <a href="#custom" class="inline-flex mt-3 px-6 py-3 bg-emerald-600 rounded-2xl font-semibold items-center justify-center gap-2">
+                    <i class="fas fa-wrench"></i> Get Custom Quote
+                </a>
+            </nav>
         </div>
     </header>
 
-    <!-- HERO -->
-    <section class="hero-bg h-screen flex items-center text-white">
+    <!-- HERO 移动端文字自适应 -->
+    <section class="hero-bg flex items-center text-white py-20 md:py-0">
         <div class="max-w-5xl mx-auto px-6 text-center">
             <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-5 py-2 rounded-3xl text-sm mb-6">
                 <span class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></span>
                 Trusted by 300+ Van Life Bloggers
             </div>
             
-            <h1 class="text-6xl md:text-7xl font-bold heading-font leading-tight mb-6">
+            <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold heading-font leading-tight mb-6">
                 Solar Power Systems<br>Custom-designed for road trip enthusiasts
             </h1>
-            <p class="text-xl md:text-2xl text-zinc-300 max-w-2xl mx-auto mb-10">
+            <p class="text-lg md:text-2xl text-zinc-300 max-w-2xl mx-auto mb-10">
                 Three proven power tiers used by top travel bloggers. 
                 From lightweight short trips to unlimited off-grid living in Tibet &amp; Xinjiang.
             </p>
@@ -113,7 +155,7 @@ content="https://mikeok.com/images/blog/rv-solar-guide.jpg">
                 </a>
             </div>
             
-            <div class="mt-16 flex justify-center gap-8 text-sm">
+            <div class="mt-16 flex flex-wrap justify-center gap-6 md:gap-8 text-sm">
                 <div class="flex items-center gap-3">
                     <i class="fas fa-check text-emerald-400"></i>
                     <span>Real Blogger Setups</span>
@@ -131,24 +173,24 @@ content="https://mikeok.com/images/blog/rv-solar-guide.jpg">
     </section>
 
     <!-- POWER LEVELS -->
-    <section id="power-levels" class="py-24 bg-zinc-900">
+    <section id="power-levels" class="py-16 md:py-24 bg-zinc-900">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16">
+            <div class="text-center mb-12 md:mb-16">
                 <span class="text-emerald-400 font-medium tracking-widest">CHOOSE YOUR TIER</span>
-                <h2 class="text-5xl heading-font font-bold mt-3">Solar Power Levels Used by Travel Bloggers</h2>
+                <h2 class="text-3xl md:text-5xl heading-font font-bold mt-3">Solar Power Levels Used by Travel Bloggers</h2>
                 <p class="text-zinc-400 mt-4 max-w-xl mx-auto">From budget short trips to heavy-duty unlimited off-grid systems</p>
             </div>
             
-            <div class="grid md:grid-cols-3 gap-8">
+            <div class="grid md:grid-cols-3 gap-6 md:gap-8">
                 <!-- Tier 1 -->
-                <div class="bg-zinc-800 rounded-3xl p-8 card-hover border border-zinc-700">
-                    <div class="flex justify-between items-start mb-8">
+                <div class="bg-zinc-800 rounded-3xl p-6 md:p-8 card-hover border border-zinc-700">
+                    <div class="flex justify-between items-start mb-6 md:mb-8">
                         <div>
                             <span class="px-4 py-1.5 bg-amber-500 text-black text-xs font-bold rounded-2xl">ENTRY LEVEL</span>
-                            <h3 class="text-3xl font-bold mt-6 heading-font">300W – 600W</h3>
+                            <h3 class="text-2xl md:text-3xl font-bold mt-6 heading-font">300W – 600W</h3>
                         </div>
                         <div class="text-right">
-                            <div class="text-5xl font-bold text-amber-400">01</div>
+                            <div class="text-4xl md:text-5xl font-bold text-amber-400">01</div>
                             <div class="text-xs text-zinc-500">Lightweight</div>
                         </div>
                     </div>
@@ -158,21 +200,21 @@ content="https://mikeok.com/images/blog/rv-solar-guide.jpg">
                         <li class="flex gap-3"><i class="fas fa-check text-emerald-400 mt-1"></i> 2–3.5 kWh/day on sunny days</li>
                         <li class="flex gap-3"><i class="fas fa-check text-emerald-400 mt-1"></i> Ideal for short trips &amp; tent camping</li>
                     </ul>
-                    <div class="mt-10 pt-8 border-t border-zinc-700 text-sm">
-                        <span class="text-emerald-400 font-medium">Perfect for:</span> Newbies, solo short-haul travelers
+                    <div class="mt-8 md:mt-10 pt-6 md:pt-8 border-t border-zinc-700 text-sm">
+                        <span class="text-amber-400 font-medium">Perfect for:</span> Newbies, solo short-haul travelers
                     </div>
                 </div>
                 
                 <!-- Tier 2 -->
-                <div class="bg-zinc-800 rounded-3xl p-8 card-hover border-2 border-emerald-500 relative">
-                    <div class="absolute -top-4 right-8 bg-emerald-500 text-black text-xs font-bold px-6 py-2 rounded-3xl">MOST POPULAR</div>
-                    <div class="flex justify-between items-start mb-8">
+                <div class="bg-zinc-800 rounded-3xl p-6 md:p-8 card-hover border-2 border-emerald-500 relative">
+                    <div class="absolute -top-4 right-4 md:right-8 bg-emerald-500 text-black text-xs font-bold px-4 md:px-6 py-2 rounded-3xl">MOST POPULAR</div>
+                    <div class="flex justify-between items-start mb-6 md:mb-8">
                         <div>
                             <span class="px-4 py-1.5 bg-emerald-500 text-black text-xs font-bold rounded-2xl">MAINSTREAM</span>
-                            <h3 class="text-3xl font-bold mt-6 heading-font">1000W – 1500W</h3>
+                            <h3 class="text-2xl md:text-3xl font-bold mt-6 heading-font">1000W – 1500W</h3>
                         </div>
                         <div class="text-right">
-                            <div class="text-5xl font-bold text-emerald-400">02</div>
+                            <div class="text-4xl md:text-5xl font-bold text-emerald-400">02</div>
                             <div class="text-xs text-zinc-500">Long-haul</div>
                         </div>
                     </div>
@@ -182,7 +224,7 @@ content="https://mikeok.com/images/blog/rv-solar-guide.jpg">
                         <li class="flex gap-3"><i class="fas fa-check text-emerald-400 mt-1"></i> 5–8 kWh/day</li>
                         <li class="flex gap-3"><i class="fas fa-check text-emerald-400 mt-1"></i> 1-2 people long-distance living</li>
                     </ul>
-                    <div class="mt-10 pt-8 border-t border-zinc-700">
+                    <div class="mt-8 md:mt-10 pt-6 md:pt-8 border-t border-zinc-700">
                         <div class="flex items-center gap-2 text-emerald-400 text-sm font-medium">
                             <i class="fas fa-star"></i>
                             <span>Used by 90% of long-distance bloggers (Sichuan-Tibet, Xinjiang routes)</span>
@@ -191,14 +233,14 @@ content="https://mikeok.com/images/blog/rv-solar-guide.jpg">
                 </div>
                 
                 <!-- Tier 3 -->
-                <div class="bg-zinc-800 rounded-3xl p-8 card-hover border border-zinc-700">
-                    <div class="flex justify-between items-start mb-8">
+                <div class="bg-zinc-800 rounded-3xl p-6 md:p-8 card-hover border border-zinc-700">
+                    <div class="flex justify-between items-start mb-6 md:mb-8">
                         <div>
                             <span class="px-4 py-1.5 bg-purple-600 text-white text-xs font-bold rounded-2xl">PREMIUM</span>
-                            <h3 class="text-3xl font-bold mt-6 heading-font">1600W – 2100W</h3>
+                            <h3 class="text-2xl md:text-3xl font-bold mt-6 heading-font">1600W – 2100W</h3>
                         </div>
                         <div class="text-right">
-                            <div class="text-5xl font-bold text-purple-400">03</div>
+                            <div class="text-4xl md:text-5xl font-bold text-purple-400">03</div>
                             <div class="text-xs text-zinc-500">Unlimited</div>
                         </div>
                     </div>
@@ -208,7 +250,7 @@ content="https://mikeok.com/images/blog/rv-solar-guide.jpg">
                         <li class="flex gap-3"><i class="fas fa-check text-emerald-400 mt-1"></i> 8–10+ kWh/day</li>
                         <li class="flex gap-3"><i class="fas fa-check text-emerald-400 mt-1"></i> Heavy-duty 3-wheel RV, remote areas</li>
                     </ul>
-                    <div class="mt-10 pt-8 border-t border-zinc-700 text-sm">
+                    <div class="mt-8 md:mt-10 pt-6 md:pt-8 border-t border-zinc-700 text-sm">
                         <span class="text-purple-400 font-medium">Perfect for:</span> Extended stays in no-power zones
                     </div>
                 </div>
@@ -217,14 +259,14 @@ content="https://mikeok.com/images/blog/rv-solar-guide.jpg">
     </section>
 
     <!-- FULL SYSTEM -->
-    <section id="full-system" class="py-24 bg-black">
+    <section id="full-system" class="py-16 md:py-24 bg-black">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="grid lg:grid-cols-12 gap-16 items-center">
+            <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
                 <div class="lg:col-span-5">
-                    <h2 class="text-5xl heading-font font-bold leading-tight">Complete Solar System<br>Used by Bloggers</h2>
+                    <h2 class="text-3xl md:text-5xl heading-font font-bold leading-tight">Complete Solar System<br>Used by Bloggers</h2>
                     <p class="mt-6 text-lg text-zinc-400">Every component is field-tested by long-distance travelers.</p>
                     
-                    <div class="mt-12 space-y-10">
+                    <div class="mt-8 md:mt-12 space-y-8 md:space-y-10">
                         <div class="flex gap-6">
                             <div class="w-12 h-12 bg-emerald-900 rounded-2xl flex items-center justify-center flex-shrink-0">⚡</div>
                             <div>
@@ -249,22 +291,22 @@ content="https://mikeok.com/images/blog/rv-solar-guide.jpg">
                     </div>
                 </div>
                 
-                <div class="lg:col-span-7 bg-zinc-900 rounded-3xl p-10">
-                    <h3 class="uppercase tracking-widest text-sm mb-8 text-emerald-400">Panel Type Preferred by 95% Bloggers</h3>
-                    <div class="grid sm:grid-cols-2 gap-8">
-                        <div class="bg-zinc-800 p-8 rounded-3xl">
-                            <div class="text-2xl font-bold mb-2">Monocrystalline Double-Glass</div>
-                            <div class="text-emerald-400 text-5xl font-bold">22-23%</div>
+                <div class="lg:col-span-7 bg-zinc-900 rounded-3xl p-6 md:p-10 mt-10 lg:mt-0">
+                    <h3 class="uppercase tracking-widest text-sm mb-6 md:mb-8 text-emerald-400">Panel Type Preferred by 95% Bloggers</h3>
+                    <div class="grid sm:grid-cols-2 gap-6 md:gap-8">
+                        <div class="bg-zinc-800 p-6 md:p-8 rounded-3xl">
+                            <div class="text-xl md:text-2xl font-bold mb-2">Monocrystalline Double-Glass</div>
+                            <div class="text-emerald-400 text-4xl md:text-5xl font-bold">22-23%</div>
                             <div class="text-sm text-zinc-400">Efficiency • Hail resistant • Best heat dissipation</div>
-                            <ul class="mt-8 space-y-3 text-sm">
+                            <ul class="mt-6 md:mt-8 space-y-3 text-sm">
                                 <li>✓ 400W–710W large panels</li>
                                 <li>✓ Long lifespan</li>
                                 <li>✓ Excellent value</li>
                             </ul>
                         </div>
-                        <div class="opacity-60">
+                        <div class="opacity-60 mt-6 sm:mt-0">
                             <div class="text-zinc-500 text-sm mb-3">NOT RECOMMENDED FOR MAIN USE</div>
-                            <div class="bg-zinc-800/50 p-8 rounded-3xl">
+                            <div class="bg-zinc-800/50 p-6 md:p-8 rounded-3xl">
                                 <div class="line-through">Flexible panels</div>
                                 <div class="line-through text-sm mt-6">Old polycrystalline panels</div>
                             </div>
@@ -276,27 +318,27 @@ content="https://mikeok.com/images/blog/rv-solar-guide.jpg">
     </section>
 
     <!-- PACKAGES -->
-    <section id="packages" class="py-24 bg-zinc-900">
+    <section id="packages" class="py-16 md:py-24 bg-zinc-900">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-5xl heading-font font-bold">Ready-to-Install Packages</h2>
+            <div class="text-center mb-12 md:mb-16">
+                <h2 class="text-3xl md:text-5xl heading-font font-bold">Ready-to-Install Packages</h2>
                 <p class="text-zinc-400 mt-3">Copy what the pros are using</p>
             </div>
             
-            <div class="grid md:grid-cols-3 gap-8">
+            <div class="grid md:grid-cols-3 gap-6 md:gap-8">
                 <!-- Package A -->
                 <div class="bg-zinc-800 rounded-3xl overflow-hidden card-hover">
                     <div class="h-2 bg-amber-400"></div>
-                    <div class="p-8">
+                    <div class="p-6 md:p-8">
                         <div class="uppercase text-amber-400 text-sm font-medium">Lightweight Short Trip</div>
-                        <div class="text-4xl font-bold mt-2">Scheme A</div>
-                        <div class="text-5xl font-bold text-amber-400 mt-1">400W</div>
+                        <div class="text-3xl md:text-4xl font-bold mt-2">Scheme A</div>
+                        <div class="text-4xl md:text-5xl font-bold text-amber-400 mt-1">400W</div>
                         
-                        <ul class="my-10 space-y-6">
-                            <li class="flex justify-between"><span class="text-zinc-400">Solar Panels</span><span class="font-medium">2×200W Monocrystalline</span></li>
-                            <li class="flex justify-between"><span class="text-zinc-400">Controller</span><span class="font-medium">60A MPPT 60V</span></li>
-                            <li class="flex justify-between"><span class="text-zinc-400">Battery</span><span class="font-medium">60V 200Ah LiFePO4 (12kWh)</span></li>
-                            <li class="flex justify-between"><span class="text-zinc-400">Inverter</span><span class="font-medium">2000W Pure Sine</span></li>
+                        <ul class="my-6 md:my-10 space-y-4 md:space-y-6">
+                            <li class="flex justify-between gap-2 text-sm md:text-base"><span class="text-zinc-400">Solar Panels</span><span class="font-medium text-right">2×200W Monocrystalline</span></li>
+                            <li class="flex justify-between gap-2 text-sm md:text-base"><span class="text-zinc-400">Controller</span><span class="font-medium text-right">60A MPPT 60V</span></li>
+                            <li class="flex justify-between gap-2 text-sm md:text-base"><span class="text-zinc-400">Battery</span><span class="font-medium text-right">60V 200Ah LiFePO4 (12kWh)</span></li>
+                            <li class="flex justify-between gap-2 text-sm md:text-base"><span class="text-zinc-400">Inverter</span><span class="font-medium text-right">2000W Pure Sine</span></li>
                         </ul>
                         
                         <div class="bg-black rounded-2xl p-6 text-sm">
@@ -307,7 +349,7 @@ content="https://mikeok.com/images/blog/rv-solar-guide.jpg">
                         </div>
                         
                         <button onclick="alert('Thank you! Our team will contact you shortly for a full quote.')"
-                                class="mt-8 w-full py-5 bg-amber-500 hover:bg-amber-400 text-black font-semibold rounded-2xl transition-colors">
+                                class="mt-6 md:mt-8 w-full py-4 md:py-5 bg-amber-500 hover:bg-amber-400 text-black font-semibold rounded-2xl transition-colors">
                             Choose This Package
                         </button>
                     </div>
@@ -315,18 +357,18 @@ content="https://mikeok.com/images/blog/rv-solar-guide.jpg">
                 
                 <!-- Package B -->
                 <div class="bg-zinc-800 rounded-3xl overflow-hidden card-hover border-2 border-emerald-500 relative">
-                    <div class="absolute top-6 right-6 bg-emerald-500 text-black text-xs font-bold px-5 py-2 rounded-3xl">BEST SELLER</div>
+                    <div class="absolute top-4 md:top-6 right-4 md:right-6 bg-emerald-500 text-black text-xs font-bold px-4 md:px-5 py-2 rounded-3xl">BEST SELLER</div>
                     <div class="h-2 bg-emerald-500"></div>
-                    <div class="p-8">
+                    <div class="p-6 md:p-8">
                         <div class="uppercase text-emerald-400 text-sm font-medium">Long Distance Living</div>
-                        <div class="text-4xl font-bold mt-2">Scheme B</div>
-                        <div class="text-5xl font-bold text-emerald-400 mt-1">1200W</div>
+                        <div class="text-3xl md:text-4xl font-bold mt-2">Scheme B</div>
+                        <div class="text-4xl md:text-5xl font-bold text-emerald-400 mt-1">1200W</div>
                         
-                        <ul class="my-10 space-y-6">
-                            <li class="flex justify-between"><span class="text-zinc-400">Solar Panels</span><span class="font-medium">3×400W Double Glass</span></li>
-                            <li class="flex justify-between"><span class="text-zinc-400">Controller</span><span class="font-medium">80A MPPT 72V</span></li>
-                            <li class="flex justify-between"><span class="text-zinc-400">Battery</span><span class="font-medium">72V 500Ah (43kWh)</span></li>
-                            <li class="flex justify-between"><span class="text-zinc-400">Inverter</span><span class="font-medium">4000W Pure Sine</span></li>
+                        <ul class="my-6 md:my-10 space-y-4 md:space-y-6">
+                            <li class="flex justify-between gap-2 text-sm md:text-base"><span class="text-zinc-400">Solar Panels</span><span class="font-medium text-right">3×400W Double Glass</span></li>
+                            <li class="flex justify-between gap-2 text-sm md:text-base"><span class="text-zinc-400">Controller</span><span class="font-medium text-right">80A MPPT 72V</span></li>
+                            <li class="flex justify-between gap-2 text-sm md:text-base"><span class="text-zinc-400">Battery</span><span class="font-medium text-right">72V 500Ah (43kWh)</span></li>
+                            <li class="flex justify-between gap-2 text-sm md:text-base"><span class="text-zinc-400">Inverter</span><span class="font-medium text-right">4000W Pure Sine</span></li>
                         </ul>
                         
                         <div class="bg-black rounded-2xl p-6 text-sm">
@@ -337,7 +379,7 @@ content="https://mikeok.com/images/blog/rv-solar-guide.jpg">
                         </div>
                         
                         <button onclick="alert('Thank you! Our team will contact you shortly for a full quote.')"
-                                class="mt-8 w-full py-5 bg-emerald-600 hover:bg-emerald-500 text-white font-semibold rounded-2xl transition-colors">
+                                class="mt-6 md:mt-8 w-full py-4 md:py-5 bg-emerald-600 hover:bg-emerald-500 text-white font-semibold rounded-2xl transition-colors">
                             Choose This Package
                         </button>
                     </div>
@@ -346,16 +388,16 @@ content="https://mikeok.com/images/blog/rv-solar-guide.jpg">
                 <!-- Package C -->
                 <div class="bg-zinc-800 rounded-3xl overflow-hidden card-hover">
                     <div class="h-2 bg-purple-600"></div>
-                    <div class="p-8">
+                    <div class="p-6 md:p-8">
                         <div class="uppercase text-purple-400 text-sm font-medium">Heavy Duty Unlimited</div>
-                        <div class="text-4xl font-bold mt-2">Scheme C</div>
-                        <div class="text-5xl font-bold text-purple-400 mt-1">2100W</div>
+                        <div class="text-3xl md:text-4xl font-bold mt-2">Scheme C</div>
+                        <div class="text-4xl md:text-5xl font-bold text-purple-400 mt-1">2100W</div>
                         
-                        <ul class="my-10 space-y-6">
-                            <li class="flex justify-between"><span class="text-zinc-400">Solar Panels</span><span class="font-medium">3×700W Double Glass</span></li>
-                            <li class="flex justify-between"><span class="text-zinc-400">Controller</span><span class="font-medium">120A MPPT 72V</span></li>
-                            <li class="flex justify-between"><span class="text-zinc-400">Battery</span><span class="font-medium">72V 840Ah (60kWh)</span></li>
-                            <li class="flex justify-between"><span class="text-zinc-400">Inverter</span><span class="font-medium">5000W Pure Sine</span></li>
+                        <ul class="my-6 md:my-10 space-y-4 md:space-y-6">
+                            <li class="flex justify-between gap-2 text-sm md:text-base"><span class="text-zinc-400">Solar Panels</span><span class="font-medium text-right">3×700W Double Glass</span></li>
+                            <li class="flex justify-between gap-2 text-sm md:text-base"><span class="text-zinc-400">Controller</span><span class="font-medium text-right">120A MPPT 72V</span></li>
+                            <li class="flex justify-between gap-2 text-sm md:text-base"><span class="text-zinc-400">Battery</span><span class="font-medium text-right">72V 840Ah (60kWh)</span></li>
+                            <li class="flex justify-between gap-2 text-sm md:text-base"><span class="text-zinc-400">Inverter</span><span class="font-medium text-right">5000W Pure Sine</span></li>
                         </ul>
                         
                         <div class="bg-black rounded-2xl p-6 text-sm">
@@ -366,7 +408,7 @@ content="https://mikeok.com/images/blog/rv-solar-guide.jpg">
                         </div>
                         
                         <button onclick="alert('Thank you! Our team will contact you shortly for a full quote.')"
-                                class="mt-8 w-full py-5 bg-purple-600 hover:bg-purple-500 text-white font-semibold rounded-2xl transition-colors">
+                                class="mt-6 md:mt-8 w-full py-4 md:py-5 bg-purple-600 hover:bg-purple-500 text-white font-semibold rounded-2xl transition-colors">
                             Choose This Package
                         </button>
                     </div>
@@ -376,34 +418,34 @@ content="https://mikeok.com/images/blog/rv-solar-guide.jpg">
     </section>
 
     <!-- TIPS & CTA -->
-    <section id="tips" class="py-24 bg-black">
+    <section id="tips" class="py-16 md:py-24 bg-black">
         <div class="max-w-4xl mx-auto px-6">
-            <div class="bg-zinc-900 rounded-3xl p-12 md:p-16">
-                <h2 class="text-4xl heading-font font-bold text-center mb-12">Pro Tips from Experienced Bloggers</h2>
-                <div class="grid md:grid-cols-2 gap-10">
-                    <div class="space-y-8">
+            <div class="bg-zinc-900 rounded-3xl p-8 md:p-12 lg:p-16">
+                <h2 class="text-3xl md:text-4xl heading-font font-bold text-center mb-8 md:mb-12">Pro Tips from Experienced Bloggers</h2>
+                <div class="grid md:grid-cols-2 gap-8 md:gap-10">
+                    <div class="space-y-6 md:space-y-8">
                         <div class="flex gap-5">
-                            <span class="text-4xl font-bold text-emerald-400">01</span>
+                            <span class="text-3xl md:text-4xl font-bold text-emerald-400">01</span>
                             <div>
                                 <p class="font-medium">Prefer large single high-wattage panels (400-700W) over many small ones.</p>
                             </div>
                         </div>
                         <div class="flex gap-5">
-                            <span class="text-4xl font-bold text-emerald-400">02</span>
+                            <span class="text-3xl md:text-4xl font-bold text-emerald-400">02</span>
                             <div>
                                 <p class="font-medium">Always use tiltable or pull-out brackets – increases generation by 25-35%.</p>
                             </div>
                         </div>
                     </div>
-                    <div class="space-y-8">
+                    <div class="space-y-6 md:space-y-8">
                         <div class="flex gap-5">
-                            <span class="text-4xl font-bold text-emerald-400">03</span>
+                            <span class="text-3xl md:text-4xl font-bold text-emerald-400">03</span>
                             <div>
                                 <p class="font-medium">Match solar power with battery: 1000W solar needs at least 30kWh battery.</p>
                             </div>
                         </div>
                         <div class="flex gap-5">
-                            <span class="text-4xl font-bold text-emerald-400">04</span>
+                            <span class="text-3xl md:text-4xl font-bold text-emerald-400">04</span>
                             <div>
                                 <p class="font-medium">For southern rainy areas, go for 1500W. Northwest highlands do well with 1200W.</p>
                             </div>
@@ -414,14 +456,15 @@ content="https://mikeok.com/images/blog/rv-solar-guide.jpg">
         </div>
     </section>
 
-    <!-- CUSTOM CTA -->
-    <section id="custom" class="py-32 bg-gradient-to-br from-emerald-900 to-black">
+    <!-- CUSTOM CTA 修复手机表单两列挤压 -->
+    <section id="custom" class="py-20 md:py-32 bg-gradient-to-br from-emerald-900 to-black">
         <div class="max-w-3xl mx-auto text-center px-6">
-            <h2 class="text-5xl heading-font font-bold">Need a Tailored Solution?</h2>
-            <p class="mt-6 text-xl text-zinc-300">Tell us about your vehicle, number of travelers, AC needs, and typical routes. We will design the most efficient and cost-effective system for you.</p>
+            <h2 class="text-3xl md:text-5xl heading-font font-bold">Need a Tailored Solution?</h2>
+            <p class="mt-6 text-lg md:text-xl text-zinc-300">Tell us about your vehicle, number of travelers, AC needs, and typical routes. We will design the most efficient and cost-effective system for you.</p>
             
-            <form class="mt-12 bg-zinc-900 rounded-3xl p-10 max-w-xl mx-auto" onsubmit="event.preventDefault(); alert('To ensure our solar energy experts can assist you promptly, please contact us via email (okmikezhao@gmail.com) or WhatsApp (+86 18006891977), and we will get back to you within 24 hours.');">
-                <div class="grid grid-cols-2 gap-6">
+            <form class="mt-8 md:mt-12 bg-zinc-900 rounded-3xl p-6 md:p-10 max-w-xl mx-auto" onsubmit="event.preventDefault(); alert('To ensure our solar energy experts can assist you promptly, please contact us via email (okmikezhao@gmail.com) or WhatsApp (+86 18006891977), and we will get back to you within 24 hours.');">
+                <!-- 手机单列，平板以上双列 -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div>
                         <label class="block text-sm mb-2 text-zinc-400">Vehicle Type</label>
                         <select class="w-full bg-black border border-zinc-700 rounded-2xl px-6 py-4 text-white">
@@ -446,7 +489,7 @@ content="https://mikeok.com/images/blog/rv-solar-guide.jpg">
                 </div>
                 
                 <button type="submit"
-                        class="mt-8 w-full py-6 bg-white text-black font-semibold text-lg rounded-3xl hover:bg-amber-300 transition-colors">
+                        class="mt-8 w-full py-5 md:py-6 bg-white text-black font-semibold text-lg rounded-3xl hover:bg-amber-300 transition-colors">
                     Get My Personalized Solar Plan →
                 </button>
             </form>
@@ -454,9 +497,9 @@ content="https://mikeok.com/images/blog/rv-solar-guide.jpg">
     </section>
 
     <!-- FOOTER -->
-    <footer class="bg-black py-20 border-t border-zinc-800">
+    <footer class="bg-black py-16 md:py-20 border-t border-zinc-800">
         <div class="max-w-7xl mx-auto px-6 text-zinc-500">
-            <div class="flex flex-col md:flex-row justify-between gap-12">
+            <div class="flex flex-col md:flex-row justify-between gap-10 md:gap-12">
                 <div>
                     <div class="flex items-center gap-3 text-white mb-6">
                         <div class="w-9 h-9 bg-emerald-500 rounded-2xl flex items-center justify-center text-2xl">☀️</div>
@@ -465,7 +508,7 @@ content="https://mikeok.com/images/blog/rv-solar-guide.jpg">
                     <p class="max-w-xs">Professional solar solutions for overland travelers and RV bloggers worldwide.</p>
                 </div>
                 
-                <div class="grid grid-cols-3 gap-12">
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 md:gap-12">
                     <div>
                         <div class="font-medium text-white mb-4">Products</div>
                         <div class="space-y-2 text-sm">
@@ -493,21 +536,37 @@ content="https://mikeok.com/images/blog/rv-solar-guide.jpg">
                 </div>
             </div>
             
-            <div class="text-center text-xs mt-20 pt-8 border-t border-zinc-800">
+            <div class="text-center text-xs mt-12 md:mt-20 pt-8 border-t border-zinc-800">
                 © 2026 SolarForge. All rights reserved. | Designed for serious travelers.
             </div>
         </div>
     </footer>
 
-    <script>
-        // Tailwind script already included
-        console.log("%cSolarForge Website Loaded Successfully", "color: #10b981; font-size: 14px");
-    </script>
-    <!-- 悬浮WhatsApp按钮（全站统一） -->
-<a href="https://wa.me/8618006891977" target="_blank" rel="noopener noreferrer" style="position:fixed;bottom:20px;right:20px;background:#25D366;width:65px;height:65px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 5px 15px rgba(0,0,0,0.3);z-index:9999;text-decoration:none;transition:0.3s;">
-<svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" fill="white" viewBox="0 0 24 24">
+    <!-- 悬浮WhatsApp按钮 手机缩小尺寸 -->
+<a href="https://wa.me/8618006891977" target="_blank" rel="noopener noreferrer" aria-label="Contact us via WhatsApp"
+style="position:fixed;bottom:16px;right:16px;background:#25D366;width:56px;height:56px;md:w-[65px] md:h-[65px];border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 5px 15px rgba(0,0,0,0.3);z-index:9999;text-decoration:none;transition:0.3s;">
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" md:w-[38] md:h-[38]" fill="white" viewBox="0 0 24 24">
 <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
 </svg>
 </a>
+
+    <script>
+        console.log("%cSolarForge Website Loaded Successfully", "color: #10b981; font-size: 14px");
+        // 移动端汉堡菜单切换
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        menuBtn.addEventListener('click', () => {
+            menuBtn.classList.toggle('menu-open');
+            mobileMenu.classList.toggle('hidden');
+        });
+        // 点击导航链接自动关闭移动端菜单
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuBtn.classList.remove('menu-open');
+            })
+        })
+    </script>
 </body>
 </html>
