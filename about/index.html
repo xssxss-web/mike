@@ -239,6 +239,363 @@
             font-weight:600;
         }
 
+<!-- ========================================
+     YIWU WAREHOUSE & OPERATIONS SECTION
+     Company Warehouse Real Photos
+     ======================================== -->
+
+<style>
+/* ========================================
+   WAREHOUSE SECTION - MAIN
+   ======================================== */
+
+.warehouse-section {
+    background: #ffffff;
+    padding: 110px 6%;
+    position: relative;
+    overflow: hidden;
+}
+
+.warehouse-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* ========================================
+   WAREHOUSE SECTION - LAYOUT
+   ======================================== */
+
+.warehouse-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+/* ========================================
+   WAREHOUSE SECTION - TEXT
+   ======================================== */
+
+.warehouse-label {
+    display: inline-block;
+    margin-bottom: 18px;
+    color: #e92b20;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.warehouse-title {
+    margin: 0 0 25px;
+    color: #07152d;
+    font-size: clamp(38px, 4vw, 58px);
+    line-height: 1.08;
+    font-weight: 700;
+}
+
+.warehouse-text {
+    margin: 0 0 20px;
+    color: #445064;
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+.warehouse-features {
+    margin: 30px 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.warehouse-features li {
+    position: relative;
+    padding-left: 28px;
+    margin-bottom: 14px;
+    color: #26364d;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.warehouse-features li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #e92b20;
+    font-weight: 700;
+}
+
+/* ========================================
+   WAREHOUSE SECTION - PHOTO GRID
+   ======================================== */
+
+.warehouse-gallery {
+    display: grid;
+    grid-template-columns: 1.45fr 0.85fr;
+    grid-template-rows: 250px 250px;
+    gap: 18px;
+}
+
+/* Large main photo */
+
+.warehouse-photo-large {
+    grid-row: 1 / 3;
+}
+
+/* Small photos */
+
+.warehouse-photo-small {
+    min-height: 0;
+}
+
+/* ========================================
+   WAREHOUSE SECTION - IMAGES
+   ======================================== */
+
+.warehouse-photo {
+    position: relative;
+    overflow: hidden;
+    border-radius: 18px;
+    background: #eef1f5;
+}
+
+.warehouse-photo img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.warehouse-photo:hover img {
+    transform: scale(1.04);
+}
+
+/* Dark overlay */
+
+.warehouse-photo::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.28),
+        rgba(0, 0, 0, 0.02) 55%
+    );
+    pointer-events: none;
+}
+
+/* ========================================
+   WAREHOUSE SECTION - PHOTO LABEL
+   ======================================== */
+
+.warehouse-photo-caption {
+    position: absolute;
+    left: 20px;
+    bottom: 18px;
+    z-index: 2;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* ========================================
+   WAREHOUSE SECTION - RESPONSIVE
+   ======================================== */
+
+@media (max-width: 1000px) {
+
+    .warehouse-section {
+        padding: 85px 5%;
+    }
+
+    .warehouse-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .warehouse-gallery {
+        grid-template-rows: 300px 220px;
+    }
+}
+
+@media (max-width: 650px) {
+
+    .warehouse-section {
+        padding: 70px 20px;
+    }
+
+    .warehouse-title {
+        font-size: 38px;
+    }
+
+    .warehouse-text {
+        font-size: 16px;
+    }
+
+    .warehouse-gallery {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 260px 180px;
+        gap: 12px;
+    }
+
+    .warehouse-photo-large {
+        grid-column: 1 / 3;
+        grid-row: 1;
+    }
+
+    .warehouse-photo-small {
+        grid-row: 2;
+    }
+
+    .warehouse-photo {
+        border-radius: 12px;
+    }
+
+    .warehouse-photo-caption {
+        left: 14px;
+        bottom: 12px;
+        font-size: 12px;
+    }
+}
+</style>
+
+
+<!-- ========================================
+     WAREHOUSE SECTION - HTML
+     ======================================== -->
+
+<section class="warehouse-section">
+
+    <div class="warehouse-container">
+
+        <div class="warehouse-grid">
+
+            <!-- ========================================
+                 LEFT: COMPANY WAREHOUSE DESCRIPTION
+                 ======================================== -->
+
+            <div class="warehouse-content">
+
+                <span class="warehouse-label">
+                    OUR CHINA OPERATIONS
+                </span>
+
+                <h2 class="warehouse-title">
+                    Your Products,<br>
+                    Managed in China.
+                </h2>
+
+                <p class="warehouse-text">
+                    Our Yiwu warehouse provides a practical base for
+                    receiving, checking and consolidating products from
+                    different suppliers across China.
+                </p>
+
+                <p class="warehouse-text">
+                    Instead of shipping each supplier's goods separately,
+                    we can coordinate incoming shipments, consolidate
+                    multiple orders and prepare your cargo for international
+                    delivery.
+                </p>
+
+                <ul class="warehouse-features">
+
+                    <li>
+                        Supplier goods receiving and checking
+                    </li>
+
+                    <li>
+                        Multi-supplier order consolidation
+                    </li>
+
+                    <li>
+                        Product photos and basic quality inspection
+                    </li>
+
+                    <li>
+                        Repacking and shipment preparation when required
+                    </li>
+
+                    <li>
+                        Coordination with international logistics partners
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- ========================================
+                 RIGHT: WAREHOUSE PHOTO GALLERY
+                 ======================================== -->
+
+            <div class="warehouse-gallery">
+
+                <!-- Large Warehouse Photo -->
+                <div class="warehouse-photo warehouse-photo-large">
+
+                    <img
+                        src="/images/gongbeijihuo.jpg"
+                        alt="MikeOK Yiwu warehouse in China"
+                        loading="lazy"
+                    >
+
+                    <span class="warehouse-photo-caption">
+                        MikeOK Yiwu Warehouse
+                    </span>
+
+                </div>
+
+
+                <!-- Small Photo 1 -->
+                <div class="warehouse-photo warehouse-photo-small">
+
+                    <img
+                        src="/images/131.jpg"
+                        alt="Products received at MikeOK warehouse in Yiwu"
+                        loading="lazy"
+                    >
+
+                    <span class="warehouse-photo-caption">
+                        Product Receiving
+                    </span>
+
+                </div>
+
+
+                <!-- Small Photo 2 -->
+                <div class="warehouse-photo warehouse-photo-small">
+
+                    <img
+                        src="/images/232.jpg"
+                        alt="Product consolidation and shipment preparation in Yiwu"
+                        loading="lazy"
+                    >
+
+                    <span class="warehouse-photo-caption">
+                        Consolidation & Shipment
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ========================================
+     END OF WAREHOUSE SECTION
+     ======================================== -->
+
+
+        
         /* =========================
         WHAT WE DO
         ========================= */
