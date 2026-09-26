@@ -805,6 +805,358 @@
                 padding: 70px 0;
             }
         }
+/* ========================================
+   REAL SOURCING & SHIPPING CASES
+   MikeOK Case Study Gallery
+   ======================================== */
+
+.sourcing-cases {
+    padding: 120px 6%;
+    background: #f8fafc;
+}
+
+.sourcing-cases-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+
+/* ========================================
+   SECTION HEADING
+   ======================================== */
+
+.sourcing-cases-heading {
+    max-width: 850px;
+    margin: 0 auto 70px;
+    text-align: center;
+}
+
+.sourcing-cases-label {
+    display: inline-block;
+    margin-bottom: 18px;
+    color: #e92b20;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.sourcing-cases-title {
+    margin: 0 0 20px;
+    color: #07152d;
+    font-size: clamp(38px, 4vw, 58px);
+    line-height: 1.1;
+    font-weight: 700;
+}
+
+.sourcing-cases-intro {
+    margin: 0;
+    color: #667085;
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+
+/* ========================================
+   CASE GRID
+   ======================================== */
+
+.sourcing-case-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 35px;
+}
+
+
+/* ========================================
+   CASE CARD
+   ======================================== */
+
+.sourcing-case {
+    background: #ffffff;
+    border: 1px solid #e7ebf0;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.sourcing-case:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+}
+
+
+/* ========================================
+   CASE CONTENT
+   ======================================== */
+
+.sourcing-case-content {
+    padding: 28px 30px 25px;
+}
+
+.sourcing-case-number {
+    margin-bottom: 8px;
+    color: #e92b20;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.sourcing-case-title {
+    margin: 0 0 10px;
+    color: #07152d;
+    font-size: 25px;
+    line-height: 1.25;
+    font-weight: 700;
+}
+
+.sourcing-case-description {
+    margin: 0;
+    color: #667085;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+
+/* ========================================
+   CASE PHOTO GRID
+   ======================================== */
+
+.sourcing-case-gallery {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr;
+    grid-template-rows: 190px 190px;
+    gap: 5px;
+    background: #f1f3f5;
+}
+
+.sourcing-case-gallery .case-photo:first-child {
+    grid-row: 1 / 3;
+}
+
+
+/* ========================================
+   CASE PHOTO
+   ======================================== */
+
+.case-photo {
+    position: relative;
+    overflow: hidden;
+    background: #e9edf2;
+    cursor: zoom-in;
+}
+
+.case-photo img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.case-photo:hover img {
+    transform: scale(1.06);
+}
+
+
+/* ========================================
+   PHOTO OVERLAY
+   ======================================== */
+
+.case-photo::after {
+    content: "View";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    
+    padding: 8px 14px;
+    border-radius: 20px;
+    
+    background: rgba(0, 0, 0, 0.65);
+    color: #ffffff;
+    
+    font-size: 12px;
+    font-weight: 600;
+    
+    opacity: 0;
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
+    
+    pointer-events: none;
+}
+
+.case-photo:hover::after {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+
+/* ========================================
+   VIEW MORE BUTTON
+   ======================================== */
+
+.sourcing-cases-button {
+    margin-top: 65px;
+    text-align: center;
+}
+
+.sourcing-cases-button a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    
+    padding: 14px 30px;
+    
+    border: 1px solid #07152d;
+    border-radius: 6px;
+    
+    color: #07152d;
+    background: #ffffff;
+    
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    
+    transition:
+        background 0.3s ease,
+        color 0.3s ease;
+}
+
+.sourcing-cases-button a:hover {
+    background: #07152d;
+    color: #ffffff;
+}
+
+
+/* ========================================
+   IMAGE LIGHTBOX
+   ======================================== */
+
+.case-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    
+    display: none;
+    align-items: center;
+    justify-content: center;
+    
+    padding: 30px;
+    
+    background: rgba(0, 0, 0, 0.88);
+}
+
+.case-lightbox.active {
+    display: flex;
+}
+
+.case-lightbox img {
+    max-width: 92vw;
+    max-height: 88vh;
+    width: auto;
+    height: auto;
+    
+    border-radius: 8px;
+    
+    object-fit: contain;
+    
+    box-shadow: 0 20px 70px rgba(0, 0, 0, 0.4);
+}
+
+.case-lightbox-close {
+    position: absolute;
+    top: 25px;
+    right: 30px;
+    
+    width: 45px;
+    height: 45px;
+    
+    border: none;
+    border-radius: 50%;
+    
+    background: rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+    
+    font-size: 28px;
+    line-height: 1;
+    
+    cursor: pointer;
+}
+
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+
+@media (max-width: 900px) {
+
+    .sourcing-cases {
+        padding: 90px 5%;
+    }
+
+    .sourcing-case-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .sourcing-cases {
+        padding: 75px 20px;
+    }
+
+    .sourcing-cases-heading {
+        margin-bottom: 45px;
+    }
+
+    .sourcing-cases-title {
+        font-size: 38px;
+    }
+
+    .sourcing-cases-intro {
+        font-size: 16px;
+    }
+
+    .sourcing-case-content {
+        padding: 24px 22px 22px;
+    }
+
+    .sourcing-case-title {
+        font-size: 22px;
+    }
+
+    .sourcing-case-gallery {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 180px 150px;
+    }
+
+    .sourcing-case-gallery .case-photo:first-child {
+        grid-column: 1 / 3;
+        grid-row: 1;
+    }
+
+    .sourcing-case-gallery .case-photo:nth-child(2),
+    .sourcing-case-gallery .case-photo:nth-child(3) {
+        grid-row: 2;
+    }
+
+    .sourcing-case-gallery .case-photo:nth-child(4) {
+        display: none;
+    }
+}
+
+
+
+
+
+        
     </style>
 </head>
 <body class="bg-white text-gray-900">
@@ -1103,6 +1455,439 @@ WHAT WE DO
      ======================================== -->
 
 
+
+<!-- ========================================
+     REAL SOURCING & SHIPPING CASES
+     ======================================== -->
+
+<section class="sourcing-cases">
+
+    <div class="sourcing-cases-container">
+
+
+        <!-- ========================================
+             SECTION HEADING
+             ======================================== -->
+
+        <div class="sourcing-cases-heading">
+
+            <span class="sourcing-cases-label">
+                REAL SOURCING & SHIPPING CASES
+            </span>
+
+            <h2 class="sourcing-cases-title">
+                From Supplier to Shipment.
+            </h2>
+
+            <p class="sourcing-cases-intro">
+                Real products, real shipments and real operations
+                handled in China. These cases show how we support
+                international buyers from supplier coordination
+                and warehouse receiving to consolidation and export.
+            </p>
+
+        </div>
+
+
+        <!-- ========================================
+             CASE GRID
+             ======================================== -->
+
+        <div class="sourcing-case-grid">
+
+
+            <!-- ========================================
+                 CASE 01
+                 ======================================== -->
+
+            <article class="sourcing-case">
+
+                <div class="sourcing-case-content">
+
+                    <div class="sourcing-case-number">
+                        CASE 01
+                    </div>
+
+                    <h3 class="sourcing-case-title">
+                        Warehouse Receiving & Consolidation
+                    </h3>
+
+                    <p class="sourcing-case-description">
+                        Products from different suppliers received
+                        at our China warehouse, checked and prepared
+                        for consolidated shipment.
+                    </p>
+
+                </div>
+
+
+                <div class="sourcing-case-gallery">
+
+                    <div class="case-photo">
+                        <img
+                            src="/images/cases/case01-01.jpg"
+                            alt="Products received at MikeOK warehouse in China"
+                            loading="lazy"
+                        >
+                    </div>
+
+                    <div class="case-photo">
+                        <img
+                            src="/images/cases/case01-02.jpg"
+                            alt="Cargo receiving at MikeOK warehouse"
+                            loading="lazy"
+                        >
+                    </div>
+
+                    <div class="case-photo">
+                        <img
+                            src="/images/cases/case01-03.jpg"
+                            alt="Products consolidated in China warehouse"
+                            loading="lazy"
+                        >
+                    </div>
+
+                    <div class="case-photo">
+                        <img
+                            src="/images/cases/case01-04.jpg"
+                            alt="Shipment preparation in China"
+                            loading="lazy"
+                        >
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- ========================================
+                 CASE 02
+                 ======================================== -->
+
+            <article class="sourcing-case">
+
+                <div class="sourcing-case-content">
+
+                    <div class="sourcing-case-number">
+                        CASE 02
+                    </div>
+
+                    <h3 class="sourcing-case-title">
+                        Container Loading
+                    </h3>
+
+                    <p class="sourcing-case-description">
+                        Cargo prepared and loaded for international
+                        shipment after supplier collection,
+                        warehouse coordination and consolidation.
+                    </p>
+
+                </div>
+
+
+                <div class="sourcing-case-gallery">
+
+                    <div class="case-photo">
+                        <img
+                            src="/images/cases/case02-01.jpg"
+                            alt="Container loading in China"
+                            loading="lazy"
+                        >
+                    </div>
+
+                    <div class="case-photo">
+                        <img
+                            src="/images/cases/case02-02.jpg"
+                            alt="Cargo prepared for container loading"
+                            loading="lazy"
+                        >
+                    </div>
+
+                    <div class="case-photo">
+                        <img
+                            src="/images/cases/case02-03.jpg"
+                            alt="Goods being loaded into container"
+                            loading="lazy"
+                        >
+                    </div>
+
+                    <div class="case-photo">
+                        <img
+                            src="/images/cases/case02-04.jpg"
+                            alt="Export cargo loading in China"
+                            loading="lazy"
+                        >
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- ========================================
+                 CASE 03
+                 ======================================== -->
+
+            <article class="sourcing-case">
+
+                <div class="sourcing-case-content">
+
+                    <div class="sourcing-case-number">
+                        CASE 03
+                    </div>
+
+                    <h3 class="sourcing-case-title">
+                        Multi-Supplier Shipment
+                    </h3>
+
+                    <p class="sourcing-case-description">
+                        Multiple products and suppliers coordinated
+                        through one China-side receiving and
+                        consolidation process.
+                    </p>
+
+                </div>
+
+
+                <div class="sourcing-case-gallery">
+
+                    <div class="case-photo">
+                        <img
+                            src="/images/cases/case03-01.jpg"
+                            alt="Mixed supplier cargo in China"
+                            loading="lazy"
+                        >
+                    </div>
+
+                    <div class="case-photo">
+                        <img
+                            src="/images/cases/case03-02.jpg"
+                            alt="Mixed products received at warehouse"
+                            loading="lazy"
+                        >
+                    </div>
+
+                    <div class="case-photo">
+                        <img
+                            src="/images/cases/case03-03.jpg"
+                            alt="China warehouse consolidation"
+                            loading="lazy"
+                        >
+                    </div>
+
+                    <div class="case-photo">
+                        <img
+                            src="/images/cases/case03-04.jpg"
+                            alt="Consolidated cargo ready for shipment"
+                            loading="lazy"
+                        >
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- ========================================
+                 CASE 04
+                 ======================================== -->
+
+            <article class="sourcing-case">
+
+                <div class="sourcing-case-content">
+
+                    <div class="sourcing-case-number">
+                        CASE 04
+                    </div>
+
+                    <h3 class="sourcing-case-title">
+                        Export Shipment Preparation
+                    </h3>
+
+                    <p class="sourcing-case-description">
+                        Cargo organized, checked and prepared for
+                        international transportation from China.
+                    </p>
+
+                </div>
+
+
+                <div class="sourcing-case-gallery">
+
+                    <div class="case-photo">
+                        <img
+                            src="/images/cases/case04-01.jpg"
+                            alt="Export shipment preparation in China"
+                            loading="lazy"
+                        >
+                    </div>
+
+                    <div class="case-photo">
+                        <img
+                            src="/images/cases/case04-02.jpg"
+                            alt="Cargo preparation before export"
+                            loading="lazy"
+                        >
+                    </div>
+
+                    <div class="case-photo">
+                        <img
+                            src="/images/cases/case04-03.jpg"
+                            alt="Goods ready for international shipment"
+                            loading="lazy"
+                        >
+                    </div>
+
+                    <div class="case-photo">
+                        <img
+                            src="/images/cases/case04-04.jpg"
+                            alt="China export cargo"
+                            loading="lazy"
+                        >
+                    </div>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+
+        <!-- ========================================
+             VIEW MORE
+             ======================================== -->
+
+        <div class="sourcing-cases-button">
+
+            <a href="/services.html">
+                Explore Our Sourcing Services →
+            </a>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- ========================================
+     CASE IMAGE LIGHTBOX
+     ======================================== -->
+
+<div class="case-lightbox" id="caseLightbox">
+
+    <button
+        class="case-lightbox-close"
+        type="button"
+        aria-label="Close image"
+    >
+        ×
+    </button>
+
+    <img
+        id="caseLightboxImage"
+        src=""
+        alt="MikeOK sourcing and shipping case"
+    >
+
+</div>
+
+
+<!-- ========================================
+     CASE IMAGE LIGHTBOX SCRIPT
+     ======================================== -->
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const casePhotos =
+        document.querySelectorAll(".case-photo img");
+
+    const lightbox =
+        document.getElementById("caseLightbox");
+
+    const lightboxImage =
+        document.getElementById("caseLightboxImage");
+
+    const closeButton =
+        document.querySelector(".case-lightbox-close");
+
+
+    /* Open image */
+
+    casePhotos.forEach(function (image) {
+
+        image.addEventListener("click", function () {
+
+            lightboxImage.src = image.src;
+            lightboxImage.alt = image.alt;
+
+            lightbox.classList.add("active");
+
+            document.body.style.overflow = "hidden";
+
+        });
+
+    });
+
+
+    /* Close button */
+
+    closeButton.addEventListener("click", function () {
+
+        lightbox.classList.remove("active");
+
+        document.body.style.overflow = "";
+
+    });
+
+
+    /* Close when clicking background */
+
+    lightbox.addEventListener("click", function (event) {
+
+        if (event.target === lightbox) {
+
+            lightbox.classList.remove("active");
+
+            document.body.style.overflow = "";
+
+        }
+
+    });
+
+
+    /* Close with ESC */
+
+    document.addEventListener("keydown", function (event) {
+
+        if (event.key === "Escape") {
+
+            lightbox.classList.remove("active");
+
+            document.body.style.overflow = "";
+
+        }
+
+    });
+
+});
+
+</script>
+
+
+<!-- ========================================
+     END OF REAL SOURCING & SHIPPING CASES
+     ======================================== -->
+
+
+
+
+
+    
     
 <!-- =========================
 OUR PRODUCT CATEGORIES
